@@ -1,5 +1,0 @@
-cmake_minimum_required(VERSION 3.27)
-
-add_library(user_and_dev STATIC user_and_dev.cpp)
-
-target_include_directories(user_and_dev PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
