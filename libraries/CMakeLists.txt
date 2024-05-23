@@ -1,3 +1,3 @@
 add_subdirectory(cosine_distance)
 add_subdirectory(word_to_vec)
-add_subdirectory(User_and_Dev_classes)
+add_subdirectory(Classes)
