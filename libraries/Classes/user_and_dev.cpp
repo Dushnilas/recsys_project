@@ -34,7 +34,6 @@ Gender AllUsers::getGender() const {
 }
 
 std::vector<Movie> AllUsers::getMovieCol(std::vector<Movie>& movies_collection) {
-
 }
 
 bool AllUsers::addMovieToCol(const Movie& movie) {

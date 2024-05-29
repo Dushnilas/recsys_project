@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.27)
-
 add_library(user_and_dev STATIC user_and_dev.cpp)
 add_library(movies STATIC movies.cpp)
 
