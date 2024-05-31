@@ -10,7 +10,7 @@ Logger& Logger::getInstance() {
     return instance;
 }
 
-Logger::Logger() = default;
+Logger::Logger() {}
 
 Logger::~Logger() {
     if (logFile.is_open()) {
@@ -67,8 +67,8 @@ void Logger::log(LogLevel level, const std::string& message) {
     }
 
     std::string logMessage = getCurrentTime() + " " + prefix + message;
-    std::cout << logMessage << std::endl;
+    std::cout << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
     if (logFile.is_open()) {
-        logFile << logMessage << std::endl;
+        logFile << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
     }
 }
