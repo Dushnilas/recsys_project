@@ -1,0 +1,5 @@
+2024-05-31 18:50:24 [INFO]    Movie class object was created (Aboba).
+2024-05-31 18:50:24 [INFO]    Actor class object was created (Lupa).
+2024-05-31 18:50:24 [WARNING] Actor Lupa was already added.
+2024-05-31 18:50:24 [INFO]    Movie Aboba was removed from Lupa.
+2024-05-31 18:50:24 [INFO]    Actor Lupa was added to Aboba.
