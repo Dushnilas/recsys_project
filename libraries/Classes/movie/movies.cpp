@@ -3,6 +3,8 @@
 #include <utility>
 #include <logger/logger.h>
 
+
+/// Definition of Movies class methods
 Movie::Movie(std::string name, std::string tconst, std::string genre, std::string description, FilmType film_type,
              int year_start, int year_end, bool is_adult, double rating, int num_votes):
              _name(std::move(name)), _tconst(std::move(tconst)), _genre(std::move(genre)),
@@ -66,6 +68,7 @@ int Movie::getVotes() const {
     return _num_votes;
 }
 
+/// Definition of Actors class methods
 Actor::Actor(std::string name, std::string nconst, std::string photo_url, Character character_played, int birth_year,
              int death_year, int actor_importance):
              _name(std::move(name)), _nconst(std::move(nconst)), _photo_url(std::move(photo_url)),
@@ -117,6 +120,7 @@ int Actor::getImportance() const {
     return _actor_importance;
 }
 
+/// Definition of Collections class methods
 Collection::Collection(int collection_id, const std::string& name): _collection_id(collection_id), _name(name) {
     Logger::getInstance().logInfo("Collection  class object was created (" + name = ").");
 }
