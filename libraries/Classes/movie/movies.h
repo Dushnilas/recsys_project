@@ -92,7 +92,7 @@ private:
     int _collection_id;
 
 public:
-    Collection(int collection_id);
+    Collection(int collection_id, const std::string& name="Collection");
     std::string getName() const;
     void addMovie(Movie* movie);
     void removeMovie(Movie* movie);

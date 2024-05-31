@@ -10,7 +10,7 @@ Logger& Logger::getInstance() {
     return instance;
 }
 
-Logger::Logger() {}
+Logger::Logger() = default;
 
 Logger::~Logger() {
     if (logFile.is_open()) {

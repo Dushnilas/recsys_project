@@ -12,6 +12,14 @@ enum class LogLevel {
 };
 
 class Logger {
+public:
+    static Logger& getInstance();
+
+    void setLogFile(const std::string& filename);
+    void logInfo(const std::string& message);
+    void logWarning(const std::string& message);
+    void logError(const std::string& message);
+
 private:
     Logger();
     ~Logger();
@@ -23,14 +31,6 @@ private:
 
     std::ofstream logFile;
     std::mutex logMutex;
-
-public:
-    static Logger& getInstance();
-
-    void setLogFile(const std::string& filename);
-    void logInfo(const std::string& message);
-    void logWarning(const std::string& message);
-    void logError(const std::string& message);
 };
 
-#endif
+#endif // LOGGER_H
