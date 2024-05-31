@@ -40,14 +40,15 @@ public:
     Gender getGender() const;
 
 private:
-    std::vector<Movie> _movies_collection;
+    std::vector<Collection> _all_collection;
 
 public:
-    std::vector<Movie> getMovieCol(std::vector<Movie>& movies_collection);
-    bool addMovieToCol(const Movie& movie);
+    const std::vector<Collection>& getAllCol() const;
+    void createCol(const std::string& name);
+    bool removeCol(Collection collection);
 };
 
-class User : private AllUsers{
+class User : public AllUsers{
 private:
     userAccess access = userAccess::User;
 

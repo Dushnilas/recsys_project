@@ -3,45 +3,38 @@
 #include <iomanip>
 #include "cosine_distance.h"
 #include "word_to_vec.h"
+#include "movie/movies.h"
+#include "users/user_and_dev.h"
+#include "logger/logger.h"
+
+
 
 
 int main() {
-    std::vector<std::string> array1 = {"apple", "banana"};
-    std::vector<std::string> array2 = {"cherry", "date"};
-    std::vector<std::vector<std::string>> words = {array1, array2};
-    int movies_amount = words.size();
-    std::vector<std::vector<int>> vectors;
-    std::map<std::string, unsigned long> dict;
+    Logger::getInstance().setLogFile("/Users/senya/CLionProjects/recsys_project/src/Data/LogFile.txt");
 
-    auto len = analyse_unique_words(dict, words);
+    Movie movie("Aboba", "23456", "Western", "Lupa zabolel i za nego na rabotu vishel Zalupa",
+                FilmType::TvSeries, 1909, 2024, true, 8.1, 7845);
 
-    for (auto const& el : words) {
-        std::vector<int> vec(len, 0);
+    Actor actor("Lupa", "2344567", "porthub", 2000, 0, 1);
 
-        word_to_vec(dict, el, vec);
-        vectors.push_back(vec);
+    movie.addActor(&actor);
 
-        for (auto i = 0; i < 4; i++) {
-            std::cout << vec[i] << ' ';
-        }
-        std::cout << '\n';
-    }
+    User Aleko("Aleko", "Messi", "abobus233", "123456");
 
-    std::vector<std::vector<double>> matrix(movies_amount, std::vector<double>(movies_amount,0));
-    for (int i = 0; i < movies_amount; i++){
-        for (int j = i; j < movies_amount; j++){
-            double dist = cosineDistance(vectors[i], vectors[j]);
-            matrix[i][j] = dist;
-            if (i != j) matrix[j][i] = dist;
+    Aleko.createCol("PORNO");
+
+    auto all_collections = Aleko.getAllCol();
+
+    for (auto col : all_collections){
+        if (col.getName() == "PORNO"){
+            col.addMovie(&movie);
+            auto all_movies = col.getMovies();
+
+            for (auto mov : all_movies){
+                std::cout << mov->getName() << '\n';
+            }
         }
     }
-
-    for (const auto& row : matrix){
-        for (auto el : row){
-            std::cout << std::fixed << std::setprecision(20) << el << ' ';
-        }
-        std::cout << '\n';
-    }
-
     return 0;
 }
