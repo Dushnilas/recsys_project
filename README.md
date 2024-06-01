@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to MovieInfoApp, a comprehensive online service that provides detailed information about movies. This project is developed by first-year students at the Higher School of Economics (HSE). Our goal is to create a user-friendly platform where users can search for movies, view detailed information about them, and get recommendations based on their preferences.
+Welcome to online cinema MAZE, a comprehensive online service that provides detailed information about movies. This project is developed by first-year students at the Higher School of Economics (HSE). Our goal is to create a user-friendly platform where users can search for movies, view detailed information about them, and get recommendations based on their preferences.
 
 ## Features
 
