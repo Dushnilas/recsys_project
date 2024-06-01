@@ -43,7 +43,6 @@ void callPythonFunction() {
         std::cerr << "Failed to load 'example'" << std::endl;
     }
 
-    // Завершение работы интерпретатора Python
     Py_Finalize();
 }
 
