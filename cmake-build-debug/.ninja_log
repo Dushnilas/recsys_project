@@ -1,0 +1,17 @@
+# ninja log v6
+1166	1211	1717262412323100243	libraries/Classes/liblogger.a	2123e3aa561e9f0c
+1026	1117	1717262412183240139	libraries/cosine_distance/libcosine_distance.a	da6c2bf4cee9f44f
+2	1223	1717262411159433311	libraries/word_to_vec/CMakeFiles/word_to_vec.dir/word_to_vec.cpp.o	362285e6d61cd015
+1450	1481	1717262412607413793	libraries/Classes/libmovies.a	6a7c330007c65228
+3	1450	1717262411160197958	libraries/Classes/CMakeFiles/movies.dir/movie/movies.cpp.o	7ec4c4a4de9b98f1
+1	1022	1717262411158619624	libraries/cosine_distance/CMakeFiles/cosine_distance.dir/cosine_distance.cpp.o	4f3027e43776ab88
+3	1164	1717262411160332579	libraries/Classes/CMakeFiles/logger.dir/logger/logger.cpp.o	4907998b45ec6615
+1223	1258	1717262412380796299	libraries/word_to_vec/libword_to_vec.a	b6073dd875a3aae1
+3	1322	1717262411159969672	libraries/Classes/CMakeFiles/user_and_dev.dir/users/user_and_dev.cpp.o	2162c15f2380a7e0
+1327	1369	1717262412484434670	libraries/Classes/libuser_and_dev.a	a5cf045e1ddf709e
+3	1428	1717262411160467368	src/backend/CMakeFiles/main.dir/main.cpp.o	e7786b263c61d1f0
+1482	1653	1717262412638897565	src/backend/main	ad29062edf2d2aeb
+4	641	1717262783391890901	CMakeFiles/python.dir/python/main.cpp.o	ad952c5319003f6b
+642	758	1717262784029337059	python	d85d5f84b79d66f4
+3	405	1717263543520397169	CMakeFiles/python.dir/python/main.cpp.o	ad952c5319003f6b
+405	526	1717263543922212274	python	d85d5f84b79d66f4
