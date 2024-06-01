@@ -1,13 +1,16 @@
 #include <Python.h>
 #include <iostream>
-#include <unistd.h> // Для функции chdir
+#include <unistd.h>
 #include <string>
+#include <vector>
 
-void callPythonFunction(const std::string& query) {
+std::vector<std::vector<std::string>> ExecuteSelectQuery(const std::string& query) {
+    std::vector<std::vector<std::string>> results;
+
     std::string project_path = "/Users/maykorablina/Yandex.Disk.localized/CodingProjects/recsys_cpp/python";
     if (chdir(project_path.c_str()) != 0) {
         std::cerr << "Failed to change directory to " << project_path << std::endl;
-        return;
+        return results;
     }
 
     Py_Initialize();
@@ -22,13 +25,12 @@ void callPythonFunction(const std::string& query) {
     PyRun_SimpleString(venv_path_cmd.c_str());
     PyRun_SimpleString("print('sys.path:', sys.path)");
 
-    // Загрузка модуля library
     PyObject *pName = PyUnicode_DecodeFSDefault("library");
     PyObject *pModule = PyImport_Import(pName);
     Py_DECREF(pName);
 
     if (pModule != nullptr) {
-        PyObject *pFunc = PyObject_GetAttrString(pModule, "execute_select_query");
+        PyObject *pFunc = PyObject_GetAttrString(pModule, "select");
 
         if (PyCallable_Check(pFunc)) {
             PyObject *pArgs = PyTuple_Pack(1, PyUnicode_FromString(query.c_str()));
@@ -37,24 +39,31 @@ void callPythonFunction(const std::string& query) {
             Py_DECREF(pArgs);
 
             if (pValue != nullptr) {
-                // Обработка результата
                 PyObject *iterator = PyObject_GetIter(pValue);
                 PyObject *item;
                 while ((item = PyIter_Next(iterator)) != NULL) {
-                    PyObject* repr = PyObject_Repr(item);
-                    std::cout << PyUnicode_AsUTF8(repr) << std::endl;
-                    Py_DECREF(repr);
+                    PyObject* row_iterator = PyObject_GetIter(item);
+                    PyObject* column_item;
+                    std::vector<std::string> row;
+                    while ((column_item = PyIter_Next(row_iterator)) != NULL) {
+                        PyObject* repr = PyObject_Str(column_item);
+                        row.push_back(PyUnicode_AsUTF8(repr));
+                        Py_DECREF(repr);
+                        Py_DECREF(column_item);
+                    }
+                    Py_DECREF(row_iterator);
+                    results.push_back(row);
                     Py_DECREF(item);
                 }
                 Py_DECREF(iterator);
                 Py_DECREF(pValue);
             } else {
                 PyErr_Print();
-                std::cerr << "Call to execute_select_query failed" << std::endl;
+                std::cerr << "Call to select failed" << std::endl;
             }
         } else {
             PyErr_Print();
-            std::cerr << "Cannot find function 'execute_select_query'" << std::endl;
+            std::cerr << "Cannot find function 'select'" << std::endl;
         }
         Py_XDECREF(pFunc);
         Py_DECREF(pModule);
@@ -64,10 +73,20 @@ void callPythonFunction(const std::string& query) {
     }
 
     Py_Finalize();
+
+    return results;
 }
 
 int main() {
-    std::string query = "SELECT * FROM titles LIMIT 5";
-    callPythonFunction(query);
+    std::string query = "SELECT * FROM user_profile";
+    std::vector<std::vector<std::string>> results = ExecuteSelectQuery(query);
+
+    for (const auto& row : results) {
+        for (const auto& col : row) {
+            std::cout << col << "\t";
+        }
+        std::cout << std::endl;
+    }
+
     return 0;
 }
