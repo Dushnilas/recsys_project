@@ -2,10 +2,10 @@
 #define MOVIES_H
 #pragma ide diagnostic ignored "modernize-use-nodiscard"
 
-
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 
 enum class Character
 {
@@ -23,7 +23,7 @@ enum class FilmType
 
 class Movie;
 
-class Actor {
+class Actor : public std::enable_shared_from_this<Actor> {
 private:
     const std::string _name;
     const std::string _nconst;
@@ -35,24 +35,24 @@ private:
 public:
     Actor(std::string name, std::string nconst, std::string photo_url, int birth_year,
           int death_year, int actor_importance);
+
     std::string getName() const;
     std::string getPhoto() const;
     std::vector<int> getLifeYears() const;
     int getImportance() const;
 
-
 private:
-    std::vector<Movie*> _movies;
-    std::map<Movie*, Character> _all_characters;
+    std::vector<std::shared_ptr<Movie>> _movies;
+    std::map<std::shared_ptr<Movie>, Character> _all_characters;
 
 public:
-    const std::map<Movie*, Character>& getAllCharacters() const;
-    void addToMovie(Movie* movie);
-    void removeMovie(Movie* movie);
-    const std::vector<Movie*>& getMovies() const;
+    const std::map<std::shared_ptr<Movie>, Character>& getAllCharacters() const;
+    void addToMovie(const std::shared_ptr<Movie>& movie);
+    void removeMovie(const std::shared_ptr<Movie>& movie);
+    const std::vector<std::shared_ptr<Movie>>& getMovies() const;
 };
 
-class Movie{
+class Movie : public std::enable_shared_from_this<Movie>{
 private:
     const std::string _name;
     const std::string _tconst;
@@ -68,6 +68,7 @@ private:
 public:
     Movie(std::string name, std::string tconst, std::string genre, std::string description, FilmType film_type,
           int year_start, int year_end, bool is_adult, double rating, int num_votes);
+
     std::string getName() const;
     std::string getGenre() const;
     std::string getDescription() const;
@@ -78,12 +79,12 @@ public:
     int getVotes() const;
 
 private:
-    std::vector<Actor*> _actors;
+    std::vector<std::shared_ptr<Actor>> _actors;
 
 public:
-    const std::vector<Actor*>& getActors() const;
-    void addActor(Actor* actor);
-    void removeActor(Actor* actor);
+    const std::vector<std::shared_ptr<Actor>>& getActors() const;
+    void addActor(const std::shared_ptr<Actor>& actor);
+    void removeActor(const std::shared_ptr<Actor>& actor);
 
 private:
     std::vector<std::string> _comments;
@@ -94,19 +95,18 @@ public:
 
 class Collection {
 private:
-    std::vector<Movie*> _collection;
+    std::vector<std::shared_ptr<Movie>> _collection;
     std::string _name;
     std::string _photo_utl;
     int _collection_id;
 
 public:
     Collection(int collection_id, const std::string& name="Collection");
-    bool operator==(const Collection& other) const;
 
     std::string getName() const;
-    const std::vector<Movie*>& getMovies() const;
-    void addMovie(Movie* movie);
-    void removeMovie(Movie* movie);
+    const std::vector<std::shared_ptr<Movie>>& getMovies() const;
+    void addMovie(const std::shared_ptr<Movie>& movie);
+    void removeMovie(const std::shared_ptr<Movie>& movie);
 };
 
 #endif

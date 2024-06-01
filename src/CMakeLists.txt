@@ -1,2 +1,2 @@
 add_subdirectory(backend)
-add_subdirectory(qt)
+#add_subdirectory(qt)
