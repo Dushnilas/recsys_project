@@ -162,6 +162,9 @@ void Movie::loadActors() {
             _actors.push_back(actor);
             counter++;
         }
+        else {
+            actor.reset();
+        }
     }
 
     Logger::getInstance().logInfo(std::to_string(counter) + "actors was added to " + _name + ".");
