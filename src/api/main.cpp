@@ -1,11 +1,14 @@
 #include "../../libraries/mysql-queries/mysql-queries.h"
-#include "iostream"
+#include <iostream>
+
 int main() {
-    if (!initializePythonInterpreter()) {
+    const std::string project_path = PROJECT_PATH;
+
+    if (!initializePythonInterpreter(project_path)) {
         return 1;
     }
 
-    std::string query = "SELECT * FROM titles LIMIT 5";
+    std::string query = "SELECT COUNT(*) FROM similarity_table";
     std::vector<std::map<std::string, std::string>> results = ExecuteSelectQuery("library", query);
 
     for (const auto& row : results) {

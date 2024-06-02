@@ -8,9 +8,8 @@
 extern const std::string red_color_code;
 extern const std::string yellow_color_code;
 extern const std::string reset_color_code;
-extern const std::string project_path;
 
-bool initializePythonInterpreter();
+bool initializePythonInterpreter(const std::string& project_path);
 void finalizePythonInterpreter();
 std::vector<std::map<std::string, std::string>> ExecuteSelectQuery(const std::string& library, const std::string& query);
 bool ExecuteInsertQuery(const std::string& library, const std::string& function_name, const std::string& table_name, const std::vector<std::map<std::string, std::string>>& data);
