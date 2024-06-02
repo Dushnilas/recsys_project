@@ -1,0 +1,7 @@
+2024-06-01 19:45:32 [INFO]    Movie class object was created (Aboba).
+2024-06-01 19:45:32 [INFO]    Actor class object was created (Pupa).
+2024-06-01 19:45:32 [INFO]    Movie`s actor list was updated. Actor Pupa was added to Aboba.
+2024-06-01 19:45:32 [INFO]    Actor`s movies list was updated. Actor Pupa was added to Aboba.
+2024-06-01 19:45:32 [WARNING] Actor Pupa was already added.
+2024-06-01 19:45:32 [INFO]    User abobus233 has logged in.
+2024-06-01 19:45:32 [INFO]    Collection class object was created (Plusi Dla loxov).

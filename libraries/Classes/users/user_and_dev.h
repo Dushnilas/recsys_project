@@ -4,7 +4,8 @@
 
 #include <string>
 #include <vector>
-#include "movies.h"
+#include <memory>
+#include "movie/movies.h"
 
 enum class userAccess
 {
@@ -40,14 +41,15 @@ public:
     Gender getGender() const;
 
 private:
-    std::vector<Movie> _movies_collection;
+    std::vector<std::shared_ptr<Collection>> _all_collection;
 
 public:
-    std::vector<Movie> getMovieCol(std::vector<Movie>& movies_collection);
-    bool addMovieToCol(const Movie& movie);
+    const std::vector<std::shared_ptr<Collection>>& getAllCol() const;
+    void createCol(const std::string& name);
+    bool removeCol(const std::shared_ptr<Collection>& collection);
 };
 
-class User : private AllUsers{
+class User : public AllUsers{
 private:
     userAccess access = userAccess::User;
 
