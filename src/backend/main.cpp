@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
-//#include "cosine_distance.h"
-//#include "word_to_vec.h"
 #include "movie/movies.h"
 #include "users/user_and_dev.h"
 #include "logger/logger.h"
@@ -28,7 +26,6 @@ void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
 
     int counter = 0;
     for (auto el: buf){
-//        std::cout << el["tconst"] << ' ' << el["year_start"] << ' ' << el["year_end"] << '1' << el["id_adult"] << '2' << el["num_votes"] << '\n';
         auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"],  el["description"],
                                              strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
                                              std::stoi(el["is_adult"]), std::stod(el["rating"]), std::stoi(el["num_votes"]));
@@ -178,10 +175,22 @@ int main() {
                 std::cin >> movie_name;
                 searchMovies(all_movies, search_mode, movie_name, 10);
 
-                std::cout << "If you want to see more information about the film type 'Info movie_number'" << '\n';
+                std::cout << "If you want to see more information about the film type movie_number. If you want to leave type 0." << '\n';
                 for (int i = 1; i < search_mode.size() + 1; i++){
                     std::cout << i << ". " << search_mode[i]->getName() << '\n';
                 }
+
+                int search_action;
+                std::cout << "Action:";
+                std::cin >> search_action;
+
+                if (search_action != 0){
+                    auto movie = search_mode[search_action - 1];
+                    std::cout << "Name: " << movie->getName() << '\n'
+                                << "Genres: " << '\n';
+                }
+
+                break;
         }
     }
 

@@ -72,7 +72,7 @@ public:
           int year_start, int year_end, bool is_adult, double rating, int num_votes);
 
     std::string getName() const;
-    void setGenre(const std::vector<std::string>& genres);
+    void setGenre();
     const std::vector<std::string>& getGenre() const;
     std::string getDescription() const;
     FilmType getFilmType() const;

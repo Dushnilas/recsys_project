@@ -2,6 +2,7 @@
 #include <iostream>
 #include <utility>
 #include <logger/logger.h>
+#include "../../mysql-queries/mysql-queries.h"
 
 // Definition of Actor class methods
 Actor::Actor(std::string name, std::string nconst, std::string photo_url, int birth_year, int death_year, int actor_importance):
@@ -74,7 +75,9 @@ Movie::Movie(std::string name, std::string tconst, std::string description, Film
              int year_start, int year_end, bool is_adult, double rating, int num_votes):
         _name(std::move(name)), _tconst(std::move(tconst)), _description(std::move(description)), _film_type(film_type),
         _year_start(year_start), _year_end(year_end), _is_adult(is_adult), _rating(rating), _num_votes(num_votes) {
-    Logger::getInstance().logInfo("Movie class object was created (" + _name + ").");
+
+//    setGenre();
+//    Logger::getInstance().logInfo("Movie class object was created (" + _name + ").");
 }
 
 std::string Movie::getName() const {
@@ -85,8 +88,14 @@ const std::vector<std::shared_ptr<Actor>>& Movie::getActors() const {
     return _actors;
 }
 
-void Movie::setGenre(const std::vector<std::string>& genres){
-    _genre.assign(genres.begin(), genres.end());
+void Movie::setGenre(){
+    std::string query = "SELECT DISTINCT g.genre_name FROM titles_genres tg JOIN genres g ON tg.genre_id = g.genre_id "
+                        "WHERE tg.tconst = '" + _tconst + "';";
+    std::vector<std::map<std::string, std::string>> genres = ExecuteSelectQuery("library", query);;
+
+    for (const auto& pair : genres) {
+        _genre.push_back(pair.at("genre_name"));
+    }
 }
 
 const std::vector<std::string>& Movie::getGenre() const {
