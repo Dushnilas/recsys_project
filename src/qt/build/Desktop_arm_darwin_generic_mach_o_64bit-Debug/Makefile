@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.28.1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/elizabethstorozheva/Mase_Cinema
+CMAKE_SOURCE_DIR = /Users/elizabethstorozheva/Mase_Cinema_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/elizabethstorozheva/Mase_Cinema/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug
+CMAKE_BINARY_DIR = /Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/elizabethstorozheva/Mase_Cinema/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles /Users/elizabethstorozheva/Mase_Cinema/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles /Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/elizabethstorozheva/Mase_Cinema/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -162,98 +162,146 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Mase_Cinema
+# Target rules for targets named Mase_Cinema_Project
 
 # Build rule for target.
-Mase_Cinema: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mase_Cinema
-.PHONY : Mase_Cinema
+Mase_Cinema_Project: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mase_Cinema_Project
+.PHONY : Mase_Cinema_Project
 
 # fast build rule for target.
-Mase_Cinema/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/build
-.PHONY : Mase_Cinema/fast
+Mase_Cinema_Project/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/build
+.PHONY : Mase_Cinema_Project/fast
 
 #=============================================================================
-# Target rules for targets named Mase_Cinema_autogen_timestamp_deps
+# Target rules for targets named Mase_Cinema_Project_autogen_timestamp_deps
 
 # Build rule for target.
-Mase_Cinema_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mase_Cinema_autogen_timestamp_deps
-.PHONY : Mase_Cinema_autogen_timestamp_deps
+Mase_Cinema_Project_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mase_Cinema_Project_autogen_timestamp_deps
+.PHONY : Mase_Cinema_Project_autogen_timestamp_deps
 
 # fast build rule for target.
-Mase_Cinema_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_autogen_timestamp_deps.dir/build.make CMakeFiles/Mase_Cinema_autogen_timestamp_deps.dir/build
-.PHONY : Mase_Cinema_autogen_timestamp_deps/fast
+Mase_Cinema_Project_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps.dir/build.make CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps.dir/build
+.PHONY : Mase_Cinema_Project_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named Mase_Cinema_autogen
+# Target rules for targets named Mase_Cinema_Project_autogen
 
 # Build rule for target.
-Mase_Cinema_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mase_Cinema_autogen
-.PHONY : Mase_Cinema_autogen
+Mase_Cinema_Project_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mase_Cinema_Project_autogen
+.PHONY : Mase_Cinema_Project_autogen
 
 # fast build rule for target.
-Mase_Cinema_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_autogen.dir/build.make CMakeFiles/Mase_Cinema_autogen.dir/build
-.PHONY : Mase_Cinema_autogen/fast
+Mase_Cinema_Project_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project_autogen.dir/build.make CMakeFiles/Mase_Cinema_Project_autogen.dir/build
+.PHONY : Mase_Cinema_Project_autogen/fast
 
-Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.o: Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.o
-.PHONY : Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.o
-
-# target to build an object file
-Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.o
-.PHONY : Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.o
-
-Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.i: Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.i
-.PHONY : Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.i
-
-# target to preprocess a source file
-Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.i
-.PHONY : Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.i
-
-Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.s: Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.s
-.PHONY : Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.s
-
-# target to generate assembly for a file
-Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.s
-.PHONY : Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.cpp.s
-
-Mase_Cinema_autogen/mocs_compilation.o: Mase_Cinema_autogen/mocs_compilation.cpp.o
-.PHONY : Mase_Cinema_autogen/mocs_compilation.o
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.o: Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o
+.PHONY : Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.o
 
 # target to build an object file
-Mase_Cinema_autogen/mocs_compilation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/Mase_Cinema_autogen/mocs_compilation.cpp.o
-.PHONY : Mase_Cinema_autogen/mocs_compilation.cpp.o
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o
+.PHONY : Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o
 
-Mase_Cinema_autogen/mocs_compilation.i: Mase_Cinema_autogen/mocs_compilation.cpp.i
-.PHONY : Mase_Cinema_autogen/mocs_compilation.i
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.i: Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.i
+.PHONY : Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.i
 
 # target to preprocess a source file
-Mase_Cinema_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/Mase_Cinema_autogen/mocs_compilation.cpp.i
-.PHONY : Mase_Cinema_autogen/mocs_compilation.cpp.i
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.i
+.PHONY : Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.i
 
-Mase_Cinema_autogen/mocs_compilation.s: Mase_Cinema_autogen/mocs_compilation.cpp.s
-.PHONY : Mase_Cinema_autogen/mocs_compilation.s
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.s: Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.s
+.PHONY : Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.s
 
 # target to generate assembly for a file
-Mase_Cinema_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/Mase_Cinema_autogen/mocs_compilation.cpp.s
-.PHONY : Mase_Cinema_autogen/mocs_compilation.cpp.s
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.s
+.PHONY : Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.s
+
+Mase_Cinema_Project_autogen/mocs_compilation.o: Mase_Cinema_Project_autogen/mocs_compilation.cpp.o
+.PHONY : Mase_Cinema_Project_autogen/mocs_compilation.o
+
+# target to build an object file
+Mase_Cinema_Project_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/mocs_compilation.cpp.o
+.PHONY : Mase_Cinema_Project_autogen/mocs_compilation.cpp.o
+
+Mase_Cinema_Project_autogen/mocs_compilation.i: Mase_Cinema_Project_autogen/mocs_compilation.cpp.i
+.PHONY : Mase_Cinema_Project_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+Mase_Cinema_Project_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/mocs_compilation.cpp.i
+.PHONY : Mase_Cinema_Project_autogen/mocs_compilation.cpp.i
+
+Mase_Cinema_Project_autogen/mocs_compilation.s: Mase_Cinema_Project_autogen/mocs_compilation.cpp.s
+.PHONY : Mase_Cinema_Project_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+Mase_Cinema_Project_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/mocs_compilation.cpp.s
+.PHONY : Mase_Cinema_Project_autogen/mocs_compilation.cpp.s
+
+firstloginsignup.o: firstloginsignup.cpp.o
+.PHONY : firstloginsignup.o
+
+# target to build an object file
+firstloginsignup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/firstloginsignup.cpp.o
+.PHONY : firstloginsignup.cpp.o
+
+firstloginsignup.i: firstloginsignup.cpp.i
+.PHONY : firstloginsignup.i
+
+# target to preprocess a source file
+firstloginsignup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/firstloginsignup.cpp.i
+.PHONY : firstloginsignup.cpp.i
+
+firstloginsignup.s: firstloginsignup.cpp.s
+.PHONY : firstloginsignup.s
+
+# target to generate assembly for a file
+firstloginsignup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/firstloginsignup.cpp.s
+.PHONY : firstloginsignup.cpp.s
+
+login.o: login.cpp.o
+.PHONY : login.o
+
+# target to build an object file
+login.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/login.cpp.o
+.PHONY : login.cpp.o
+
+login.i: login.cpp.i
+.PHONY : login.i
+
+# target to preprocess a source file
+login.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/login.cpp.i
+.PHONY : login.cpp.i
+
+login.s: login.cpp.s
+.PHONY : login.s
+
+# target to generate assembly for a file
+login.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/login.cpp.s
+.PHONY : login.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -261,7 +309,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -269,32 +317,56 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-main_page.o: main_page.cpp.o
-.PHONY : main_page.o
+pagemain.o: pagemain.cpp.o
+.PHONY : pagemain.o
 
 # target to build an object file
-main_page.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/main_page.cpp.o
-.PHONY : main_page.cpp.o
+pagemain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/pagemain.cpp.o
+.PHONY : pagemain.cpp.o
 
-main_page.i: main_page.cpp.i
-.PHONY : main_page.i
+pagemain.i: pagemain.cpp.i
+.PHONY : pagemain.i
 
 # target to preprocess a source file
-main_page.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/main_page.cpp.i
-.PHONY : main_page.cpp.i
+pagemain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/pagemain.cpp.i
+.PHONY : pagemain.cpp.i
 
-main_page.s: main_page.cpp.s
-.PHONY : main_page.s
+pagemain.s: pagemain.cpp.s
+.PHONY : pagemain.s
 
 # target to generate assembly for a file
-main_page.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema.dir/build.make CMakeFiles/Mase_Cinema.dir/main_page.cpp.s
-.PHONY : main_page.cpp.s
+pagemain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/pagemain.cpp.s
+.PHONY : pagemain.cpp.s
+
+userinfo.o: userinfo.cpp.o
+.PHONY : userinfo.o
+
+# target to build an object file
+userinfo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.o
+.PHONY : userinfo.cpp.o
+
+userinfo.i: userinfo.cpp.i
+.PHONY : userinfo.i
+
+# target to preprocess a source file
+userinfo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.i
+.PHONY : userinfo.cpp.i
+
+userinfo.s: userinfo.cpp.s
+.PHONY : userinfo.s
+
+# target to generate assembly for a file
+userinfo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.s
+.PHONY : userinfo.cpp.s
 
 # Help Target
 help:
@@ -308,21 +380,30 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Mase_Cinema_autogen"
-	@echo "... Mase_Cinema_autogen_timestamp_deps"
-	@echo "... Mase_Cinema"
-	@echo "... Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.o"
-	@echo "... Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.i"
-	@echo "... Mase_Cinema_autogen/EWIEGA46WW/qrc_PICS.s"
-	@echo "... Mase_Cinema_autogen/mocs_compilation.o"
-	@echo "... Mase_Cinema_autogen/mocs_compilation.i"
-	@echo "... Mase_Cinema_autogen/mocs_compilation.s"
+	@echo "... Mase_Cinema_Project_autogen"
+	@echo "... Mase_Cinema_Project_autogen_timestamp_deps"
+	@echo "... Mase_Cinema_Project"
+	@echo "... Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.o"
+	@echo "... Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.i"
+	@echo "... Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.s"
+	@echo "... Mase_Cinema_Project_autogen/mocs_compilation.o"
+	@echo "... Mase_Cinema_Project_autogen/mocs_compilation.i"
+	@echo "... Mase_Cinema_Project_autogen/mocs_compilation.s"
+	@echo "... firstloginsignup.o"
+	@echo "... firstloginsignup.i"
+	@echo "... firstloginsignup.s"
+	@echo "... login.o"
+	@echo "... login.i"
+	@echo "... login.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... main_page.o"
-	@echo "... main_page.i"
-	@echo "... main_page.s"
+	@echo "... pagemain.o"
+	@echo "... pagemain.i"
+	@echo "... pagemain.s"
+	@echo "... userinfo.o"
+	@echo "... userinfo.i"
+	@echo "... userinfo.s"
 .PHONY : help
 
 
