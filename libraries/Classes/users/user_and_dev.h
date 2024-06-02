@@ -47,6 +47,8 @@ public:
     const std::vector<std::shared_ptr<Collection>>& getAllCol() const;
     void createCol(const std::string& name);
     bool removeCol(const std::shared_ptr<Collection>& collection);
+
+    void leaveComment(const std::shared_ptr<Movie>& movie, const std::string& com);
 };
 
 class User : public AllUsers{

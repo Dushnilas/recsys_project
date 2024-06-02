@@ -91,6 +91,7 @@ private:
 
 public:
     const std::vector<std::string>& getComments() const;
+    void leaveComment(const std::string& com);
 };
 
 class Collection {

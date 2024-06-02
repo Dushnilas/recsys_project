@@ -143,6 +143,10 @@ const std::vector<std::string>& Movie::getComments() const {
     return _comments;
 }
 
+void Movie::leaveComment(const std::string& com) {
+    _comments.push_back(com);
+}
+
 // Definition of Collection class methods
 Collection::Collection(int collection_id, const std::string& name): _collection_id(collection_id), _name(name) {
     Logger::getInstance().logInfo("Collection class object was created (" + name + ").");

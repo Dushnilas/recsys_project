@@ -57,6 +57,10 @@ void AllUsers::createCol(const std::string& name) {
     _all_collection.push_back(newCollection);
 }
 
+void AllUsers::leaveComment(const std::shared_ptr<Movie>& movie, const std::string& com) {
+    movie->leaveComment(com);
+}
+
 User::User(std::string name, std::string lastname, std::string login, std::string password):
         AllUsers(std::move(name), std::move(lastname), std::move(login), std::move(password)) {}
 
