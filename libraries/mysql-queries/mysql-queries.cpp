@@ -9,7 +9,7 @@
 const std::string red_color_code = "\033[1;31m";
 const std::string reset_color_code = "\033[0m";
 const std::string yellow_color_code = "\033[1;33m";
-const std::string project_path = "/Users/maykorablina/Yandex.Disk.localized/CodingProjects/recsys_cpp/libraries/mysql-queries";
+const std::string project_path = "/Users/senya/CLionProjects/recsys_project/libraries/mysql-queries";
 
 bool initializePythonInterpreter() {
     if (chdir(project_path.c_str()) != 0) {

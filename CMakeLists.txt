@@ -5,5 +5,3 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(libraries)
 add_subdirectory(src)
-add_subdirectory(libraries/mysql-queries)
-add_subdirectory(src/api)

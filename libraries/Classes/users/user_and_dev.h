@@ -20,7 +20,7 @@ enum class Gender
     Not_given
 };
 
-class AllUsers{
+class AllUsers : public std::enable_shared_from_this<AllUsers> {
 private:
     std::string _name;
     std::string _lastname;

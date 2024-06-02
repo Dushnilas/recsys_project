@@ -1,8 +1,6 @@
-cmake_minimum_required(VERSION 3.10)
+include_directories(/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/include/python3.12)
 
-project(mysql-queries)
-
-set(CMAKE_CXX_STANDARD 17)
+link_directories(/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib)
 
 add_library(mysql-queries STATIC mysql-queries.cpp)
 

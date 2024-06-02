@@ -8,6 +8,8 @@
 #include "logger/logger.h"
 
 
+std::shared_ptr<AllUsers> main_user;
+
 std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::shared_ptr<Movie>>& allMovies,
                                                     int n, const std::string& genre="") {
 
@@ -49,6 +51,33 @@ std::vector<std::shared_ptr<Movie>> searchMovies(const std::vector<std::shared_p
         return compareMovies(m1, m2, query); });
 
     return result;
+}
+
+bool SignIn(const std::string& login, const std::string& password){
+    std::vector<std::map<std::string, std::string>> buf;
+
+    for (const auto& el: buf){
+        if (login == el.at("user_id") and password == el.at("pass")){
+            main_user = std::make_shared<User>(el.at("name"), el.at("lastname"), login, password);
+            return true;
+        }
+    }
+    Logger::getInstance().logError("Wrong login or password");
+    return false;
+}
+
+bool SignUp(const std::string& login, const std::string& password){
+    std::vector<std::map<std::string, std::string>> buf;
+
+    if (std::find_if(buf.begin(), buf.end(), [&](const auto& c) {
+        return login == c.at("user_id"); }) == buf.end()) {
+        Logger::getInstance().logInfo("User " + login = " signed up.");
+        main_user = std::make_shared<User>(login, "", login, password);
+        return true;
+    }
+
+    Logger::getInstance().logError("User with this login already exists.");
+    return false;
 }
 
 int main() {
