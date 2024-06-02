@@ -18,7 +18,8 @@ enum class FilmType
 {
     Movie,
     TvMovie,
-    TvSeries
+    TvSeries,
+    Default
 };
 
 class Movie;
@@ -77,6 +78,9 @@ public:
     bool IsAdult() const;
     double getRating() const;
     int getVotes() const;
+
+    FilmType strToType(const std::string& type);
+    void createMovies(std::vector<std::shared_ptr<Movie>>& allMovies);
 
 private:
     std::vector<std::shared_ptr<Actor>> _actors;

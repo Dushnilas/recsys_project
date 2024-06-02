@@ -109,6 +109,30 @@ int Movie::getVotes() const {
     return _num_votes;
 }
 
+FilmType Movie::strToType(const std::string& type){
+    if (type == "Movie") return FilmType::Movie;
+    else if (type == "TvMovie") return FilmType::TvMovie;
+    else if (type == "TvSeries") return FilmType::TvSeries;
+
+    return FilmType::Default;
+}
+
+
+void Movie::createMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
+    std::vector<std::map<std::string, std::string>> buf;
+
+    int counter = 0;
+    for (auto el: buf){
+        auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"], el["genre_name"], el["description"],
+                                             strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
+                                             std::stoi(el["id_adult"]), std::stod(el["ratings"]), std::stoi(el["num_votes"]));
+        allMovies.push_back(movie);
+        counter++;
+    }
+
+    Logger::getInstance().logInfo(std::to_string(counter) + "movies was uploaded.");
+}
+
 bool compareActors(const std::shared_ptr<Actor>& actor1, const std::shared_ptr<Actor>& actor2) {
     return actor1.get() == actor2.get();
 }
