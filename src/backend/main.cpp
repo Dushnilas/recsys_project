@@ -8,6 +8,26 @@
 #include "logger/logger.h"
 
 
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::shared_ptr<Movie>>& allMovies,
+                                                    int n, const std::string& genre="") {
+
+    std::vector<std::shared_ptr<Movie>> genreMovies;
+
+    if (!genre.empty()) {
+        for (const auto &movie: allMovies) {
+            if (movie->getGenre() == genre) {
+                genreMovies.push_back(movie);
+            }
+        }
+    }
+
+    std::sort(genreMovies.begin(), genreMovies.end(),[](const std::shared_ptr<Movie>& a, const std::shared_ptr<Movie>& b) {
+                  return a->getRating() > b->getRating(); });
+
+    if (genreMovies.size() <= n) return genreMovies;
+    return {genreMovies.begin(), genreMovies.begin() + n};
+}
+
 bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2, const std::string& query) {
     size_t pos1 = m1->getName().find(query);
     size_t pos2 = m2->getName().find(query);
