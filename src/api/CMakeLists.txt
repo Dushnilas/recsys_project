@@ -13,7 +13,9 @@ include_directories(/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.fr
 
 link_directories(/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib)
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/../../libraries/mysql-queries ${CMAKE_BINARY_DIR}/mysql-queries)
+if(NOT TARGET mysql-queries)
+    add_subdirectory(${CMAKE_SOURCE_DIR}/../../libraries/mysql-queries ${CMAKE_BINARY_DIR}/mysql-queries)
+endif()
 
 add_executable(api main.cpp)
 

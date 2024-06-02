@@ -8,7 +8,7 @@ int main() {
         return 1;
     }
 
-    std::string query = "SELECT * FROM titles LIMIT 5";
+    std::string query = "SELECT * FROM user_profile";
     std::vector<std::map<std::string, std::string>> results = ExecuteSelectQuery("library", query);
 
     for (const auto& row : results) {
