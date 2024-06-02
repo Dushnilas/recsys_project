@@ -8,7 +8,48 @@
 #include "logger/logger.h"
 
 
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::shared_ptr<Movie>>& allMovies,
+                                                    int n, const std::string& genre="") {
 
+    std::vector<std::shared_ptr<Movie>> genreMovies;
+
+    if (!genre.empty()) {
+        for (const auto &movie: allMovies) {
+            if (movie->getGenre() == genre) {
+                genreMovies.push_back(movie);
+            }
+        }
+    }
+
+    std::sort(genreMovies.begin(), genreMovies.end(),[](const std::shared_ptr<Movie>& a, const std::shared_ptr<Movie>& b) {
+                  return a->getRating() > b->getRating(); });
+
+    if (genreMovies.size() <= n) return genreMovies;
+    return {genreMovies.begin(), genreMovies.begin() + n};
+}
+
+bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2, const std::string& query) {
+    size_t pos1 = m1->getName().find(query);
+    size_t pos2 = m2->getName().find(query);
+
+    if (pos1 != pos2) return pos1 < pos2;
+    return m1->getName().length() < m2->getName().length();
+}
+
+std::vector<std::shared_ptr<Movie>> searchMovies(const std::vector<std::shared_ptr<Movie>>& all_movies,
+                                                 std::vector<std::shared_ptr<Movie>>& result, const std::string& query) {
+
+    for (const auto& movie : all_movies) {
+        if (movie->getName().find(query) != std::string::npos) {
+            result.push_back(movie);
+        }
+    }
+
+    std::sort(result.begin(), result.end(), [&](const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2) {
+        return compareMovies(m1, m2, query); });
+
+    return result;
+}
 
 int main() {
     Logger::getInstance().setLogFile("/Users/senya/CLionProjects/recsys_project/src/Data/LogFile.txt");
@@ -26,12 +67,12 @@ int main() {
 
     auto all_collections = Aleko.getAllCol();
 
-    for (auto col : all_collections){
+    for (const auto& col : all_collections){
         if (col->getName() == "Plusi Dla loxov"){
             col->addMovie(movie);
             auto all_movies = col->getMovies();
 
-            for (auto mov : all_movies){
+            for (const auto& mov : all_movies){
                 std::cout << mov->getName() << '\n';
             }
         }

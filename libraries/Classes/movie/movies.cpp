@@ -14,6 +14,11 @@ std::string Actor::getName() const {
     return _name;
 }
 
+std::string Actor::getId() const{
+    return _nconst;
+}
+
+
 const std::vector<std::shared_ptr<Movie>>& Actor::getMovies() const {
     return _movies;
 }
@@ -109,8 +114,57 @@ int Movie::getVotes() const {
     return _num_votes;
 }
 
+FilmType Movie::strToType(const std::string& type){
+    if (type == "Movie") return FilmType::Movie;
+    else if (type == "TvMovie") return FilmType::TvMovie;
+    else if (type == "TvSeries") return FilmType::TvSeries;
+
+    return FilmType::Default;
+}
+
+
+void Movie::loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
+    std::vector<std::map<std::string, std::string>> buf;
+
+    int counter = 0;
+    for (auto el: buf){
+        auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"], el["genre_name"], el["description"],
+                                             strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
+                                             std::stoi(el["id_adult"]), std::stod(el["ratings"]), std::stoi(el["num_votes"]));
+        allMovies.push_back(movie);
+        counter++;
+    }
+
+    Logger::getInstance().logInfo(std::to_string(counter) + "movies was uploaded.");
+}
+
+void Movie::updateRating(int new_vote){
+    _rating = (_rating * _num_votes + new_vote) / (_num_votes + 1);
+    _num_votes++;
+}
+
+
 bool compareActors(const std::shared_ptr<Actor>& actor1, const std::shared_ptr<Actor>& actor2) {
     return actor1.get() == actor2.get();
+}
+
+void Movie::loadActors() {
+    std::vector<std::map<std::string, std::string>> buf;
+
+    int counter = 0;
+    for (auto el: buf){
+        auto actor = std::make_shared<Actor>(el.at("name"), el.at("nconst"), el.at("photo_url"),
+                                             std::stoi(el.at("birth_year")), std::stoi(el.at("death_year")),
+                                             std::stoi(el.at("actor_importance")));
+
+        if (std::find_if(_actors.begin(), _actors.end(), [&actor](const std::shared_ptr<Actor>& a) {
+            return compareActors(a, actor); }) == _actors.end()) {
+            _actors.push_back(actor);
+            counter++;
+        }
+    }
+
+    Logger::getInstance().logInfo(std::to_string(counter) + "actors was added to " + _name + ".");
 }
 
 void Movie::addActor(const std::shared_ptr<Actor>& actor) {
@@ -124,6 +178,15 @@ void Movie::addActor(const std::shared_ptr<Actor>& actor) {
     } else {
         Logger::getInstance().logWarning("Actor " + actor->getName() + " was already added.");
     }
+}
+
+void Movie::clearActors() {
+    for (auto& actor : _actors) {
+        actor.reset();
+    }
+    _actors.clear();
+
+    Logger::getInstance().logInfo("All actors were removed from " + _name + ".");
 }
 
 void Movie::removeActor(const std::shared_ptr<Actor>& actor) {
@@ -141,6 +204,10 @@ void Movie::removeActor(const std::shared_ptr<Actor>& actor) {
 
 const std::vector<std::string>& Movie::getComments() const {
     return _comments;
+}
+
+void Movie::leaveComment(const std::string& com) {
+    _comments.push_back(com);
 }
 
 // Definition of Collection class methods

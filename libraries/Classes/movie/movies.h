@@ -18,7 +18,8 @@ enum class FilmType
 {
     Movie,
     TvMovie,
-    TvSeries
+    TvSeries,
+    Default
 };
 
 class Movie;
@@ -37,6 +38,7 @@ public:
           int death_year, int actor_importance);
 
     std::string getName() const;
+    std::string getId() const;
     std::string getPhoto() const;
     std::vector<int> getLifeYears() const;
     int getImportance() const;
@@ -78,10 +80,16 @@ public:
     double getRating() const;
     int getVotes() const;
 
+    FilmType strToType(const std::string& type);
+    void loadMovies(std::vector<std::shared_ptr<Movie>>& allMovies);
+    void updateRating(int new_vote);
+
 private:
     std::vector<std::shared_ptr<Actor>> _actors;
 
 public:
+    void loadActors();
+    void clearActors();
     const std::vector<std::shared_ptr<Actor>>& getActors() const;
     void addActor(const std::shared_ptr<Actor>& actor);
     void removeActor(const std::shared_ptr<Actor>& actor);
@@ -91,9 +99,10 @@ private:
 
 public:
     const std::vector<std::string>& getComments() const;
+    void leaveComment(const std::string& com);
 };
 
-class Collection {
+class Collection : public std::enable_shared_from_this<Collection> {
 private:
     std::vector<std::shared_ptr<Movie>> _collection;
     std::string _name;
@@ -101,7 +110,7 @@ private:
     int _collection_id;
 
 public:
-    Collection(int collection_id, const std::string& name="Collection");
+    explicit Collection(int collection_id, const std::string& name="Collection");
 
     std::string getName() const;
     const std::vector<std::shared_ptr<Movie>>& getMovies() const;
