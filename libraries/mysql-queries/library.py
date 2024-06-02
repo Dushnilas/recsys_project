@@ -34,7 +34,15 @@ def select(query):
         results = cursor.fetchall()
         result_dicts = []
         for row in results:
-            row_dict = {columns[i]: str(row[i]) for i in range(len(columns))}
+            row_dict = {}
+            for i in range(len(columns)):
+                value = row[i]
+                if value is None:
+                    if cursor.description[i][1] in (mysql.connector.FieldType.TINY, mysql.connector.FieldType.SHORT, mysql.connector.FieldType.LONG, mysql.connector.FieldType.FLOAT, mysql.connector.FieldType.DOUBLE, mysql.connector.FieldType.INT24):
+                        value = 0
+                    else:
+                        value = ""
+                row_dict[columns[i]] = str(value)
             result_dicts.append(list(row_dict.items()))
         return result_dicts
     except Error as e:
