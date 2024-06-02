@@ -27,8 +27,20 @@ std::string AllUsers::getPassword() const {
     return _password;
 }
 
+void AllUsers::setEmail(const std::string& email) {
+    _email_address = email;
+}
+
 std::string AllUsers::getEmail() const {
     return _email_address;
+}
+
+void AllUsers::setPhoto(const std::string& photo) {
+    _photo_url = photo;
+}
+
+std::string AllUsers::getPhoto() const {
+    return _photo_url;
 }
 
 Gender AllUsers::getGender() const {
@@ -99,7 +111,6 @@ void AllUsers::makeVote(const std::shared_ptr<Movie>& movie, int vote){
     }
     else Logger::getInstance().logError("New vote for " + movie->getName() + "isn`t from diapason of 0-10.");
 }
-
 
 User::User(std::string name, std::string lastname, std::string login, std::string password):
         AllUsers(std::move(name), std::move(lastname), std::move(login), std::move(password)) {}

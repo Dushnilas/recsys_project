@@ -26,7 +26,8 @@ private:
     std::string _lastname;
     std::string _login;
     std::string _password;
-    std::string _email_address;
+    std::string _email_address = "";
+    std::string _photo_url = "";
     Gender _gender = Gender::Not_given;
 
 protected:
@@ -37,7 +38,10 @@ public:
     std::string getLastname() const;
     std::string getLogin() const;
     std::string getPassword() const;
+    void setEmail(const std::string& email);
     std::string getEmail() const;
+    void setPhoto(const std::string& photo);
+    std::string getPhoto() const;
     Gender getGender() const;
 
 private:

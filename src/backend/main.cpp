@@ -59,6 +59,8 @@ bool SignIn(const std::string& login, const std::string& password){
     for (const auto& el: buf){
         if (login == el.at("user_id") and password == el.at("pass")){
             main_user = std::make_shared<User>(el.at("name"), el.at("lastname"), login, password);
+            main_user->setEmail(el.at("email"));
+            main_user->setPhoto(el.at("photo_url"));
             return true;
         }
     }
