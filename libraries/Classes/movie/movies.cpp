@@ -14,6 +14,11 @@ std::string Actor::getName() const {
     return _name;
 }
 
+std::string Actor::getId() const{
+    return _nconst;
+}
+
+
 const std::vector<std::shared_ptr<Movie>>& Actor::getMovies() const {
     return _movies;
 }
@@ -137,6 +142,25 @@ bool compareActors(const std::shared_ptr<Actor>& actor1, const std::shared_ptr<A
     return actor1.get() == actor2.get();
 }
 
+void Movie::loadActors() {
+    std::vector<std::map<std::string, std::string>> buf;
+
+    int counter = 0;
+    for (auto el: buf){
+        auto actor = std::make_shared<Actor>(el.at("name"), el.at("nconst"), el.at("photo_url"),
+                                             std::stoi(el.at("birth_year")), std::stoi(el.at("death_year")),
+                                             std::stoi(el.at("actor_importance")));
+
+        if (std::find_if(_actors.begin(), _actors.end(), [&actor](const std::shared_ptr<Actor>& a) {
+            return compareActors(a, actor); }) == _actors.end()) {
+            _actors.push_back(actor);
+            counter++;
+        }
+    }
+
+    Logger::getInstance().logInfo(std::to_string(counter) + "actors was added to " + _name + ".");
+}
+
 void Movie::addActor(const std::shared_ptr<Actor>& actor) {
     if (std::find_if(_actors.begin(), _actors.end(), [&actor](const std::shared_ptr<Actor>& a) {
         return compareActors(a, actor); }) == _actors.end()) {
@@ -148,6 +172,15 @@ void Movie::addActor(const std::shared_ptr<Actor>& actor) {
     } else {
         Logger::getInstance().logWarning("Actor " + actor->getName() + " was already added.");
     }
+}
+
+void Movie::clearActors() {
+    for (auto& actor : _actors) {
+        actor.reset();
+    }
+    _actors.clear();
+
+    Logger::getInstance().logInfo("All actors were removed from " + _name + ".");
 }
 
 void Movie::removeActor(const std::shared_ptr<Actor>& actor) {

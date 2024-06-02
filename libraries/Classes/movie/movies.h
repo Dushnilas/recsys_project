@@ -38,6 +38,7 @@ public:
           int death_year, int actor_importance);
 
     std::string getName() const;
+    std::string getId() const;
     std::string getPhoto() const;
     std::vector<int> getLifeYears() const;
     int getImportance() const;
@@ -86,6 +87,8 @@ private:
     std::vector<std::shared_ptr<Actor>> _actors;
 
 public:
+    void loadActors();
+    void clearActors();
     const std::vector<std::shared_ptr<Actor>>& getActors() const;
     void addActor(const std::shared_ptr<Actor>& actor);
     void removeActor(const std::shared_ptr<Actor>& actor);
