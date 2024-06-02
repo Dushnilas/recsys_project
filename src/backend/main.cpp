@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
-#include "cosine_distance.h"
-#include "word_to_vec.h"
+//#include "cosine_distance.h"
+//#include "word_to_vec.h"
 #include "movie/movies.h"
 #include "users/user_and_dev.h"
 #include "logger/logger.h"
@@ -28,9 +28,10 @@ void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
 
     int counter = 0;
     for (auto el: buf){
+//        std::cout << el["tconst"] << ' ' << el["year_start"] << ' ' << el["year_end"] << '1' << el["id_adult"] << '2' << el["num_votes"] << '\n';
         auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"],  el["description"],
                                              strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
-                                             std::stoi(el["id_adult"]), std::stod(el["ratings"]), std::stoi(el["num_votes"]));
+                                             std::stoi(el["is_adult"]), std::stod(el["rating"]), std::stoi(el["num_votes"]));
         allMovies.push_back(movie);
         counter++;
     }
@@ -113,77 +114,76 @@ bool SignUp(const std::string& login, const std::string& password){
 }
 
 int main() {
-    initializePythonInterpreter();
+    initializePythonInterpreter(PROJECT_PATH);
     Logger::getInstance().setLogFile("/Users/senya/CLionProjects/recsys_project/src/Data/LogFile.txt");
     std::vector<std::shared_ptr<Movie>> all_movies;
     loadMovies(all_movies);
-    std::cout << all_movies.size();
+    std::cout << all_movies.size() << '\n';
 
+    std::string sign = "";
+    while (sign != "in" and sign != "up"){
+        std::cout << "Do you want to sign in or sing up (write in or up): ";
+        std::cin >> sign;
+    }
 
-//    std::string sign = "";
-//    while (sign != "in" and sign != "up"){
-//        std::cout << "Do you want to sign in or sing up (write in or up): ";
-//        std::cin >> sign;
-//    }
-//
-//    std::string login, password;
-//    std::cout << std::left << std::setw(10) << "Login: ";
-//    std::cin >> login;
-//    std::cout << std::left << std::setw(10) << "Password: ";
-//    std::cin >> password;
-//
-//    if (sign == "in"){
-//        while (!SignIn(login, password)){
-//            std::cout << "User with this login already exists. Try again." << '\n';
-//            std::cout << std::left << std::setw(10) << "Login: ";
-//            std::cin >> login;
-//            std::cout << std::left << std::setw(10) << "Password: ";
-//            std::cin >> password;
-//        }
-//
-//        std::cout << main_user->getName() << " welcome to Maze online cinema"  << '\n';
-//    }
-//    else if (sign == "up"){
-//        while (!SignUp(login, password)){
-//            std::cout << "Wrong login or password. Try again." << '\n';
-//            std::cout << std::left << std::setw(10) << "Login: ";
-//            std::cin >> login;
-//            std::cout << std::left << std::setw(10) << "Password: ";
-//            std::cin >> password;
-//        }
-//
-//        std::cout << main_user->getName() << " welcome to Maze online cinema";
-//    }
-//
-//    int action = 1;
-//    while (action != 0){
-//        std::cout << "Choose one of options:" << '\n';
-//        std::cout << "1. Search" << '\n';
-//        std::cout << "2. Add collection" << '\n';
-//        std::cout << "3. Open collections" << '\n';
-//        std::cout << "4. Open movies in collection" << '\n';
-//        std::cout << "5. Add movie to collection" << '\n';
-//        std::cout << "6. Remove movie from collection" << '\n';
-//        std::cout << "7. Add movie to collection" << '\n';
-//        std::cout << "0. Exit" << '\n';
-//        std::cout << "Your action: ";
-//        std::cin >> action;
-//
-//        switch (action) {
-//            case 1:
-//                std::string movie_name;
-//                std::vector<std::shared_ptr<Movie>> search_mode;
-//
-//                std::cout << "Search: ";
-//                std::cin >> movie_name;
-//                searchMovies(all_movies, search_mode, movie_name, 10);
-//
-//                std::cout << "If you want to see more information about the film type 'Info movie_number'" << '\n';
-//                for (int i = 1; i < search_mode.size() + 1; i++){
-//                    std::cout << i << ". " << search_mode[i]->getName() << '\n';
-//                }
-//        }
-//    }
+    std::string login, password;
+    std::cout << std::left << std::setw(10) << "Login: ";
+    std::cin >> login;
+    std::cout << std::left << std::setw(10) << "Password: ";
+    std::cin >> password;
+
+    if (sign == "in"){
+        while (!SignIn(login, password)){
+            std::cout << "User with this login already exists. Try again." << '\n';
+            std::cout << std::left << std::setw(10) << "Login: ";
+            std::cin >> login;
+            std::cout << std::left << std::setw(10) << "Password: ";
+            std::cin >> password;
+        }
+
+        std::cout << main_user->getName() << " welcome to Maze online cinema"  << '\n';
+    }
+    else if (sign == "up"){
+        while (!SignUp(login, password)){
+            std::cout << "Wrong login or password. Try again." << '\n';
+            std::cout << std::left << std::setw(10) << "Login: ";
+            std::cin >> login;
+            std::cout << std::left << std::setw(10) << "Password: ";
+            std::cin >> password;
+        }
+
+        std::cout << main_user->getName() << " welcome to Maze online cinema";
+    }
+
+    int action = 1;
+    while (action != 0){
+        std::cout << "Choose one of options:" << '\n';
+        std::cout << "1. Search" << '\n';
+        std::cout << "2. Add collection" << '\n';
+        std::cout << "3. Open collections" << '\n';
+        std::cout << "4. Open movies in collection" << '\n';
+        std::cout << "5. Add movie to collection" << '\n';
+        std::cout << "6. Remove movie from collection" << '\n';
+        std::cout << "7. Add movie to collection" << '\n';
+        std::cout << "0. Exit" << '\n';
+        std::cout << "Your action: ";
+        std::cin >> action;
+
+        switch (action) {
+            case 1:
+                std::string movie_name;
+                std::vector<std::shared_ptr<Movie>> search_mode;
+
+                std::cout << "Search: ";
+                std::cin >> movie_name;
+                searchMovies(all_movies, search_mode, movie_name, 10);
+
+                std::cout << "If you want to see more information about the film type 'Info movie_number'" << '\n';
+                for (int i = 1; i < search_mode.size() + 1; i++){
+                    std::cout << i << ". " << search_mode[i]->getName() << '\n';
+                }
+        }
+    }
 
 //    auto movie = std::make_shared<Movie>("Aboba", "23456", "Western", "Lupa zabolel i za Lupu na rabotu vishel Pupa",
 //                FilmType::TvSeries, 1909, 2024, true, 8.1, 7845);
