@@ -30,13 +30,15 @@ def select(query):
     cursor = connection.cursor()
     try:
         cursor.execute(query)
+        columns = [desc[0] for desc in cursor.description]
         results = cursor.fetchall()
-        for row in range(len(results)):
-            results[row] = [str(x) for x in results[row]]
-        return results
+        result_dicts = []
+        for row in results:
+            row_dict = {columns[i]: str(row[i]) for i in range(len(columns))}
+            result_dicts.append(list(row_dict.items()))
+        return result_dicts
     except Error as e:
         print(f"The error '{e}' occurred")
-        connection.rollback()
         return []
     finally:
         cursor.close()
@@ -58,7 +60,7 @@ def delete(delete_query):
         connection.close()
 
 # -------------- insert --------------
-def insert_data(table_name, data):
+def insert(table_name, data):
     connection = create_connection(host_name, user_name, user_password, db_name, port)
     cursor = connection.cursor()
     try:
