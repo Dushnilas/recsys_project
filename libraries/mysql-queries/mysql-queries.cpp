@@ -9,9 +9,8 @@
 const std::string red_color_code = "\033[1;31m";
 const std::string reset_color_code = "\033[0m";
 const std::string yellow_color_code = "\033[1;33m";
-const std::string project_path = "/Users/maykorablina/Yandex.Disk.localized/CodingProjects/recsys_cpp/libraries/mysql-queries";
 
-bool initializePythonInterpreter() {
+bool initializePythonInterpreter(const std::string& project_path) {
     if (chdir(project_path.c_str()) != 0) {
         std::cout << red_color_code << "Failed to change directory to " << project_path << reset_color_code << std::endl;
         return false;

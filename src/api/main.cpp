@@ -1,7 +1,10 @@
 #include "../../libraries/mysql-queries/mysql-queries.h"
-#include "iostream"
+#include <iostream>
+
 int main() {
-    if (!initializePythonInterpreter()) {
+    const std::string project_path = PROJECT_PATH;
+
+    if (!initializePythonInterpreter(project_path)) {
         return 1;
     }
 
