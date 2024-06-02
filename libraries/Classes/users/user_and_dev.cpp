@@ -92,6 +92,15 @@ void AllUsers::leaveComment(const std::shared_ptr<Movie>& movie, const std::stri
     movie->leaveComment(com);
 }
 
+void AllUsers::makeVote(const std::shared_ptr<Movie>& movie, int vote){
+    if (0 <= vote and vote <= 10){
+        movie->updateRating(vote);
+        Logger::getInstance().logInfo("Movie (" + movie->getName() + ") rating update.");
+    }
+    else Logger::getInstance().logError("New vote for " + movie->getName() + "isn`t from diapason of 0-10.");
+}
+
+
 User::User(std::string name, std::string lastname, std::string login, std::string password):
         AllUsers(std::move(name), std::move(lastname), std::move(login), std::move(password)) {}
 

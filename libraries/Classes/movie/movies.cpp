@@ -123,7 +123,7 @@ FilmType Movie::strToType(const std::string& type){
 }
 
 
-void Movie::createMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
+void Movie::loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
     std::vector<std::map<std::string, std::string>> buf;
 
     int counter = 0;
@@ -137,6 +137,12 @@ void Movie::createMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
 
     Logger::getInstance().logInfo(std::to_string(counter) + "movies was uploaded.");
 }
+
+void Movie::updateRating(int new_vote){
+    _rating = (_rating * _num_votes + new_vote) / (_num_votes + 1);
+    _num_votes++;
+}
+
 
 bool compareActors(const std::shared_ptr<Actor>& actor1, const std::shared_ptr<Actor>& actor2) {
     return actor1.get() == actor2.get();

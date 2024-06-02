@@ -81,7 +81,8 @@ public:
     int getVotes() const;
 
     FilmType strToType(const std::string& type);
-    void createMovies(std::vector<std::shared_ptr<Movie>>& allMovies);
+    void loadMovies(std::vector<std::shared_ptr<Movie>>& allMovies);
+    void updateRating(int new_vote);
 
 private:
     std::vector<std::shared_ptr<Actor>> _actors;
@@ -109,7 +110,7 @@ private:
     int _collection_id;
 
 public:
-    Collection(int collection_id, const std::string& name="Collection");
+    explicit Collection(int collection_id, const std::string& name="Collection");
 
     std::string getName() const;
     const std::vector<std::shared_ptr<Movie>>& getMovies() const;
