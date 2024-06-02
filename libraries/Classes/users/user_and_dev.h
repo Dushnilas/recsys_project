@@ -44,6 +44,8 @@ private:
     std::vector<std::shared_ptr<Collection>> _all_collection;
 
 public:
+    void loadCol();
+    void clearCol();
     const std::vector<std::shared_ptr<Collection>>& getAllCol() const;
     void createCol(const std::string& name);
     bool removeCol(const std::shared_ptr<Collection>& collection);

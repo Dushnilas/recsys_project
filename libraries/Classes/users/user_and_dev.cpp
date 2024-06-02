@@ -35,8 +35,39 @@ Gender AllUsers::getGender() const {
     return _gender;
 }
 
+bool compareCol(const std::shared_ptr<Collection>& col1, const std::shared_ptr<Collection>& col2) {
+    return col1.get() == col2.get();
+}
+
+void AllUsers::loadCol() {
+    std::vector<std::map<std::string, std::string>> buf;
+
+    int counter = 0;
+    for (auto el: buf){
+        auto col = std::make_shared<Collection>(std::stoi(el.at("collection_id")),
+                                                el.at("collection_name"));
+
+        if (std::find_if(_all_collection.begin(), _all_collection.end(), [&col](const std::shared_ptr<Collection>& c) {
+            return compareCol(c, col); }) == _all_collection.end()) {
+            _all_collection.push_back(col);
+            counter++;
+        }
+    }
+
+    Logger::getInstance().logInfo(std::to_string(counter) + "collections was added to " + _name + ".");
+}
+
 const std::vector<std::shared_ptr<Collection>>& AllUsers::getAllCol() const{
     return _all_collection;
+}
+
+void AllUsers::clearCol() {
+    for (auto& col : _all_collection) {
+        col.reset();
+    }
+    _all_collection.clear();
+
+    Logger::getInstance().logInfo("All actors were removed from " + _name + ".");
 }
 
 bool AllUsers::removeCol(const std::shared_ptr<Collection>& collection) {

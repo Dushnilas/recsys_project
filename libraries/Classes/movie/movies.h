@@ -101,7 +101,7 @@ public:
     void leaveComment(const std::string& com);
 };
 
-class Collection {
+class Collection : public std::enable_shared_from_this<Collection> {
 private:
     std::vector<std::shared_ptr<Movie>> _collection;
     std::string _name;
