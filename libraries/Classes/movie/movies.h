@@ -58,7 +58,7 @@ class Movie : public std::enable_shared_from_this<Movie>{
 private:
     const std::string _name;
     const std::string _tconst;
-    const std::string _genre;
+    std::vector<std::string> _genre;
     std::string _description;
     const FilmType _film_type;
     const int _year_start;
@@ -68,11 +68,12 @@ private:
     int _num_votes;
 
 public:
-    Movie(std::string name, std::string tconst, std::string genre, std::string description, FilmType film_type,
+    Movie(std::string name, std::string tconst, std::string description, FilmType film_type,
           int year_start, int year_end, bool is_adult, double rating, int num_votes);
 
     std::string getName() const;
-    std::string getGenre() const;
+    void setGenre(const std::vector<std::string>& genres);
+    const std::vector<std::string>& getGenre() const;
     std::string getDescription() const;
     FilmType getFilmType() const;
     std::vector<int> getYears() const;
@@ -80,8 +81,6 @@ public:
     double getRating() const;
     int getVotes() const;
 
-    FilmType strToType(const std::string& type);
-    void loadMovies(std::vector<std::shared_ptr<Movie>>& allMovies);
     void updateRating(int new_vote);
 
 private:
@@ -117,5 +116,6 @@ public:
     void addMovie(const std::shared_ptr<Movie>& movie);
     void removeMovie(const std::shared_ptr<Movie>& movie);
 };
+
 
 #endif

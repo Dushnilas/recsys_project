@@ -67,7 +67,7 @@ void Logger::log(LogLevel level, const std::string& message) {
     }
 
     std::string logMessage = getCurrentTime() + " " + prefix + message;
-    std::cout << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
+//    std::cout << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
     if (logFile.is_open()) {
         logFile << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
     }

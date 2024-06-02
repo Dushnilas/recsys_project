@@ -70,11 +70,10 @@ void Actor::removeMovie(const std::shared_ptr<Movie>& movie) {
 }
 
 // Definition of Movie class methods
-Movie::Movie(std::string name, std::string tconst, std::string genre, std::string description, FilmType film_type,
+Movie::Movie(std::string name, std::string tconst, std::string description, FilmType film_type,
              int year_start, int year_end, bool is_adult, double rating, int num_votes):
-        _name(std::move(name)), _tconst(std::move(tconst)), _genre(std::move(genre)),
-        _description(std::move(description)), _film_type(film_type), _year_start(year_start), _year_end(year_end),
-        _is_adult(is_adult), _rating(rating), _num_votes(num_votes) {
+        _name(std::move(name)), _tconst(std::move(tconst)), _description(std::move(description)), _film_type(film_type),
+        _year_start(year_start), _year_end(year_end), _is_adult(is_adult), _rating(rating), _num_votes(num_votes) {
     Logger::getInstance().logInfo("Movie class object was created (" + _name + ").");
 }
 
@@ -86,7 +85,11 @@ const std::vector<std::shared_ptr<Actor>>& Movie::getActors() const {
     return _actors;
 }
 
-std::string Movie::getGenre() const {
+void Movie::setGenre(const std::vector<std::string>& genres){
+    _genre.assign(genres.begin(), genres.end());
+}
+
+const std::vector<std::string>& Movie::getGenre() const {
     return _genre;
 }
 
@@ -112,30 +115,6 @@ double Movie::getRating() const {
 
 int Movie::getVotes() const {
     return _num_votes;
-}
-
-FilmType Movie::strToType(const std::string& type){
-    if (type == "Movie") return FilmType::Movie;
-    else if (type == "TvMovie") return FilmType::TvMovie;
-    else if (type == "TvSeries") return FilmType::TvSeries;
-
-    return FilmType::Default;
-}
-
-
-void Movie::loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
-    std::vector<std::map<std::string, std::string>> buf;
-
-    int counter = 0;
-    for (auto el: buf){
-        auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"], el["genre_name"], el["description"],
-                                             strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
-                                             std::stoi(el["id_adult"]), std::stod(el["ratings"]), std::stoi(el["num_votes"]));
-        allMovies.push_back(movie);
-        counter++;
-    }
-
-    Logger::getInstance().logInfo(std::to_string(counter) + "movies was uploaded.");
 }
 
 void Movie::updateRating(int new_vote){

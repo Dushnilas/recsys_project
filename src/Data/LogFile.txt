@@ -1,0 +1,16 @@
+2024-06-02 18:23:13 [INFO]    Movie class object was created (Aboba).
+2024-06-02 18:23:13 [INFO]    Actor class object was created (Pupa).
+2024-06-02 18:23:13 [INFO]    Movie`s actor list was updated. Actor Pupa was added to Aboba.
+2024-06-02 18:23:13 [INFO]    Actor`s movies list was updated. Actor Pupa was added to Aboba.
+2024-06-02 18:23:13 [WARNING] Actor Pupa was already added.
+2024-06-02 18:23:13 [INFO]    User abobus233 has logged in.
+2024-06-02 18:23:13 [INFO]    Collection class object was created (Plusi Dla loxov).
+2024-06-02 18:23:39 [INFO]    Movie class object was created (Aboba).
+2024-06-02 18:23:39 [INFO]    Actor class object was created (Pupa).
+2024-06-02 18:23:39 [INFO]    Movie`s actor list was updated. Actor Pupa was added to Aboba.
+2024-06-02 18:23:39 [INFO]    Actor`s movies list was updated. Actor Pupa was added to Aboba.
+2024-06-02 18:23:39 [WARNING] Actor Pupa was already added.
+2024-06-02 18:23:39 [INFO]    User abobus233 has logged in.
+2024-06-02 18:23:39 [INFO]    Collection class object was created (Plusi Dla loxov).
+2024-06-02 19:41:03 [INFO]     signed up.
+2024-06-02 19:41:03 [INFO]    User Aboba has logged in.
