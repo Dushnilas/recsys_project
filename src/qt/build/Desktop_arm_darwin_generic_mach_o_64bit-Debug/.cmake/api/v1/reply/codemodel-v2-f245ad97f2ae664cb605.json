@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-f574ab5a7d244741f1da.json",
+					"jsonFile" : "directory-.-Debug-1905bd3505be3ecdcb4a.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Mase_Cinema_Project::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Mase_Cinema_Project-Debug-85112b7b041b1c916a32.json",
+					"jsonFile" : "target-Mase_Cinema_Project-Debug-918556571b07f6b303d7.json",
 					"name" : "Mase_Cinema_Project",
 					"projectIndex" : 0
 				},

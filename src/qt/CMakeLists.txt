@@ -29,6 +29,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         login.h login.cpp login.ui
         pagemain.h pagemain.cpp pagemain.ui
         userinfo.h userinfo.cpp userinfo.ui
+        searchfilm.h searchfilm.cpp searchfilm.ui
+        signup.h signup.cpp signup.ui
+        persuser.h persuser.cpp persuser.ui
+        tvshows.h tvshows.cpp tvshows.ui
+        kidstv.h kidstv.cpp kidstv.ui
 
 
 

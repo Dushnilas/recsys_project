@@ -12,9 +12,14 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp" "CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o.d"
   "/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/Mase_Cinema_Project_autogen/mocs_compilation.cpp" "CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/mocs_compilation.cpp.o.d"
   "/Users/elizabethstorozheva/Mase_Cinema_Project/firstloginsignup.cpp" "CMakeFiles/Mase_Cinema_Project.dir/firstloginsignup.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/firstloginsignup.cpp.o.d"
+  "/Users/elizabethstorozheva/Mase_Cinema_Project/kidstv.cpp" "CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o.d"
   "/Users/elizabethstorozheva/Mase_Cinema_Project/login.cpp" "CMakeFiles/Mase_Cinema_Project.dir/login.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/login.cpp.o.d"
   "/Users/elizabethstorozheva/Mase_Cinema_Project/main.cpp" "CMakeFiles/Mase_Cinema_Project.dir/main.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/main.cpp.o.d"
   "/Users/elizabethstorozheva/Mase_Cinema_Project/pagemain.cpp" "CMakeFiles/Mase_Cinema_Project.dir/pagemain.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/pagemain.cpp.o.d"
+  "/Users/elizabethstorozheva/Mase_Cinema_Project/persuser.cpp" "CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o.d"
+  "/Users/elizabethstorozheva/Mase_Cinema_Project/searchfilm.cpp" "CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o.d"
+  "/Users/elizabethstorozheva/Mase_Cinema_Project/signup.cpp" "CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o.d"
+  "/Users/elizabethstorozheva/Mase_Cinema_Project/tvshows.cpp" "CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o.d"
   "/Users/elizabethstorozheva/Mase_Cinema_Project/userinfo.cpp" "CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.o" "gcc" "CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.o.d"
   )
 

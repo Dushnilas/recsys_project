@@ -354,6 +354,12 @@
 			null
 		],
 		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/kidstv.h",
+			"MU",
+			"EWIEGA46WW/moc_kidstv.cpp",
+			null
+		],
+		[
 			"/Users/elizabethstorozheva/Mase_Cinema_Project/login.h",
 			"MU",
 			"EWIEGA46WW/moc_login.cpp",
@@ -363,6 +369,30 @@
 			"/Users/elizabethstorozheva/Mase_Cinema_Project/pagemain.h",
 			"MU",
 			"EWIEGA46WW/moc_pagemain.cpp",
+			null
+		],
+		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/persuser.h",
+			"MU",
+			"EWIEGA46WW/moc_persuser.cpp",
+			null
+		],
+		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/searchfilm.h",
+			"MU",
+			"EWIEGA46WW/moc_searchfilm.cpp",
+			null
+		],
+		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/signup.h",
+			"MU",
+			"EWIEGA46WW/moc_signup.cpp",
+			null
+		],
+		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/tvshows.h",
+			"MU",
+			"EWIEGA46WW/moc_tvshows.cpp",
 			null
 		],
 		[
@@ -435,6 +465,11 @@
 			null
 		],
 		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/kidstv.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/elizabethstorozheva/Mase_Cinema_Project/login.cpp",
 			"MU",
 			null
@@ -442,6 +477,26 @@
 		[ "/Users/elizabethstorozheva/Mase_Cinema_Project/main.cpp", "MU", null ],
 		[
 			"/Users/elizabethstorozheva/Mase_Cinema_Project/pagemain.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/persuser.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/searchfilm.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/signup.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/elizabethstorozheva/Mase_Cinema_Project/tvshows.cpp",
 			"MU",
 			null
 		],

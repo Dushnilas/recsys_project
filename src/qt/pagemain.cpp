@@ -6,6 +6,7 @@
 #include <QScrollArea>
 #include <QWidget>
 #include "userinfo.h"
+#include "persuser.h"
 
 
 PageMain::PageMain(QWidget *parent)
@@ -14,7 +15,8 @@ PageMain::PageMain(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //connect(ui->verticalScrollBar,SIGNAL(sliderMoved(int)),ui->scrollArea,SLOT(setWindowModified(bool)));
+    //connect(goToTVShowsB, &QPushButton::clicked, this, &PageMain::onGoToTVShowsButtonClicked);
+
 }
 
 PageMain::~PageMain()
@@ -26,38 +28,49 @@ PageMain::~PageMain()
 void PageMain::on_pushButton_clicked()
 {
     hide();
-    lg = new LogIn(this);
+    lg = new LogIn(this); //goes to log in form
     lg->show();
-
-
-
-
 }
 
 
-void PageMain::on_pushButton_35_clicked()
+void PageMain::on_FilmsButton1_clicked()
 {
     hide();
-    usi = new UserInfo(this);
+    usi = new UserInfo(this); //goes to the page of films/TVShows/Kids
     usi->show();
 
+}
 
+
+void PageMain::on_UserB1_clicked()
+{
+    hide();
+
+    pu = new PersUser(this); //Goes to User page
+    pu->show();
 
 
 
 }
 
 
+void PageMain::on_GoTpTVShowsB_clicked()
+{
+    //emit goToTVShowsButtonClicked(); //отправляем сигнал
+
+}
+
+// void PageMain::onGoToTVShowsButtonClicked() {
+//     emit goToTVShowsButtonClicked();  // Отправляем сигнал при нажатии кнопки
+// }
 
 
 
 
 
 
+void PageMain::on_FilmsB1_clicked()
+{
 
-
-
-
-
-
+}
 

@@ -2,6 +2,7 @@
 #include "ui_login.h"
 #include <QMessageBox>
 #include <QString>
+#include "signup.h"
 
 
 LogIn::LogIn(QWidget *parent)
@@ -55,6 +56,15 @@ void LogIn::on_ButNext_clicked()
         QMessageBox::information(this, "User","Your username or password is incorect");
 
     }
+
+}
+
+
+void LogIn::on_pushButton_2_clicked()
+{
+    hide();
+    su2 = new SignUp(this);
+    su2->show();
 
 
 }

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "login.h"
+#include "signup.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -10,7 +11,8 @@ class FirstLogInSignUp;
 }
 QT_END_NAMESPACE
 
-class LogIn; //класс для перехода в другое окно
+class LogIn; //класс для перехода в LogIn
+class SignUp; //класс для перехода в SignUp
 
 class FirstLogInSignUp : public QMainWindow
 {
@@ -23,10 +25,13 @@ public:
 private slots:
     void on_loginB_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::FirstLogInSignUp *ui;
 
-    LogIn *lg;  //инициализатор для другого окна
+    LogIn *lg;  //инициализатор для LogIn
+    SignUp *su;   //инициализатор для SignUp
 
 
 

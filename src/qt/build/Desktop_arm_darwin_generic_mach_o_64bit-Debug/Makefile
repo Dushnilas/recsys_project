@@ -272,6 +272,30 @@ firstloginsignup.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/firstloginsignup.cpp.s
 .PHONY : firstloginsignup.cpp.s
 
+kidstv.o: kidstv.cpp.o
+.PHONY : kidstv.o
+
+# target to build an object file
+kidstv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o
+.PHONY : kidstv.cpp.o
+
+kidstv.i: kidstv.cpp.i
+.PHONY : kidstv.i
+
+# target to preprocess a source file
+kidstv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.i
+.PHONY : kidstv.cpp.i
+
+kidstv.s: kidstv.cpp.s
+.PHONY : kidstv.s
+
+# target to generate assembly for a file
+kidstv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.s
+.PHONY : kidstv.cpp.s
+
 login.o: login.cpp.o
 .PHONY : login.o
 
@@ -344,6 +368,102 @@ pagemain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/pagemain.cpp.s
 .PHONY : pagemain.cpp.s
 
+persuser.o: persuser.cpp.o
+.PHONY : persuser.o
+
+# target to build an object file
+persuser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o
+.PHONY : persuser.cpp.o
+
+persuser.i: persuser.cpp.i
+.PHONY : persuser.i
+
+# target to preprocess a source file
+persuser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.i
+.PHONY : persuser.cpp.i
+
+persuser.s: persuser.cpp.s
+.PHONY : persuser.s
+
+# target to generate assembly for a file
+persuser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.s
+.PHONY : persuser.cpp.s
+
+searchfilm.o: searchfilm.cpp.o
+.PHONY : searchfilm.o
+
+# target to build an object file
+searchfilm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o
+.PHONY : searchfilm.cpp.o
+
+searchfilm.i: searchfilm.cpp.i
+.PHONY : searchfilm.i
+
+# target to preprocess a source file
+searchfilm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.i
+.PHONY : searchfilm.cpp.i
+
+searchfilm.s: searchfilm.cpp.s
+.PHONY : searchfilm.s
+
+# target to generate assembly for a file
+searchfilm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.s
+.PHONY : searchfilm.cpp.s
+
+signup.o: signup.cpp.o
+.PHONY : signup.o
+
+# target to build an object file
+signup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o
+.PHONY : signup.cpp.o
+
+signup.i: signup.cpp.i
+.PHONY : signup.i
+
+# target to preprocess a source file
+signup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.i
+.PHONY : signup.cpp.i
+
+signup.s: signup.cpp.s
+.PHONY : signup.s
+
+# target to generate assembly for a file
+signup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.s
+.PHONY : signup.cpp.s
+
+tvshows.o: tvshows.cpp.o
+.PHONY : tvshows.o
+
+# target to build an object file
+tvshows.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o
+.PHONY : tvshows.cpp.o
+
+tvshows.i: tvshows.cpp.i
+.PHONY : tvshows.i
+
+# target to preprocess a source file
+tvshows.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.i
+.PHONY : tvshows.cpp.i
+
+tvshows.s: tvshows.cpp.s
+.PHONY : tvshows.s
+
+# target to generate assembly for a file
+tvshows.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mase_Cinema_Project.dir/build.make CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.s
+.PHONY : tvshows.cpp.s
+
 userinfo.o: userinfo.cpp.o
 .PHONY : userinfo.o
 
@@ -392,6 +512,9 @@ help:
 	@echo "... firstloginsignup.o"
 	@echo "... firstloginsignup.i"
 	@echo "... firstloginsignup.s"
+	@echo "... kidstv.o"
+	@echo "... kidstv.i"
+	@echo "... kidstv.s"
 	@echo "... login.o"
 	@echo "... login.i"
 	@echo "... login.s"
@@ -401,6 +524,18 @@ help:
 	@echo "... pagemain.o"
 	@echo "... pagemain.i"
 	@echo "... pagemain.s"
+	@echo "... persuser.o"
+	@echo "... persuser.i"
+	@echo "... persuser.s"
+	@echo "... searchfilm.o"
+	@echo "... searchfilm.i"
+	@echo "... searchfilm.s"
+	@echo "... signup.o"
+	@echo "... signup.i"
+	@echo "... signup.s"
+	@echo "... tvshows.o"
+	@echo "... tvshows.i"
+	@echo "... tvshows.s"
 	@echo "... userinfo.o"
 	@echo "... userinfo.i"
 	@echo "... userinfo.s"

@@ -14,11 +14,13 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,11 +30,18 @@ class Ui_FirstLogInSignUp
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QHBoxLayout *horizontalLayout;
+    QHBoxLayout *comboBut;
     QPushButton *loginB;
-    QPushButton *SignUpB;
-    QSpacerItem *verticalSpacer;
+    QPushButton *pushButton;
+    QVBoxLayout *verticalLayout;
+    QVBoxLayout *verticalLayout_2;
     QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *verticalSpacer;
+    QHBoxLayout *ComboLogo;
+    QLabel *label;
+    QSpacerItem *verticalSpacer_3;
+    QSpacerItem *verticalSpacer_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -50,31 +59,90 @@ public:
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName("gridLayout");
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName("horizontalLayout");
+        comboBut = new QHBoxLayout();
+        comboBut->setObjectName("comboBut");
+        comboBut->setContentsMargins(-1, 100, -1, 10);
         loginB = new QPushButton(centralwidget);
         loginB->setObjectName("loginB");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(10);
+        sizePolicy.setVerticalStretch(20);
+        sizePolicy.setHeightForWidth(loginB->sizePolicy().hasHeightForWidth());
+        loginB->setSizePolicy(sizePolicy);
+        loginB->setMinimumSize(QSize(10, 40));
+        loginB->setStyleSheet(QString::fromUtf8("border: 4px solid rgb(229, 217, 190);\n"
+"border-radius: 5px;\n"
+"padding: 5px;"));
 
-        horizontalLayout->addWidget(loginB);
+        comboBut->addWidget(loginB);
 
-        SignUpB = new QPushButton(centralwidget);
-        SignUpB->setObjectName("SignUpB");
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
+        pushButton->setMinimumSize(QSize(10, 40));
+        pushButton->setStyleSheet(QString::fromUtf8("border: 4px solid rgb(229, 217, 190);\n"
+"border-radius: 5px;\n"
+"padding: 5px;"));
 
-        horizontalLayout->addWidget(SignUpB);
+        comboBut->addWidget(pushButton);
 
+        comboBut->setStretch(0, 4);
+        comboBut->setStretch(1, 4);
 
-        gridLayout->addLayout(horizontalLayout, 3, 1, 1, 1);
+        gridLayout->addLayout(comboBut, 3, 0, 1, 1);
 
-        verticalSpacer = new QSpacerItem(10, 10, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Fixed);
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
 
-        gridLayout->addItem(verticalSpacer, 1, 1, 1, 1);
+        gridLayout->addLayout(verticalLayout, 0, 0, 1, 1);
 
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName("verticalLayout_2");
         widget = new QWidget(centralwidget);
         widget->setObjectName("widget");
-        widget->setStyleSheet(QString::fromUtf8("border-image: url(:/rec/Pics/BackG2-removebg-preview.png);"));
+        widget->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
+"border: 4px solid rgb(229, 217, 190);\n"
+"border-radius: 5px;\n"
+"padding: 5px;"));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        gridLayout->addWidget(widget, 0, 1, 1, 1);
+        horizontalLayout->addItem(verticalSpacer);
 
+        ComboLogo = new QHBoxLayout();
+        ComboLogo->setObjectName("ComboLogo");
+        label = new QLabel(widget);
+        label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("border-image: url(:/rec/Pics/LogoRem.png);"));
+
+        ComboLogo->addWidget(label);
+
+
+        horizontalLayout->addLayout(ComboLogo);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        horizontalLayout->addItem(verticalSpacer_3);
+
+        horizontalLayout->setStretch(0, 1);
+        horizontalLayout->setStretch(1, 7);
+        horizontalLayout->setStretch(2, 1);
+
+        verticalLayout_2->addWidget(widget);
+
+
+        gridLayout->addLayout(verticalLayout_2, 2, 0, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 1, 0, 1, 1);
+
+        gridLayout->setRowStretch(0, 1);
+        gridLayout->setRowStretch(1, 1);
+        gridLayout->setRowStretch(2, 7);
+        gridLayout->setRowStretch(3, 2);
         FirstLogInSignUp->setCentralWidget(centralwidget);
         menubar = new QMenuBar(FirstLogInSignUp);
         menubar->setObjectName("menubar");
@@ -93,7 +161,8 @@ public:
     {
         FirstLogInSignUp->setWindowTitle(QCoreApplication::translate("FirstLogInSignUp", "FirstLogInSignUp", nullptr));
         loginB->setText(QCoreApplication::translate("FirstLogInSignUp", "Log In", nullptr));
-        SignUpB->setText(QCoreApplication::translate("FirstLogInSignUp", "Sign Up", nullptr));
+        pushButton->setText(QCoreApplication::translate("FirstLogInSignUp", "Sign Up", nullptr));
+        label->setText(QString());
     } // retranslateUi
 
 };

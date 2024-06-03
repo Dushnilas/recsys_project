@@ -66,8 +66,8 @@ include CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps.dir/compiler_depen
 # Include the progress variables for this target.
 include CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps.dir/progress.make
 
-CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps: /opt/homebrew/share/qt/libexec/uic
 CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps: /opt/homebrew/share/qt/libexec/moc
+CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps: /opt/homebrew/share/qt/libexec/uic
 CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 CMakeFiles/Mase_Cinema_Project_autogen_timestamp_deps: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
 

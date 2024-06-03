@@ -81,9 +81,11 @@ Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: CMakeFiles/Mase_Cinema_Proj
 Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/BackG1.png
 Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/BackG2.png
 Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/backg.png
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/fun-backpacker-german-shepherd-dog-cartoon-character.jpg
 Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/housenormal.png
 Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/TVShows.png
-Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/YouLog.png
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/fun-horse-3d-illustration.jpg
+Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/LogoRem.png
 Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/Films.png
 Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/Kids.png
 Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp: /Users/elizabethstorozheva/Mase_Cinema_Project/Pics/BackG2-removebg-preview.png
@@ -178,10 +180,80 @@ CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/elizabethstorozheva/Mase_Cinema_Project/userinfo.cpp -o CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.s
 
+CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/flags.make
+CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o: /Users/elizabethstorozheva/Mase_Cinema_Project/searchfilm.cpp
+CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o -MF CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o.d -o CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o -c /Users/elizabethstorozheva/Mase_Cinema_Project/searchfilm.cpp
+
+CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/elizabethstorozheva/Mase_Cinema_Project/searchfilm.cpp > CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.i
+
+CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/elizabethstorozheva/Mase_Cinema_Project/searchfilm.cpp -o CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.s
+
+CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/flags.make
+CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o: /Users/elizabethstorozheva/Mase_Cinema_Project/signup.cpp
+CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o -MF CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o.d -o CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o -c /Users/elizabethstorozheva/Mase_Cinema_Project/signup.cpp
+
+CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/elizabethstorozheva/Mase_Cinema_Project/signup.cpp > CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.i
+
+CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/elizabethstorozheva/Mase_Cinema_Project/signup.cpp -o CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.s
+
+CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/flags.make
+CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o: /Users/elizabethstorozheva/Mase_Cinema_Project/persuser.cpp
+CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o -MF CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o.d -o CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o -c /Users/elizabethstorozheva/Mase_Cinema_Project/persuser.cpp
+
+CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/elizabethstorozheva/Mase_Cinema_Project/persuser.cpp > CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.i
+
+CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/elizabethstorozheva/Mase_Cinema_Project/persuser.cpp -o CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.s
+
+CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/flags.make
+CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o: /Users/elizabethstorozheva/Mase_Cinema_Project/tvshows.cpp
+CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o -MF CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o.d -o CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o -c /Users/elizabethstorozheva/Mase_Cinema_Project/tvshows.cpp
+
+CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/elizabethstorozheva/Mase_Cinema_Project/tvshows.cpp > CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.i
+
+CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/elizabethstorozheva/Mase_Cinema_Project/tvshows.cpp -o CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.s
+
+CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/flags.make
+CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o: /Users/elizabethstorozheva/Mase_Cinema_Project/kidstv.cpp
+CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o -MF CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o.d -o CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o -c /Users/elizabethstorozheva/Mase_Cinema_Project/kidstv.cpp
+
+CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/elizabethstorozheva/Mase_Cinema_Project/kidstv.cpp > CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.i
+
+CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/elizabethstorozheva/Mase_Cinema_Project/kidstv.cpp -o CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.s
+
 CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/flags.make
 CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o: Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp
 CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o: CMakeFiles/Mase_Cinema_Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o -MF CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o.d -o CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o -c /Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp
 
 CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.i: cmake_force
@@ -200,6 +272,11 @@ Mase_Cinema_Project_OBJECTS = \
 "CMakeFiles/Mase_Cinema_Project.dir/login.cpp.o" \
 "CMakeFiles/Mase_Cinema_Project.dir/pagemain.cpp.o" \
 "CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.o" \
+"CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o" \
+"CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o" \
+"CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o" \
+"CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o" \
+"CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o" \
 "CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o"
 
 # External object files for target Mase_Cinema_Project
@@ -211,13 +288,18 @@ Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cine
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/login.cpp.o
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/pagemain.cpp.o
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/userinfo.cpp.o
+Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/searchfilm.cpp.o
+Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/signup.cpp.o
+Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/persuser.cpp.o
+Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/tvshows.cpp.o
+Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/kidstv.cpp.o
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/build.make
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: CMakeFiles/Mase_Cinema_Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Mase_Cinema_Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -2,4 +2,7 @@
 #include "EWIEGA46WW/moc_firstloginsignup.cpp"
 #include "EWIEGA46WW/moc_login.cpp"
 #include "EWIEGA46WW/moc_pagemain.cpp"
+#include "EWIEGA46WW/moc_persuser.cpp"
+#include "EWIEGA46WW/moc_searchfilm.cpp"
+#include "EWIEGA46WW/moc_signup.cpp"
 #include "EWIEGA46WW/moc_userinfo.cpp"

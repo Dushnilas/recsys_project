@@ -4,12 +4,14 @@
 #include <QMainWindow>
 #include "firstloginsignup.h"
 #include "pagemain.h"
+#include "signup.h"
 
 namespace Ui {
 class LogIn;
 }
 
 class FirstLogInSignUp;
+class SignUp;
 
 class LogIn : public QMainWindow
 {
@@ -26,12 +28,18 @@ private slots:
 
     void on_ButNext_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::LogIn *ui;
 
     PageMain *pg;
 
     FirstLogInSignUp *fls;
+
+    SignUp *su2;
+
+
 
 
 
