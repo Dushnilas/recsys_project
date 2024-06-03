@@ -152,7 +152,6 @@ int main(int argc, char *argv[])
 {
 
     initializePythonInterpreter(PROJECT_PATH);
-    // Logger::getInstance().setLogFile("/Users/maykorablina/Yandex.Disk.localized/CodingProjects/dev/src/Data/LogFile.txt");
     std::vector<std::shared_ptr<Movie>> all_movies;
     loadMovies(all_movies);
     QApplication a(argc, argv);
@@ -163,7 +162,6 @@ int main(int argc, char *argv[])
 
     return a.exec();
 
-    // Подключаем сигнал из PageMain к слоту в UserInfo
     //QObject::connect(&pageMain, &PageMain::goToTVShowsButtonClicked, &userInfo, &UserInfo::handleGoToTVShowsButtonClicked);
 
 }

@@ -11,6 +11,7 @@ const std::string reset_color_code = "\033[0m";
 const std::string yellow_color_code = "\033[1;33m";
 
 bool initializePythonInterpreter(const std::string& fixed_path) {
+
     Py_Initialize();
 
     PyRun_SimpleString("import sys");
