@@ -12,14 +12,12 @@
 		"commands" : 
 		[
 			"add_library",
-			"add_definitions",
 			"include_directories",
 			"target_include_directories"
 		],
 		"files" : 
 		[
-			"src/backend/libraries/mysql-queries/CMakeLists.txt",
-			"src/backend/CMakeLists.txt"
+			"src/backend/libraries/mysql-queries/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -33,22 +31,13 @@
 				"parent" : 0
 			},
 			{
-				"file" : 1
-			},
-			{
 				"command" : 1,
-				"file" : 1,
-				"line" : 3,
-				"parent" : 2
-			},
-			{
-				"command" : 2,
 				"file" : 0,
 				"line" : 1,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 7,
 				"parent" : 0
@@ -64,21 +53,14 @@
 					"fragment" : "-DQT_QML_DEBUG -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics"
 				}
 			],
-			"defines" : 
-			[
-				{
-					"backtrace" : 3,
-					"define" : "PROJECT_PATH=\"/Users/senya/recsys_project_front/src/backend/libraries/mysql-queries\""
-				}
-			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 2,
 					"path" : "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/include/python3.12"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 3,
 					"path" : "/Users/senya/recsys_project_front/src/backend/libraries/mysql-queries"
 				}
 			],

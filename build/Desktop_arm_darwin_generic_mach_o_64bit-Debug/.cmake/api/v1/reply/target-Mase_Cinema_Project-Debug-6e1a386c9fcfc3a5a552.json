@@ -49,7 +49,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 23,
+				"line" : 30,
 				"parent" : 0
 			},
 			{
@@ -73,7 +73,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 79,
+				"line" : 78,
 				"parent" : 0
 			},
 			{
@@ -245,25 +245,31 @@
 			{
 				"command" : 12,
 				"file" : 1,
-				"line" : 58,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
 				"command" : 12,
 				"file" : 1,
-				"line" : 59,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
 				"command" : 12,
 				"file" : 1,
-				"line" : 60,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 12,
 				"file" : 1,
-				"line" : 61,
+				"line" : 50,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 1,
+				"line" : 51,
 				"parent" : 0
 			}
 		]
@@ -318,19 +324,23 @@
 				},
 				{
 					"backtrace" : 37,
-					"path" : "/Users/senya/recsys_project_front/src/qt/../backend/libraries/Classes/logger"
+					"path" : "/Users/senya/recsys_project_front/src/backend/libraries/Classes/logger"
 				},
 				{
 					"backtrace" : 38,
-					"path" : "/Users/senya/recsys_project_front/src/qt/../backend/libraries/Classes/movie"
+					"path" : "/Users/senya/recsys_project_front/src/backend/libraries/Classes/movie"
 				},
 				{
 					"backtrace" : 39,
-					"path" : "/Users/senya/recsys_project_front/src/qt/../backend/libraries/Classes/users"
+					"path" : "/Users/senya/recsys_project_front/src/backend/libraries/Classes/users"
 				},
 				{
 					"backtrace" : 40,
-					"path" : "/Users/senya/recsys_project_front/src/qt/../backend/libraries/mysql-queries"
+					"path" : "/Users/senya/recsys_project_front/src/backend/libraries/mysql-queries"
+				},
+				{
+					"backtrace" : 41,
+					"path" : "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/include/python3.12"
 				},
 				{
 					"backtrace" : 14,
@@ -373,14 +383,14 @@
 				0,
 				1,
 				2,
-				7,
-				10,
-				13,
-				16,
-				19,
-				22,
-				25,
-				28,
+				6,
+				9,
+				12,
+				15,
+				18,
+				21,
+				24,
+				27,
 				40
 			]
 		}
@@ -388,7 +398,15 @@
 	"dependencies" : 
 	[
 		{
+			"backtrace" : 6,
+			"id" : "classes::@0af18959c0072c1794b9"
+		},
+		{
 			"id" : "Mase_Cinema_Project_autogen_timestamp_deps::@08c692b06e89fa797efc"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "mysql-queries::@a0bd36b3469e8de3b3b3"
 		},
 		{
 			"backtrace" : 0,
@@ -433,6 +451,21 @@
 			{
 				"backtrace" : 6,
 				"fragment" : "/opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/libpython3.12.dylib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "../backend/libraries/mysql-queries/libmysql-queries.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "../backend/libraries/Classes/libclasses.a",
 				"role" : "libraries"
 			},
 			{
@@ -498,22 +531,6 @@
 				0,
 				1,
 				2,
-				7,
-				10,
-				13,
-				16,
-				19,
-				22,
-				25,
-				28,
-				40
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				3,
 				6,
 				9,
 				12,
@@ -522,6 +539,22 @@
 				21,
 				24,
 				27,
+				40
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				3,
+				5,
+				8,
+				11,
+				14,
+				17,
+				20,
+				23,
+				26,
 				30,
 				31,
 				32,
@@ -538,14 +571,14 @@
 			"sourceIndexes" : 
 			[
 				4,
-				5,
-				8,
-				11,
-				14,
-				17,
-				20,
-				23,
-				26,
+				7,
+				10,
+				13,
+				16,
+				19,
+				22,
+				25,
+				28,
 				29,
 				39
 			]
@@ -588,11 +621,6 @@
 		{
 			"backtrace" : 4,
 			"path" : "src/qt/firstloginsignup.ui",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 4,
-			"path" : "src/qt/pics.qrc",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -721,6 +749,11 @@
 		{
 			"backtrace" : 4,
 			"path" : "src/qt/kidstv.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "src/qt/pics.qrc",
 			"sourceGroupIndex" : 2
 		},
 		{

@@ -84,3 +84,7 @@ install(TARGETS Mase_Cinema_Project
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Mase_Cinema_Project)
 endif()
+
+set(PROJECT_PATH ../backend/libraries/mysql-queries)
+
+add_definitions(-DPROJECT_PATH="${PROJECT_PATH}")

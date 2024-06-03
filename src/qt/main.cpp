@@ -150,9 +150,16 @@ bool SignUp(const std::string& login, const std::string& password){
 
 int main(int argc, char *argv[])
 {
+    initializePythonInterpreter(PROJECT_PATH);
+    Logger::getInstance().setLogFile("/Users/senya/CLionProjects/recsys_project/src/Data/LogFile.txt");
+    std::vector<std::shared_ptr<Movie>> all_movies;
+    loadMovies(all_movies);
     QApplication a(argc, argv);
     FirstLogInSignUp w;
     w.show();
+
+    finalizePythonInterpreter();
+
     return a.exec();
 
     // Подключаем сигнал из PageMain к слоту в UserInfo

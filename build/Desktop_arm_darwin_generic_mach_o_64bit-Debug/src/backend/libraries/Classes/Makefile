@@ -162,53 +162,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/rule:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/rule
-.PHONY : src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/rule
+src/backend/libraries/Classes/CMakeFiles/classes.dir/rule:
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/backend/libraries/Classes/CMakeFiles/classes.dir/rule
+.PHONY : src/backend/libraries/Classes/CMakeFiles/classes.dir/rule
 
 # Convenience name for target.
-user_and_dev: src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/rule
-.PHONY : user_and_dev
+classes: src/backend/libraries/Classes/CMakeFiles/classes.dir/rule
+.PHONY : classes
 
 # fast build rule for target.
-user_and_dev/fast:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/build.make src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/build
-.PHONY : user_and_dev/fast
-
-# Convenience name for target.
-src/backend/libraries/Classes/CMakeFiles/movies.dir/rule:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/backend/libraries/Classes/CMakeFiles/movies.dir/rule
-.PHONY : src/backend/libraries/Classes/CMakeFiles/movies.dir/rule
-
-# Convenience name for target.
-movies: src/backend/libraries/Classes/CMakeFiles/movies.dir/rule
-.PHONY : movies
-
-# fast build rule for target.
-movies/fast:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/movies.dir/build.make src/backend/libraries/Classes/CMakeFiles/movies.dir/build
-.PHONY : movies/fast
-
-# Convenience name for target.
-src/backend/libraries/Classes/CMakeFiles/logger.dir/rule:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/backend/libraries/Classes/CMakeFiles/logger.dir/rule
-.PHONY : src/backend/libraries/Classes/CMakeFiles/logger.dir/rule
-
-# Convenience name for target.
-logger: src/backend/libraries/Classes/CMakeFiles/logger.dir/rule
-.PHONY : logger
-
-# fast build rule for target.
-logger/fast:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/logger.dir/build.make src/backend/libraries/Classes/CMakeFiles/logger.dir/build
-.PHONY : logger/fast
+classes/fast:
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/build
+.PHONY : classes/fast
 
 logger/logger.o: logger/logger.cpp.o
 .PHONY : logger/logger.o
 
 # target to build an object file
 logger/logger.cpp.o:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/logger.dir/build.make src/backend/libraries/Classes/CMakeFiles/logger.dir/logger/logger.cpp.o
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/logger/logger.cpp.o
 .PHONY : logger/logger.cpp.o
 
 logger/logger.i: logger/logger.cpp.i
@@ -216,7 +188,7 @@ logger/logger.i: logger/logger.cpp.i
 
 # target to preprocess a source file
 logger/logger.cpp.i:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/logger.dir/build.make src/backend/libraries/Classes/CMakeFiles/logger.dir/logger/logger.cpp.i
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/logger/logger.cpp.i
 .PHONY : logger/logger.cpp.i
 
 logger/logger.s: logger/logger.cpp.s
@@ -224,7 +196,7 @@ logger/logger.s: logger/logger.cpp.s
 
 # target to generate assembly for a file
 logger/logger.cpp.s:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/logger.dir/build.make src/backend/libraries/Classes/CMakeFiles/logger.dir/logger/logger.cpp.s
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/logger/logger.cpp.s
 .PHONY : logger/logger.cpp.s
 
 movie/movies.o: movie/movies.cpp.o
@@ -232,7 +204,7 @@ movie/movies.o: movie/movies.cpp.o
 
 # target to build an object file
 movie/movies.cpp.o:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/movies.dir/build.make src/backend/libraries/Classes/CMakeFiles/movies.dir/movie/movies.cpp.o
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/movie/movies.cpp.o
 .PHONY : movie/movies.cpp.o
 
 movie/movies.i: movie/movies.cpp.i
@@ -240,7 +212,7 @@ movie/movies.i: movie/movies.cpp.i
 
 # target to preprocess a source file
 movie/movies.cpp.i:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/movies.dir/build.make src/backend/libraries/Classes/CMakeFiles/movies.dir/movie/movies.cpp.i
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/movie/movies.cpp.i
 .PHONY : movie/movies.cpp.i
 
 movie/movies.s: movie/movies.cpp.s
@@ -248,7 +220,7 @@ movie/movies.s: movie/movies.cpp.s
 
 # target to generate assembly for a file
 movie/movies.cpp.s:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/movies.dir/build.make src/backend/libraries/Classes/CMakeFiles/movies.dir/movie/movies.cpp.s
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/movie/movies.cpp.s
 .PHONY : movie/movies.cpp.s
 
 users/user_and_dev.o: users/user_and_dev.cpp.o
@@ -256,7 +228,7 @@ users/user_and_dev.o: users/user_and_dev.cpp.o
 
 # target to build an object file
 users/user_and_dev.cpp.o:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/build.make src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/users/user_and_dev.cpp.o
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/users/user_and_dev.cpp.o
 .PHONY : users/user_and_dev.cpp.o
 
 users/user_and_dev.i: users/user_and_dev.cpp.i
@@ -264,7 +236,7 @@ users/user_and_dev.i: users/user_and_dev.cpp.i
 
 # target to preprocess a source file
 users/user_and_dev.cpp.i:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/build.make src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/users/user_and_dev.cpp.i
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/users/user_and_dev.cpp.i
 .PHONY : users/user_and_dev.cpp.i
 
 users/user_and_dev.s: users/user_and_dev.cpp.s
@@ -272,7 +244,7 @@ users/user_and_dev.s: users/user_and_dev.cpp.s
 
 # target to generate assembly for a file
 users/user_and_dev.cpp.s:
-	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/build.make src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/users/user_and_dev.cpp.s
+	cd /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug && $(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/users/user_and_dev.cpp.s
 .PHONY : users/user_and_dev.cpp.s
 
 # Help Target
@@ -287,9 +259,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... logger"
-	@echo "... movies"
-	@echo "... user_and_dev"
+	@echo "... classes"
 	@echo "... logger/logger.o"
 	@echo "... logger/logger.i"
 	@echo "... logger/logger.s"

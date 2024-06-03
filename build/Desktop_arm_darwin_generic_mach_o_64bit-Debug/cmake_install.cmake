@@ -39,7 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/src/cmake_install.cmake")
+  include("/Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/src/backend/libraries/Classes/cmake_install.cmake")
+  include("/Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/src/backend/libraries/mysql-queries/cmake_install.cmake")
+  include("/Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/src/qt/cmake_install.cmake")
 
 endif()
 

@@ -162,43 +162,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named user_and_dev
+# Target rules for targets named classes
 
 # Build rule for target.
-user_and_dev: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user_and_dev
-.PHONY : user_and_dev
+classes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classes
+.PHONY : classes
 
 # fast build rule for target.
-user_and_dev/fast:
-	$(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/build.make src/backend/libraries/Classes/CMakeFiles/user_and_dev.dir/build
-.PHONY : user_and_dev/fast
-
-#=============================================================================
-# Target rules for targets named movies
-
-# Build rule for target.
-movies: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 movies
-.PHONY : movies
-
-# fast build rule for target.
-movies/fast:
-	$(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/movies.dir/build.make src/backend/libraries/Classes/CMakeFiles/movies.dir/build
-.PHONY : movies/fast
-
-#=============================================================================
-# Target rules for targets named logger
-
-# Build rule for target.
-logger: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 logger
-.PHONY : logger
-
-# fast build rule for target.
-logger/fast:
-	$(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/logger.dir/build.make src/backend/libraries/Classes/CMakeFiles/logger.dir/build
-.PHONY : logger/fast
+classes/fast:
+	$(MAKE) $(MAKESILENT) -f src/backend/libraries/Classes/CMakeFiles/classes.dir/build.make src/backend/libraries/Classes/CMakeFiles/classes.dir/build
+.PHONY : classes/fast
 
 #=============================================================================
 # Target rules for targets named mysql-queries
@@ -212,32 +186,6 @@ mysql-queries: cmake_check_build_system
 mysql-queries/fast:
 	$(MAKE) $(MAKESILENT) -f src/backend/libraries/mysql-queries/CMakeFiles/mysql-queries.dir/build.make src/backend/libraries/mysql-queries/CMakeFiles/mysql-queries.dir/build
 .PHONY : mysql-queries/fast
-
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f src/backend/src/backend/CMakeFiles/main.dir/build.make src/backend/src/backend/CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
-# Target rules for targets named api
-
-# Build rule for target.
-api: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 api
-.PHONY : api
-
-# fast build rule for target.
-api/fast:
-	$(MAKE) $(MAKESILENT) -f src/backend/src/api/CMakeFiles/api.dir/build.make src/backend/src/api/CMakeFiles/api.dir/build
-.PHONY : api/fast
 
 #=============================================================================
 # Target rules for targets named Mase_Cinema_Project
@@ -293,12 +241,8 @@ help:
 	@echo "... Mase_Cinema_Project_autogen"
 	@echo "... Mase_Cinema_Project_autogen_timestamp_deps"
 	@echo "... Mase_Cinema_Project"
-	@echo "... api"
-	@echo "... logger"
-	@echo "... main"
-	@echo "... movies"
+	@echo "... classes"
 	@echo "... mysql-queries"
-	@echo "... user_and_dev"
 .PHONY : help
 
 

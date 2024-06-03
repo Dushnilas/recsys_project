@@ -297,6 +297,9 @@ src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: src/qt/CMakeF
 src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: src/qt/CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp.o
 src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: src/qt/CMakeFiles/Mase_Cinema_Project.dir/build.make
 src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
+src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: /opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/libpython3.12.dylib
+src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: src/backend/libraries/mysql-queries/libmysql-queries.a
+src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: src/backend/libraries/Classes/libclasses.a
 src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project: src/qt/CMakeFiles/Mase_Cinema_Project.dir/link.txt
