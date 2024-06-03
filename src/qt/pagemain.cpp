@@ -8,6 +8,11 @@
 #include "userinfo.h"
 #include "persuser.h"
 
+#include "tvshows.h"
+#include "kidstv.h"
+#include "userinfo.h"
+#include "persuser.h"
+
 
 PageMain::PageMain(QWidget *parent)
     : QMainWindow(parent)
@@ -25,6 +30,17 @@ PageMain::~PageMain()
 
 }
 
+void PageMain::on_UserB1_clicked()
+{
+    hide();
+
+    pu = new PersUser(this); //Goes to User page
+    pu->show();
+
+}
+
+
+
 void PageMain::on_pushButton_clicked()
 {
     hide();
@@ -33,44 +49,76 @@ void PageMain::on_pushButton_clicked()
 }
 
 
+
+//Films section
+
 void PageMain::on_FilmsButton1_clicked()
 {
     hide();
-    usi = new UserInfo(this); //goes to the page of films/TVShows/Kids
+    usi = new UserInfo(this); //goes to the Films
+    usi->show();
+
+}
+
+void PageMain::on_FilmsB1_clicked()
+{
+    hide();
+    usi = new UserInfo(this); //goes to the Films
     usi->show();
 
 }
 
 
-void PageMain::on_UserB1_clicked()
-{
-    hide();
-
-    pu = new PersUser(this); //Goes to User page
-    pu->show();
 
 
-
-}
-
+//TVShows section
 
 void PageMain::on_GoTpTVShowsB_clicked()
 {
-    //emit goToTVShowsButtonClicked(); //отправляем сигнал
+    hide();
+
+    tvsh = new TVShows(this); //Goes to TVShows
+    tvsh->show();
+
 
 }
 
-// void PageMain::onGoToTVShowsButtonClicked() {
-//     emit goToTVShowsButtonClicked();  // Отправляем сигнал при нажатии кнопки
-// }
+
+void PageMain::on_TVShowsB1_clicked()
+{
+
+    hide();
+
+    tvsh = new TVShows(this); //Goes to TVShows
+    tvsh->show();
+
+}
+
+//Kids section
+
+void PageMain::on_KidsB1_clicked()
+{
+    hide();
+
+    kidstv = new KidsTV(this); //Goes to TVShows
+    kidstv->show();
+
+}
+
+void PageMain::on_KidsHButton_clicked()
+{
+    hide();
+
+    kidstv = new KidsTV(this); //Goes to TVShows
+    kidstv->show();
+
+}
 
 
 
 
 
 
-// void PageMain::on_FilmsB1_clicked()
-// {
 
-// }
+
 

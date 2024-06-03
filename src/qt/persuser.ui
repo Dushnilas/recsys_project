@@ -50,7 +50,7 @@ padding: 5px;
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_4">
+            <widget class="QPushButton" name="FilmsHButton">
              <property name="styleSheet">
               <string notr="true">border-image: url(:/rec/Pics/housenormal.png);</string>
              </property>

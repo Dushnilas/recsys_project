@@ -6,6 +6,12 @@
 #include <QWidget>
 #include <QPushButton>
 
+#include "tvshows.h"
+#include "kidstv.h"
+#include "userinfo.h"
+#include "persuser.h"
+
+
 namespace Ui {
 class PageMain;
 }
@@ -26,7 +32,6 @@ public:
 
 signals:
 
-    //void goToTVShowsButtonClicked(); //надо для проверки сигнала
 
 private slots:
 
@@ -42,16 +47,33 @@ private slots:
     //void onGoToTVShowsButtonClicked();//надо для проверки сигнала
 
 
+    //void on_FilmsB1_clicked();
+
+    void on_TVShowsB1_clicked();
+
+    void on_KidsB1_clicked();
+
+    void on_KidsHButton_clicked();
+
+    //void on_FilmB1_clicked();
+
+    void on_FilmsB1_clicked();
+
 private:
     Ui::PageMain *ui;
 
-    LogIn *lg;
+    LogIn *lg; // Log In page
 
-    UserInfo *usi;
+    PersUser *pu; // User page
 
-    PersUser *pu;
 
-    //QPushButton *goToTVShowsB;
+
+    UserInfo *usi; //Films
+
+    KidsTV *kidstv; //Kids
+
+    TVShows *tvsh; //TVShows
+
 };
 
 #endif // PAGEMAIN_H

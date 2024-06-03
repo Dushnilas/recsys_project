@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
+
 project(Mase_Cinema_Project VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
@@ -32,6 +34,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         persuser.h persuser.cpp persuser.ui
         tvshows.h tvshows.cpp tvshows.ui
         kidstv.h kidstv.cpp kidstv.ui
+        mainwindow.h mainwindow.cpp mainwindow.ui
+        filmpage.h filmpage.cpp filmpage.ui
+        likedfilms.h likedfilms.cpp likedfilms.ui
+        filmscollection.h filmscollection.cpp filmscollection.ui
+        collectionpage.h collectionpage.cpp collectionpage.ui
+
 
 
 
@@ -55,11 +63,6 @@ else()
 endif()
 
 target_link_libraries(Mase_Cinema_Project PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
-include_directories(../backend/libraries/Classes/logger)
-include_directories(../backend/libraries/Classes/movie)
-include_directories(../backend/libraries/Classes/users)
-include_directories(../backend/libraries/mysql-queries)
-
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
