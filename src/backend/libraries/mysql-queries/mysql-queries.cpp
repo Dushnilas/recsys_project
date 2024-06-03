@@ -10,26 +10,36 @@ const std::string red_color_code = "\033[1;31m";
 const std::string reset_color_code = "\033[0m";
 const std::string yellow_color_code = "\033[1;33m";
 
-bool initializePythonInterpreter(const std::string& project_path) {
-    if (chdir(project_path.c_str()) != 0) {
-        std::cout << red_color_code << "Failed to change directory to " << project_path << reset_color_code << std::endl;
-        return false;
-    }
-
+bool initializePythonInterpreter(const std::string& fixed_path) {
     Py_Initialize();
 
     PyRun_SimpleString("import sys");
     PyRun_SimpleString("import os");
     PyRun_SimpleString("print('Current working directory:', os.getcwd())");
 
-    std::string python_path_cmd = "sys.path.append('" + project_path + "')";
-    std::string venv_path_cmd = "sys.path.append('" + project_path + "/mysqlenv/lib/python3.12/site-packages')";
-    PyRun_SimpleString(python_path_cmd.c_str());
+    char abs_path[PATH_MAX];
+    if (realpath(fixed_path.c_str(), abs_path) == NULL) {
+        std::cerr << "Error resolving absolute path" << std::endl;
+        return false;
+    }
+    std::string library_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+
+    std::string venv_path = std::string(abs_path) + "/mysqlenv/lib/python3.12/site-packages";
+    if (realpath(venv_path.c_str(), abs_path) == NULL) {
+        std::cerr << "Error resolving absolute path for virtual environment" << std::endl;
+        return false;
+    }
+    std::string venv_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+
+    PyRun_SimpleString(library_path_cmd.c_str());
     PyRun_SimpleString(venv_path_cmd.c_str());
+
     PyRun_SimpleString("print('sys.path:', sys.path)");
 
     return true;
 }
+
+
 
 void finalizePythonInterpreter() {
     Py_Finalize();

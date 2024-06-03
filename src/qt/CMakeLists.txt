@@ -85,6 +85,6 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Mase_Cinema_Project)
 endif()
 
-set(PROJECT_PATH ../backend/libraries/mysql-queries)
+set(PROJECT_PATH /Users/maykorablina/Yandex.Disk.localized/CodingProjects/dev/src/backend/libraries/mysql-queries)
 
 add_definitions(-DPROJECT_PATH="${PROJECT_PATH}")
