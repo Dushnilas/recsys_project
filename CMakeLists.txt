@@ -3,5 +3,4 @@ project(Recommendation_system)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_subdirectory(libraries)
 add_subdirectory(src)

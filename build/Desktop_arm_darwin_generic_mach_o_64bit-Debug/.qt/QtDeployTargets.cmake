@@ -1,0 +1,3 @@
+set(__QT_DEPLOY_TARGET_main_FILE /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/src/backend/src/backend/main)
+set(__QT_DEPLOY_TARGET_api_FILE /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/src/backend/src/api/api)
+set(__QT_DEPLOY_TARGET_Mase_Cinema_Project_FILE /Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/src/qt/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project)

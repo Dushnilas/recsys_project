@@ -1,1 +1,0 @@
-set(__QT_DEPLOY_TARGET_Mase_Cinema_Project_FILE /Users/elizabethstorozheva/Mase_Cinema_Project/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project)

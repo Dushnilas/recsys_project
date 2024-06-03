@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+341632d944eb550cb54e98a8a4c823c7 src/qt/CMakeFiles/Mase_Cinema_Project_autogen
+616d88c1a16e7b78ad1ac442aa8dd71a src/qt/Mase_Cinema_Project_autogen/EWIEGA46WW/qrc_pics.cpp
+d9314859ebae43018f55c61e75a8129f src/qt/Mase_Cinema_Project_autogen/timestamp
