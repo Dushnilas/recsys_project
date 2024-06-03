@@ -1,10 +1,10 @@
+#include "mysql-queries.h"
 #include <Python.h>
 #include <iostream>
 #include <unistd.h>
 #include <string>
 #include <vector>
 #include <map>
-#include "mysql-queries.h"
 
 const std::string red_color_code = "\033[1;31m";
 const std::string reset_color_code = "\033[0m";

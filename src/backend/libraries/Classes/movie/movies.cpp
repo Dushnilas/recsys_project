@@ -1,7 +1,7 @@
 #include "movies.h"
 #include <iostream>
 #include <utility>
-#include <logger/logger.h>
+#include "../logger/logger.h"
 #include "../../mysql-queries/mysql-queries.h"
 
 // Definition of Actor class methods

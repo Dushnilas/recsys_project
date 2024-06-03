@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "movie/movies.h"
+#include "../movie/movies.h"
 #include "user_and_dev.h"
-#include "logger/logger.h"
+#include "../logger/logger.h"
 #include "../../mysql-queries/mysql-queries.h"
 
 
