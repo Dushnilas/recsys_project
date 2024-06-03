@@ -280,9 +280,9 @@ bool ExecuteDeleteQuery(const std::string& library, const std::string& delete_qu
     return success;
 }
 
-std::vector<std::string> ExecuteSelectGenresQuery(const std::string& library, const std::string& query) {
+std::vector<std::pair<std::string, std::vector<std::string>>> ExecuteSelectGenresQuery(const std::string& library, const std::string& query) {
     std::string function_name = "select_genres";
-    std::vector<std::string> results;
+    std::vector<std::pair<std::string, std::vector<std::string>>> results;
 
     PyObject *pName = PyUnicode_DecodeFSDefault(library.c_str());
     PyObject *pModule = PyImport_Import(pName);
@@ -309,11 +309,33 @@ std::vector<std::string> ExecuteSelectGenresQuery(const std::string& library, co
 
                 PyObject *item;
                 while ((item = PyIter_Next(iterator)) != NULL) {
-                    if (PyUnicode_Check(item)) {
-                        results.push_back(PyUnicode_AsUTF8(item));
+                    if (PyTuple_Check(item) && PyTuple_Size(item) == 2) {
+                        PyObject *first = PyTuple_GetItem(item, 0);
+                        PyObject *second = PyTuple_GetItem(item, 1);
+
+                        if (PyUnicode_Check(first) && PyTuple_Check(second)) {
+                            std::string tconst = PyUnicode_AsUTF8(first);
+                            std::vector<std::string> genres;
+
+                            PyObject *genre_item;
+                            Py_ssize_t genre_size = PyTuple_Size(second);
+                            for (Py_ssize_t i = 0; i < genre_size; ++i) {
+                                genre_item = PyTuple_GetItem(second, i);
+                                if (PyUnicode_Check(genre_item)) {
+                                    genres.push_back(PyUnicode_AsUTF8(genre_item));
+                                } else {
+                                    PyErr_Print();
+                                    std::cout << red_color_code << "Genre item is not a string" << reset_color_code << std::endl;
+                                }
+                            }
+                            results.emplace_back(tconst, genres);
+                        } else {
+                            PyErr_Print();
+                            std::cout << red_color_code << "Tuple items are not of expected types" << reset_color_code << std::endl;
+                        }
                     } else {
                         PyErr_Print();
-                        std::cout << red_color_code << "Item is not a string" << reset_color_code << std::endl;
+                        std::cout << red_color_code << "Item is not a tuple or does not have 2 elements" << reset_color_code << std::endl;
                     }
                     Py_DECREF(item);
                 }

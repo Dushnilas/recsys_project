@@ -96,9 +96,9 @@ const std::vector<std::shared_ptr<Actor>>& Movie::getActors() const {
 void Movie::setGenre(){
     std::string query = "SELECT DISTINCT g.genre_name FROM titles_genres tg JOIN genres g ON tg.genre_id = g.genre_id "
                         "WHERE tg.tconst = '" + _tconst + "';";
-    std::vector<std::string> genres = ExecuteSelectGenresQuery("library", query);;
-
-    _genre.assign(genres.begin(), genres.end());
+    // std::vector<std::string> genres = ExecuteSelectGenresQuery("library", query);;
+    //
+    // _genre.assign(genres.begin(), genres.end());
 }
 
 const std::vector<std::string>& Movie::getGenre() const {

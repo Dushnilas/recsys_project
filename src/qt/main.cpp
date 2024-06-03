@@ -148,10 +148,28 @@ bool SignUp(const std::string& login, const std::string& password){
     return false;
 }
 
+// ----------------- FUNCTIONS FOR DB TESTING ----------------------
+void print_select_genres(std::vector<std::pair<std::string, std::vector<std::string>>> results) {
+    for (const auto& result : results) {
+        std::cout << yellow_color_code << "TConst: " << result.first << "\nGenres: ";
+        for (const auto& genre : result.second) {
+            std::cout << genre << " ";
+        }
+        std::cout << "\n";
+    }
+    std::cout << reset_color_code;
+}
+ // ------------------ MAIN -------------------
 int main(int argc, char *argv[])
 {
 
     initializePythonInterpreter(PROJECT_PATH);
+
+    // ---------------- TEST OF SELECTGENRES ------------------
+    std::string query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC;";
+    std::vector<std::pair<std::string, std::vector<std::string>>> results = ExecuteSelectGenresQuery("library", query);
+    print_select_genres(results);
+
     std::vector<std::shared_ptr<Movie>> all_movies;
     loadMovies(all_movies);
     QApplication a(argc, argv);
