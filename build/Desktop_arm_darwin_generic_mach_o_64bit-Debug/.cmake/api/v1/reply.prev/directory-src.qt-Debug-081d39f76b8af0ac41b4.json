@@ -1,0 +1,60 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"src/qt/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+<<<<<<<< HEAD:build/.cmake/api/v1/reply/directory-.-Debug-f574ab5a7d244741f1da.json
+				"line" : 70,
+========
+				"line" : 79,
+>>>>>>>> front:build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/.cmake/api/v1/reply.prev/directory-src.qt-Debug-081d39f76b8af0ac41b4.json
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : ".",
+			"paths" : 
+			[
+				{
+<<<<<<<< HEAD:build/.cmake/api/v1/reply/directory-.-Debug-f574ab5a7d244741f1da.json
+					"from" : "Mase_Cinema_Project.app",
+					"to" : "Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project"
+				}
+			],
+			"targetId" : "Mase_Cinema_Project::@6890427a1f51a3e7e1df",
+========
+					"from" : "src/qt/Mase_Cinema_Project.app",
+					"to" : "Mase_Cinema_Project.app/Contents/MacOS/Mase_Cinema_Project"
+				}
+			],
+			"targetId" : "Mase_Cinema_Project::@08c692b06e89fa797efc",
+>>>>>>>> front:build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/.cmake/api/v1/reply.prev/directory-src.qt-Debug-081d39f76b8af0ac41b4.json
+			"targetIndex" : 0,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "src/qt",
+		"source" : "src/qt"
+	}
+}

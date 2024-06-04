@@ -5,6 +5,8 @@
 #include <QPushButton>
 #include <QScrollArea>
 #include <QWidget>
+#include "userinfo.h"
+#include "persuser.h"
 
 
 PageMain::PageMain(QWidget *parent)
@@ -13,44 +15,62 @@ PageMain::PageMain(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //connect(ui->verticalScrollBar,SIGNAL(sliderMoved(int)),ui->scrollArea,SLOT(setWindowModified(bool)));
+    //connect(goToTVShowsB, &QPushButton::clicked, this, &PageMain::onGoToTVShowsButtonClicked);
+
 }
 
 PageMain::~PageMain()
 {
     delete ui;
 
-    // Создаем виджет прокрутки
-    scrollArea = new QScrollArea(this);
-    setCentralWidget(scrollArea);
-
-    // Создаем подвижный виджет
-    movableWidget = new QWidget(this);
-    movableWidget->setFixedSize(800, 600); // Устанавливаем размер виджета
-
-    // // Добавляем элементы в подвижный виджет
-    // QLabel *label = new QLabel("This is a movable widget", movableWidget);
-    // label->move(20, 20);
-
-    QPushButton *button = new QPushButton("Button", movableWidget);
-    button->move(20, 60);
-
-    // Устанавливаем подвижный виджет в область прокрутки
-    scrollArea->setWidget(movableWidget);
-
-    // Устанавливаем политику прокрутки
-    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 }
 
 void PageMain::on_pushButton_clicked()
 {
     hide();
-    lg = new LogIn(this);
+    lg = new LogIn(this); //goes to log in form
     lg->show();
+}
 
+
+void PageMain::on_FilmsButton1_clicked()
+{
+    hide();
+    usi = new UserInfo(this); //goes to the page of films/TVShows/Kids
+    usi->show();
+
+}
+
+
+void PageMain::on_UserB1_clicked()
+{
+    hide();
+
+    pu = new PersUser(this); //Goes to User page
+    pu->show();
 
 
 
 }
+
+
+void PageMain::on_GoTpTVShowsB_clicked()
+{
+    //emit goToTVShowsButtonClicked(); //отправляем сигнал
+
+}
+
+// void PageMain::onGoToTVShowsButtonClicked() {
+//     emit goToTVShowsButtonClicked();  // Отправляем сигнал при нажатии кнопки
+// }
+
+
+
+
+
+
+// void PageMain::on_FilmsB1_clicked()
+// {
+
+// }
 

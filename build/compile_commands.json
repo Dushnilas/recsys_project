@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/libraries/cosine_distance",
+  "command": "/usr/bin/clang++  -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/cosine_distance -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/cosine_distance.dir/cosine_distance.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/cosine_distance/cosine_distance.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/cosine_distance/cosine_distance.cpp",
+  "output": "libraries/cosine_distance/CMakeFiles/cosine_distance.dir/cosine_distance.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/libraries/word_to_vec",
+  "command": "/usr/bin/clang++  -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/word_to_vec -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/word_to_vec.dir/word_to_vec.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/word_to_vec/word_to_vec.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/word_to_vec/word_to_vec.cpp",
+  "output": "libraries/word_to_vec/CMakeFiles/word_to_vec.dir/word_to_vec.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/libraries/Classes",
+  "command": "/usr/bin/clang++  -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/user_and_dev.dir/users/user_and_dev.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes/users/user_and_dev.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes/users/user_and_dev.cpp",
+  "output": "libraries/Classes/CMakeFiles/user_and_dev.dir/users/user_and_dev.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/libraries/Classes",
+  "command": "/usr/bin/clang++  -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/movies.dir/movie/movies.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes/movie/movies.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes/movie/movies.cpp",
+  "output": "libraries/Classes/CMakeFiles/movies.dir/movie/movies.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/libraries/Classes",
+  "command": "/usr/bin/clang++  -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/logger.dir/logger/logger.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes/logger/logger.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes/logger/logger.cpp",
+  "output": "libraries/Classes/CMakeFiles/logger.dir/logger/logger.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/libraries/mysql-queries",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/include/python3.12 -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/mysql-queries -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/mysql-queries.dir/mysql-queries.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/mysql-queries/mysql-queries.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/mysql-queries/mysql-queries.cpp",
+  "output": "libraries/mysql-queries/CMakeFiles/mysql-queries.dir/mysql-queries.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/backend",
+  "command": "/usr/bin/clang++  -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/cosine_distance -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/word_to_vec -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/Classes -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/main.dir/main.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/src/backend/main.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/src/backend/main.cpp",
+  "output": "src/backend/CMakeFiles/main.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/api",
+  "command": "/usr/bin/clang++  -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/../../libraries/mysql-queries -I/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/include/python3.12 -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/libraries/mysql-queries -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/api.dir/main.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/src/api/main.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/src/api/main.cpp",
+  "output": "src/api/CMakeFiles/api.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/qt",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/qt/Mase_Cinema_Project_autogen/include -isystem /Users/elizabethstorozheva/anaconda3/include/qt -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtWidgets -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtGui -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtCore -isystem /Users/elizabethstorozheva/anaconda3/./mkspecs/macx-clang -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fPIC -o CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/mocs_compilation.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/qt/Mase_Cinema_Project_autogen/mocs_compilation.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/qt/Mase_Cinema_Project_autogen/mocs_compilation.cpp",
+  "output": "src/qt/CMakeFiles/Mase_Cinema_Project.dir/Mase_Cinema_Project_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/qt",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/qt/Mase_Cinema_Project_autogen/include -isystem /Users/elizabethstorozheva/anaconda3/include/qt -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtWidgets -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtGui -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtCore -isystem /Users/elizabethstorozheva/anaconda3/./mkspecs/macx-clang -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fPIC -o CMakeFiles/Mase_Cinema_Project.dir/main.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/src/qt/main.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/src/qt/main.cpp",
+  "output": "src/qt/CMakeFiles/Mase_Cinema_Project.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/qt",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build/src/qt/Mase_Cinema_Project_autogen/include -isystem /Users/elizabethstorozheva/anaconda3/include/qt -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtWidgets -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtGui -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/elizabethstorozheva/anaconda3/include/qt/QtCore -isystem /Users/elizabethstorozheva/anaconda3/./mkspecs/macx-clang -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fPIC -o CMakeFiles/Mase_Cinema_Project.dir/firstloginsignup.cpp.o -c /Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/src/qt/firstloginsignup.cpp",
+  "file": "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/src/qt/firstloginsignup.cpp",
+  "output": "src/qt/CMakeFiles/Mase_Cinema_Project.dir/firstloginsignup.cpp.o"
+}
+]

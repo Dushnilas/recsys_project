@@ -1,0 +1,160 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src/backend/libraries/Classes",
+					"jsonFile" : "directory-src.backend.libraries.Classes-Debug-57f8c45a895d01c422c5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "src/backend/libraries/Classes",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/backend/libraries/mysql-queries",
+					"jsonFile" : "directory-src.backend.libraries.mysql-queries-Debug-d54fce1c33e8e955e1eb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/backend/libraries/mysql-queries",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "src/qt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.qt-Debug-1547216bcbe7589b29cb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src/qt",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						2,
+						3
+					],
+					"name" : "Mase_Cinema_Project",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Classes",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "Mase_Cinema_Project::@08c692b06e89fa797efc",
+					"jsonFile" : "target-Mase_Cinema_Project-Debug-6e1a386c9fcfc3a5a552.json",
+					"name" : "Mase_Cinema_Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Mase_Cinema_Project_autogen::@08c692b06e89fa797efc",
+					"jsonFile" : "target-Mase_Cinema_Project_autogen-Debug-b207c7e2543d1ba20b7f.json",
+					"name" : "Mase_Cinema_Project_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Mase_Cinema_Project_autogen_timestamp_deps::@08c692b06e89fa797efc",
+					"jsonFile" : "target-Mase_Cinema_Project_autogen_timestamp_deps-Debug-066e23f763227673beca.json",
+					"name" : "Mase_Cinema_Project_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "classes::@0af18959c0072c1794b9",
+					"jsonFile" : "target-classes-Debug-e105b99f75101272f46b.json",
+					"name" : "classes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "mysql-queries::@a0bd36b3469e8de3b3b3",
+					"jsonFile" : "target-mysql-queries-Debug-f673f36fb857d7ac9832.json",
+					"name" : "mysql-queries",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/senya/recsys_project_front/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug",
+		"source" : "/Users/senya/recsys_project_front"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

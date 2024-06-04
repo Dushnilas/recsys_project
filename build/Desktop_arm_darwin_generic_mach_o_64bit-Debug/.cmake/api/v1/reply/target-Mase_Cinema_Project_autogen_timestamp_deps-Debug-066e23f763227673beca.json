@@ -1,0 +1,38 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"src/qt/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "classes::@0af18959c0072c1794b9"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "mysql-queries::@a0bd36b3469e8de3b3b3"
+		}
+	],
+	"id" : "Mase_Cinema_Project_autogen_timestamp_deps::@08c692b06e89fa797efc",
+	"isGeneratorProvided" : true,
+	"name" : "Mase_Cinema_Project_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "src/qt",
+		"source" : "src/qt"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,311 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "libraries",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-libraries-Debug-a240e4b91e98ca34081a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "libraries"
+				},
+				{
+					"build" : "libraries/cosine_distance",
+					"jsonFile" : "directory-libraries.cosine_distance-Debug-68070cf99943568e9f50.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "libraries/cosine_distance",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "libraries/word_to_vec",
+					"jsonFile" : "directory-libraries.word_to_vec-Debug-e9b1ef48bbc30e48cac8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "libraries/word_to_vec",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "libraries/Classes",
+					"jsonFile" : "directory-libraries.Classes-Debug-3e26d94910b4f7f30b2d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "libraries/Classes",
+					"targetIndexes" : 
+					[
+						5,
+						7,
+						9
+					]
+				},
+				{
+					"build" : "libraries/mysql-queries",
+					"jsonFile" : "directory-libraries.mysql-queries-Debug-cff5339928a46b63ee39.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "libraries/mysql-queries",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						7,
+						8,
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/backend",
+					"jsonFile" : "directory-src.backend-Debug-3815b753bcc19632a73e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "src/backend",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "src/api",
+					"jsonFile" : "directory-src.api-Debug-c4068b274e968da3f289.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "src/api",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/qt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.qt-Debug-120d01e2cc6233fe17fe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 1,
+					"source" : "src/qt",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"name" : "Recommendation_system",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "Mase_Cinema_Project",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 9,
+					"id" : "Mase_Cinema_Project::@08c692b06e89fa797efc",
+					"jsonFile" : "target-Mase_Cinema_Project-Debug-419348dede447ef2530f.json",
+					"name" : "Mase_Cinema_Project",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "Mase_Cinema_Project_autogen::@08c692b06e89fa797efc",
+					"jsonFile" : "target-Mase_Cinema_Project_autogen-Debug-cfea8e3ac2eb39e8c523.json",
+					"name" : "Mase_Cinema_Project_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "Mase_Cinema_Project_autogen_timestamp_deps::@08c692b06e89fa797efc",
+					"jsonFile" : "target-Mase_Cinema_Project_autogen_timestamp_deps-Debug-74f166093cd24ac09b32.json",
+					"name" : "Mase_Cinema_Project_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "api::@f0e24b7f04f99860965c",
+					"jsonFile" : "target-api-Debug-328ced3a9156836c6f1e.json",
+					"name" : "api",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "cosine_distance::@52c508f7447d6dafa8ad",
+					"jsonFile" : "target-cosine_distance-Debug-a566a729c3a605b773c2.json",
+					"name" : "cosine_distance",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "logger::@bce2aa214fcb09908f2f",
+					"jsonFile" : "target-logger-Debug-a274800a03454bd756f9.json",
+					"name" : "logger",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "main::@525b47d26c118ac1ce89",
+					"jsonFile" : "target-main-Debug-f4a77284c5d624d945d8.json",
+					"name" : "main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "movies::@bce2aa214fcb09908f2f",
+					"jsonFile" : "target-movies-Debug-dd2d1dce8c8d3cc77708.json",
+					"name" : "movies",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "mysql-queries::@04f4b21ff50164478d3d",
+					"jsonFile" : "target-mysql-queries-Debug-8e1b25a3edb692d5c235.json",
+					"name" : "mysql-queries",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "user_and_dev::@bce2aa214fcb09908f2f",
+					"jsonFile" : "target-user_and_dev-Debug-7b2ef4283bfa0b2403aa.json",
+					"name" : "user_and_dev",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "word_to_vec::@5083b3e95f9258fe16cc",
+					"jsonFile" : "target-word_to_vec-Debug-32817d9104ff0428e7bd.json",
+					"name" : "word_to_vec",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project/build",
+		"source" : "/Users/elizabethstorozheva/CLionProjects/aboba/recsys_project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

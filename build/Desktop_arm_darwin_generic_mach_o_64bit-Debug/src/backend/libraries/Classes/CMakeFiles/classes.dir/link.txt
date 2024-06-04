@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libclasses.a CMakeFiles/classes.dir/logger/logger.cpp.o CMakeFiles/classes.dir/movie/movies.cpp.o CMakeFiles/classes.dir/users/user_and_dev.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libclasses.a

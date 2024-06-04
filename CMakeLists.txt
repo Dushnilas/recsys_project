@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Recommendation_system)
+project(Mase_Cinema_Project VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(PROJECT_PATH /Users/senya/CLionProjects/recsys_project/libraries/mysql-queries)
+# Add subdirectories for backend libraries
+add_subdirectory(src/backend/libraries/Classes)
+add_subdirectory(src/backend/libraries/mysql-queries)
 
-add_definitions(-DPROJECT_PATH="${PROJECT_PATH}")
-
-add_subdirectory(libraries)
-add_subdirectory(src)
+# Add subdirectory for the Qt project
+add_subdirectory(src/qt)
