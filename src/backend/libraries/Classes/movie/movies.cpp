@@ -76,7 +76,6 @@ Movie::Movie(std::string name, std::string tconst, std::string description, Film
         _name(std::move(name)), _tconst(std::move(tconst)), _description(std::move(description)), _film_type(film_type),
         _year_start(year_start), _year_end(year_end), _is_adult(is_adult), _rating(rating), _num_votes(num_votes) {
 
-//    setGenre();
 //    Logger::get Instance().logInfo("Movie class object was created (" + _name + ").");
 }
 
@@ -93,12 +92,8 @@ const std::vector<std::shared_ptr<Actor>>& Movie::getActors() const {
     return _actors;
 }
 
-void Movie::setGenre(){
-    std::string query = "SELECT DISTINCT g.genre_name FROM titles_genres tg JOIN genres g ON tg.genre_id = g.genre_id "
-                        "WHERE tg.tconst = '" + _tconst + "';";
-    // std::vector<std::string> genres = ExecuteSelectGenresQuery("library", query);;
-    //
-    // _genre.assign(genres.begin(), genres.end());
+void Movie::setGenre(const std::vector<std::string>& genres){
+    _genre.assign(genres.begin(), genres.end());
 }
 
 const std::vector<std::string>& Movie::getGenre() const {

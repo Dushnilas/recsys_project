@@ -26,7 +26,16 @@ FilmType strToType(const std::string& type){
 
 
 void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
-    std::string query = "SELECT t.title_name, t.tconst, t.description, t.title_type, t.year_start, t.year_end, "
+    // Load all genres in map {tconst: [genre1, genre2, ...]}
+    std::map<std::string, std::vector<std::string>> genres;
+    std::string query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN "
+                        "titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE "
+                        "t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > "
+                        "200 ORDER BY r.num_votes DESC;";
+    genres = ExecuteSelectGenresQuery("library", query);
+
+    // Load all movies in vector of maps [{title_name: name, ...}, {title_name: name, ...}]
+    query = "SELECT t.title_name, t.tconst, t.description, t.title_type, t.year_start, t.year_end, "
                         "t.is_adult, r.rating, r.num_votes FROM titles t JOIN ratings r ON t.tconst = r.tconst WHERE "
                         "t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC LIMIT 100;";
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", query);
@@ -37,6 +46,7 @@ void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
                                              strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
                                              std::stoi(el["is_adult"]), std::stod(el["rating"]), std::stoi(el["num_votes"]));
         allMovies.push_back(movie);
+        movie->setGenre(genres[el["tconst"]]);
         counter++;
     }
 
@@ -149,7 +159,7 @@ bool SignUp(const std::string& login, const std::string& password){
 }
 
 // ----------------- FUNCTIONS FOR DB TESTING ----------------------
-void print_select_genres(std::vector<std::pair<std::string, std::vector<std::string>>> results) {
+void print_select_genres(const std::map<std::string, std::vector<std::string>>& results) {
     std::cout << "IM OK";
     for (const auto& result : results) {
         std::cout << yellow_color_code << "TConst: " << result.first << "\nGenres: ";
@@ -176,28 +186,28 @@ int main(int argc, char *argv[])
 
     initializePythonInterpreter(PROJECT_PATH);
 
-    // ---------------- TEST OF DATABASE------------------
-    // ---------------- INITIALIZING VARIABLES -------------
-    std::vector<std::map<std::string, std::string>> select;
-    std::vector<std::pair<std::string, std::vector<std::string>>> select_genres;
-    std::string query;
-
-    //---------------- FUNCTIONS AND QUERIES -----------------
-    // -------------- SELECT ALL GENRES IN SENYA'S FORMAT
-    query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC;";
-    select_genres = ExecuteSelectGenresQuery("library", query);
-    print_select_genres(select_genres);
-
-// -------------- CHECK REC TABLE --------------
-    // select = ExecuteSelectQuery("library", "SELECT COUNT(*) FROM cb_similarity;");
-    // print_select(select);
-
-
-
-
+//    // ---------------- TEST OF DATABASE------------------
+//    // ---------------- INITIALIZING VARIABLES -------------
+//    std::vector<std::map<std::string, std::string>> select;
+//    std::map<std::string, std::vector<std::string>> select_genres;
+//    std::string query;
+//
+//    //---------------- FUNCTIONS AND QUERIES -----------------
+//    // -------------- SELECT ALL GENRES IN SENYA'S FORMAT
+//    query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC;";
+//    select_genres = ExecuteSelectGenresQuery("library", query);
+//    print_select_genres(select_genres);
+//
+//// -------------- CHECK REC TABLE --------------
+//    // select = ExecuteSelectQuery("library", "SELECT COUNT(*) FROM cb_similarity;");
+//    // print_select(select);
 
     std::vector<std::shared_ptr<Movie>> all_movies;
     loadMovies(all_movies);
+    for (auto el: all_movies[0]->getGenre()){
+        std::cout << el << ' ';
+    }
+
     QApplication a(argc, argv);
     FirstLogInSignUp w;
     w.show();

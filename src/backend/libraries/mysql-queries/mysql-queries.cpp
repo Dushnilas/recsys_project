@@ -280,9 +280,9 @@ bool ExecuteDeleteQuery(const std::string& library, const std::string& delete_qu
     return success;
 }
 
-std::vector<std::pair<std::string, std::vector<std::string>>> ExecuteSelectGenresQuery(const std::string& library, const std::string& query) {
+std::map<std::string, std::vector<std::string>> ExecuteSelectGenresQuery(const std::string& library, const std::string& query) {
     std::string function_name = "select_genres";
-    std::vector<std::pair<std::string, std::vector<std::string>>> results;
+    std::map<std::string, std::vector<std::string>> results;
 
     PyObject *pName = PyUnicode_DecodeFSDefault(library.c_str());
     PyObject *pModule = PyImport_Import(pName);
@@ -328,7 +328,7 @@ std::vector<std::pair<std::string, std::vector<std::string>>> ExecuteSelectGenre
                                     std::cout << red_color_code << "Genre item is not a string" << reset_color_code << std::endl;
                                 }
                             }
-                            results.emplace_back(tconst, genres);
+                            results[tconst] = genres;
                         } else {
                             PyErr_Print();
                             std::cout << red_color_code << "Tuple items are not of expected types" << reset_color_code << std::endl;
