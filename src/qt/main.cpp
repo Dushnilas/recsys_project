@@ -290,6 +290,7 @@ int main(int argc, char *argv[])
     std::string query;
     std::string collection_name;
     std::string collection_id;
+    std::string comment;
     std::vector<std::map<std::string, std::string>> data;
 
     //---------------- FUNCTIONS AND QUERIES -----------------
@@ -347,10 +348,29 @@ int main(int argc, char *argv[])
     // select = ExecuteSelectQuery("library", query);
     // print_select(select);
 
+// --------------------- USER WRITES A COMMENT ON FILM -----------------
+    tconst = "tt0096928";
+    user_id = "PavelPopov";
+    comment = "Really like this film!";
 
+    data = {
+        {{"user_id", user_id}, {"tconst", tconst}, {"comment", comment}}
+    };
+    insert = ExecuteInsertQuery("library", "insert", "comments", data);
 
+    // ------------ GET COMMENTS ON FILM --------------
+    query = "SELECT * FROM comments WHERE tconst = '" + tconst + "'";
+    select = ExecuteSelectQuery("library", query);
+    print_select(select);
 
-
+    // ------------------ INSERT LOG INTO LOG TABLE --------------
+    data = {
+        {{"timestamp", "2024-06-02 18:23:13"}, {"type", "[INFO]"}, {"message", "User abobus233 has logged in."}}
+    };
+    insert = ExecuteInsertQuery("library", "insert", "logging", data);
+    query = "SELECT * FROM logging";
+    select = ExecuteSelectQuery("library", query);
+    print_select(select);
 
 
 
