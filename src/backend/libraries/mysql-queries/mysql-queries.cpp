@@ -178,6 +178,7 @@ bool ExecuteInsertQuery(const std::string& library, const std::string& function_
     return success;
 }
 
+
 bool ExecuteUpdateQuery(const std::string& library, const std::string& update_query) {
     std::string function_name = "update";
     bool success = false;

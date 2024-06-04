@@ -159,7 +159,7 @@ bool SignUp(const std::string& login, const std::string& password){
 }
 
 // ----------------- FUNCTIONS FOR DB TESTING ----------------------
-void print_select_genres(const std::map<std::string, std::vector<std::string>>& results) {
+void print_select_genres(std::vector<std::pair<std::string, std::vector<std::string>>> results) {
     std::cout << "IM OK";
     for (const auto& result : results) {
         std::cout << yellow_color_code << "TConst: " << result.first << "\nGenres: ";
@@ -186,21 +186,84 @@ int main(int argc, char *argv[])
 
     initializePythonInterpreter(PROJECT_PATH);
 
-//    // ---------------- TEST OF DATABASE------------------
-//    // ---------------- INITIALIZING VARIABLES -------------
-//    std::vector<std::map<std::string, std::string>> select;
-//    std::map<std::string, std::vector<std::string>> select_genres;
-//    std::string query;
-//
-//    //---------------- FUNCTIONS AND QUERIES -----------------
-//    // -------------- SELECT ALL GENRES IN SENYA'S FORMAT
-//    query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC;";
-//    select_genres = ExecuteSelectGenresQuery("library", query);
-//    print_select_genres(select_genres);
-//
-//// -------------- CHECK REC TABLE --------------
-//    // select = ExecuteSelectQuery("library", "SELECT COUNT(*) FROM cb_similarity;");
-//    // print_select(select);
+    // ---------------- TEST OF DATABASE------------------
+    // ---------------- INITIALIZING VARIABLES -------------
+    std::vector<std::map<std::string, std::string>> select;
+    bool update;
+    bool insert;
+    bool del;
+    std::string user_id;
+    std::string tconst;
+    std::vector<std::pair<std::string, std::vector<std::string>>> select_genres;
+    std::string query;
+    std::string collection_name;
+    std::string collection_id;
+    std::vector<std::map<std::string, std::string>> data;
+
+    //---------------- FUNCTIONS AND QUERIES -----------------
+    // -------------- SELECT ALL GENRES IN SENYA'S FORMAT
+    // query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC;";
+    // select_genres = ExecuteSelectGenresQuery("library", query);
+    // print_select_genres(select_genres);
+
+// -------------- CHECK REC TABLE --------------
+    // select = ExecuteSelectQuery("library", "SELECT COUNT(*) FROM cb_similarity;");
+    // print_select(select);
+
+    // // --------------- GET ALL USERS ------------
+    // query = "SELECT * FROM user_profile";
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
+
+// ----------- USER ОЦЕНИВАЕТ FILM
+    // tconst = "tt0096928";
+    // user_id = "PavelPopov";
+    // data = {
+    //     {{"user_id", user_id}, {"tconst", tconst}, {"rating", "10"}},
+    //     };
+    // insert = ExecuteInsertQuery("library", "insert", "user_ratings", data);
+
+    // ------------ GET ONE USER'S RATINGS ------------
+    // user_id = "PavelPopov";
+    // query = "SELECT * FROM user_ratings WHERE user_id = '" + user_id + "';";
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
+
+    // ------------- CREATE NEW COLLECTION TO USER ----------------
+    // user_id = "PavelPopov";
+    // collection_name = "DUROV IS THE BEST";
+    // data = {
+    //     {{"collection_name", collection_name}, {"user_id", user_id}},
+    //     };
+    // insert = ExecuteInsertQuery("library", "insert", "user_collections", data);
+
+    // ---------- USER ADDS FILM TO COLLECTION -----------
+    // ----------ALREADY DONE, THIS PART IS JUST FIOR TESTING----------
+    // user_id = "PavelPopov";
+    // collection_name = "DUROV IS THE BEST";
+    // query = "SELECT collection_id FROM user_collections WHERE user_id = '" + user_id + "' AND collection_name = '" + collection_name + "';";
+    // select = ExecuteSelectQuery("library", query);
+    //
+    // tconst = "tt0096928";
+    // collection_id = select[0]["collection_id"];
+    //
+    // data = {
+    //     {{"collection_id", collection_id}, {"tconst", "tt0103617"}}
+    // };
+    // insert = ExecuteInsertQuery("library", "insert", "titles_collections", data);
+    // query = "SELECT * FROM titles_collections WHERE collection_id = " + collection_id + ";";
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
+
+
+
+
+
+
+
+
+
+// ------------- QT PART -----------------
 
     std::vector<std::shared_ptr<Movie>> all_movies;
     loadMovies(all_movies);

@@ -97,12 +97,13 @@ def insert(table_name, data):
     connection = create_connection(host_name, user_name, user_password, db_name, port)
     cursor = connection.cursor()
     try:
-        if isinstance(data[0], tuple):
-            data = [data]
+        # if not isinstance(data[0], tuple):
+        # #     data = [data]
+        # print(data)
         columns = ', '.join([item[0] for item in data[0]])
         placeholders = ', '.join(['%s'] * len(data[0]))
         sql = f"INSERT IGNORE INTO {table_name} ({columns}) VALUES ({placeholders})"
-        values = [[item[1] for item in record] for record in data]
+        values = [tuple(item[1] for item in record) for record in data]
         cursor.executemany(sql, values)
         connection.commit()
         print(f"{cursor.rowcount} rows inserted successfully into {table_name}")
@@ -112,6 +113,7 @@ def insert(table_name, data):
     finally:
         cursor.close()
         connection.close()
+
 
 # -------------- update --------------
 def update(update_query):
