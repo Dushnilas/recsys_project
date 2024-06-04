@@ -93,3 +93,47 @@ void LikedFilms::on_pushButton_7_clicked()
     fip->show();
 }
 
+//Hedder
+
+void LikedFilms::on_HomeBLF_clicked()
+{
+    hide();
+    pmFL = new PageMain(this);
+    pmFL->show();
+
+}
+
+
+void LikedFilms::on_FilmsBFI_clicked()
+{
+    hide();
+    uiFL = new UserInfo(this);
+    uiFL->show();
+}
+
+
+void LikedFilms::on_TVShowsBFL_clicked()
+{
+    hide();
+    tvsFL = new TVShows(this);
+    tvsFL->show();
+
+
+}
+
+void LikedFilms::on_KidsBFL_clicked()
+{
+    hide();
+    kidsFL = new KidsTV(this);
+    kidsFL->show();
+
+}
+
+
+void LikedFilms::on_UserBFL_clicked()
+{
+    hide();
+    puFL = new PersUser(this);
+    puFL->show();
+}
+

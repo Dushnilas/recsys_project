@@ -93,7 +93,7 @@ padding: 5px;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: url(:/rec/Pics/BackG2.png);</string>
+               <string notr="true">border-image: url(:/rec/Pics/LogoRem.png);</string>
               </property>
               <property name="text">
                <string/>
@@ -117,7 +117,7 @@ padding: 5px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_12">
+             <widget class="QPushButton" name="filmsCol">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -125,7 +125,8 @@ padding: 5px;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: url(:/rec/Pics/Filmsnormal.png);</string>
+               <string notr="true">border-image: url(:/rec/Pics/Filmsnormal.png);
+border-image: url(:/rec/Pics/Films.png);</string>
               </property>
               <property name="text">
                <string/>
@@ -133,7 +134,7 @@ padding: 5px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_13">
+             <widget class="QPushButton" name="TVShowsCol">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -141,7 +142,7 @@ padding: 5px;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: url(:/rec/Pics/TVShowsnormal.png);</string>
+               <string notr="true">border-image: url(:/rec/Pics/TVShows.png);</string>
               </property>
               <property name="text">
                <string/>
@@ -149,7 +150,7 @@ padding: 5px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_14">
+             <widget class="QPushButton" name="KidsCol">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -157,7 +158,7 @@ padding: 5px;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-image: url(:/rec/Pics/Kidsnormal.png);</string>
+               <string notr="true">border-image: url(:/rec/Pics/Kids.png);</string>
               </property>
               <property name="text">
                <string/>
@@ -185,7 +186,7 @@ padding: 5px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_16">
+             <widget class="QPushButton" name="UserCol">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -256,8 +257,8 @@ color: rgb(229, 217, 190);</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>758</width>
-         <height>398</height>
+         <width>759</width>
+         <height>390</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
@@ -639,7 +640,7 @@ padding: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>36</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

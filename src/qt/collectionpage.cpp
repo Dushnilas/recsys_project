@@ -14,6 +14,8 @@ CollectionPage::~CollectionPage()
     delete ui;
 }
 
+//Buttons for eacg film
+
 void CollectionPage::on_pushButton_clicked()
 {
     hide();
@@ -91,5 +93,56 @@ void CollectionPage::on_pushButton_7_clicked()
     hide();
     fip = new FilmPage(this);
     fip->show();
+}
+
+//Header
+
+
+
+void CollectionPage::on_pushButton_11_clicked()
+{
+    hide();
+
+    pgCol = new PageMain(this);
+    pgCol->show();
+
+}
+
+
+void CollectionPage::on_filmsCol_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+
+}
+
+
+void CollectionPage::on_TVShowsCol_clicked()
+{
+    hide();
+    uiCol = new UserInfo(this);
+    uiCol->show();
+
+
+}
+
+
+void CollectionPage::on_KidsCol_clicked()
+{
+    hide();
+
+    kidCol = new KidsTV(this);
+    kidCol->show();
+}
+
+
+void CollectionPage::on_UserCol_clicked()
+{
+    hide();
+
+    puCol = new PersUser(this);
+    puCol->show();
+
 }
 

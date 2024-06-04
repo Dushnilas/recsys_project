@@ -66,8 +66,6 @@ private:
 
     PersUser *pu; // User page
 
-
-
     UserInfo *usi; //Films
 
     KidsTV *kidstv; //Kids

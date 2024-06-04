@@ -53,3 +53,58 @@ void FilmsCollection::on_pushButton_4_clicked()
     cpage->show();
 }
 
+
+
+
+
+//Header
+
+
+
+void FilmsCollection::on_HomeBFC_clicked()
+{
+    hide();
+
+    pmFC = new PageMain(this);
+    pmFC->show();
+}
+
+
+void FilmsCollection::on_FilmBFC_clicked()
+{
+    hide();
+
+    uiFC = new UserInfo(this);
+    uiFC->show();
+
+}
+
+
+void FilmsCollection::on_TVShowsBFC_clicked()
+{
+    hide();
+
+    tvsFC = new TVShows(this);
+    tvsFC->show();
+
+
+}
+
+
+void FilmsCollection::on_KidsBFC_clicked()
+{
+    hide();
+
+    kidsFC = new KidsTV(this);
+    kidsFC->show();
+}
+
+
+void FilmsCollection::on_UserBFC_clicked()
+{
+    hide();
+
+    puFC = new PersUser(this);
+    puFC->show();
+}
+

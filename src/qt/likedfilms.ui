@@ -72,7 +72,7 @@ padding: 5px;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border-image: url(:/rec/Pics/BackG2.png);</string>
+            <string notr="true">border-image: url(:/rec/Pics/LogoRem.png);</string>
            </property>
            <property name="text">
             <string/>
@@ -80,7 +80,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_12">
+          <widget class="QPushButton" name="HomeBLF">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -96,7 +96,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_11">
+          <widget class="QPushButton" name="FilmsBFI">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -104,7 +104,7 @@ padding: 5px;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border-image: url(:/rec/Pics/Filmsnormal.png);</string>
+            <string notr="true">border-image: url(:/rec/Pics/Films.png);</string>
            </property>
            <property name="text">
             <string/>
@@ -112,7 +112,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_13">
+          <widget class="QPushButton" name="TVShowsBFL">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -120,7 +120,7 @@ padding: 5px;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border-image: url(:/rec/Pics/TVShowsnormal.png);</string>
+            <string notr="true">border-image: url(:/rec/Pics/TVShows.png);</string>
            </property>
            <property name="text">
             <string/>
@@ -128,7 +128,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_14">
+          <widget class="QPushButton" name="KidsBFL">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -136,7 +136,7 @@ padding: 5px;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border-image: url(:/rec/Pics/Kidsnormal.png);</string>
+            <string notr="true">border-image: url(:/rec/Pics/Kids.png);</string>
            </property>
            <property name="text">
             <string/>
@@ -164,7 +164,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_16">
+          <widget class="QPushButton" name="UserBFL">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -209,7 +209,7 @@ color: rgb(229, 217, 190);</string>
       <widget class="QWidget" name="scrollAreaWidgetContents">
        <property name="geometry">
         <rect>
-         <x>-27</x>
+         <x>0</x>
          <y>0</y>
          <width>800</width>
          <height>390</height>
@@ -738,7 +738,7 @@ padding: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>36</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

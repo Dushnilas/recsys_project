@@ -80,9 +80,7 @@ void PageMain::on_GoTpTVShowsB_clicked()
     tvsh = new TVShows(this); //Goes to TVShows
     tvsh->show();
 
-
 }
-
 
 void PageMain::on_TVShowsB1_clicked()
 {
@@ -100,7 +98,7 @@ void PageMain::on_KidsB1_clicked()
 {
     hide();
 
-    kidstv = new KidsTV(this); //Goes to TVShows
+    kidstv = new KidsTV(this); //Goes to kids
     kidstv->show();
 
 }
@@ -109,7 +107,7 @@ void PageMain::on_KidsHButton_clicked()
 {
     hide();
 
-    kidstv = new KidsTV(this); //Goes to TVShows
+    kidstv = new KidsTV(this); //Goes to kids
     kidstv->show();
 
 }

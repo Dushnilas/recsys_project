@@ -3,11 +3,27 @@
 
 #include <QMainWindow>
 
+//Header
+#include "pagemain.h"
+#include "userinfo.h"
+#include "tvshows.h"
+#include "kidstv.h"
+#include "persuser.h"
+
+
 
 namespace Ui {
 class LikedFilms;
 }
 class FilmPage;
+
+//Header
+class PageMain;
+class UserInfo;
+class TVShows;
+class KidsTV;
+class PersUser;
+
 
 class LikedFilms : public QMainWindow
 {
@@ -38,9 +54,25 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_HomeBLF_clicked();
+
+    void on_FilmsBFI_clicked();
+
+    void on_TVShowsBFL_clicked();
+
+    void on_KidsBFL_clicked();
+
+    void on_UserBFL_clicked();
+
 private:
     Ui::LikedFilms *ui;
     FilmPage *fip;
+
+    PageMain *pmFL;
+    UserInfo *uiFL;
+    TVShows *tvsFL;
+    KidsTV *kidsFL;
+    PersUser *puFL;
 };
 
 #endif // LIKEDFILMS_H

@@ -12,3 +12,51 @@ PersUser::~PersUser()
 {
     delete ui;
 }
+
+void PersUser::on_LikedBut_clicked()
+{
+
+
+    hide();
+
+    lf = new LikedFilms(this); //goes to liked page
+    lf->show();
+}
+
+
+void PersUser::on_CollectionsBut_clicked()
+{
+
+    hide();
+
+    cp = new CollectionPage(this); //goes to collections page
+    cp->show();
+
+
+
+}
+
+
+//Header
+
+void PersUser::on_HomeBPU_clicked()
+{
+    hide();
+
+    pmPU = new PageMain(this);
+    pmPU->show();
+
+
+
+}
+
+
+void PersUser::on_FilmsBPU_clicked()
+{
+    hide();
+
+    cp = new CollectionPage(this); //goes to collections page
+    cp->show();
+
+}
+
