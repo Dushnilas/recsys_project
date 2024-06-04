@@ -73,7 +73,7 @@ public:
 
     std::string getName() const;
     std::string getTconst() const;
-    void setGenre();
+    void setGenre(const std::vector<std::string>& genres);
     const std::vector<std::string>& getGenre() const;
     std::string getDescription() const;
     FilmType getFilmType() const;

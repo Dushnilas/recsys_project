@@ -53,20 +53,24 @@ def select(query):
         connection.close()
 
 # -------------- select specially for genres --------------
+# SRECIALLY FOR SENYA
 def select_genres(query):
     connection = create_connection(host_name, user_name, user_password, db_name, port)
     cursor = connection.cursor()
     try:
         cursor.execute(query)
         results = cursor.fetchall()
-        # genres.append("pej")
-        genres = []
+        grouped_results = {}
         for row in results:
-            genre = row[0]
-            if genre is None:
-                genre = ""
-            genres.append(str(genre))
-        return genres
+            tconst = row[0]
+            genre_name = row[1]
+            if tconst not in grouped_results:
+                grouped_results[tconst] = []
+            grouped_results[tconst].append(genre_name)
+
+        formatted_results = [(tconst, tuple(set(genres))) for tconst, genres in grouped_results.items()]
+
+        return formatted_results
     except Error as e:
         print(f"The error '{e}' occurred")
         return []

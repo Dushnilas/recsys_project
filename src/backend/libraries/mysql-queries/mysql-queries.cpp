@@ -1,20 +1,16 @@
+#include "mysql-queries.h"
 #include <Python.h>
 #include <iostream>
 #include <unistd.h>
 #include <string>
 #include <vector>
 #include <map>
-#include "mysql-queries.h"
 
 const std::string red_color_code = "\033[1;31m";
 const std::string reset_color_code = "\033[0m";
 const std::string yellow_color_code = "\033[1;33m";
 
-bool initializePythonInterpreter(const std::string& project_path) {
-    if (chdir(project_path.c_str()) != 0) {
-        std::cout << red_color_code << "Failed to change directory to " << project_path << reset_color_code << std::endl;
-        return false;
-    }
+bool initializePythonInterpreter(const std::string& fixed_path) {
 
     Py_Initialize();
 
@@ -22,14 +18,29 @@ bool initializePythonInterpreter(const std::string& project_path) {
     PyRun_SimpleString("import os");
     PyRun_SimpleString("print('Current working directory:', os.getcwd())");
 
-    std::string python_path_cmd = "sys.path.append('" + project_path + "')";
-    std::string venv_path_cmd = "sys.path.append('" + project_path + "/mysqlenv/lib/python3.12/site-packages')";
-    PyRun_SimpleString(python_path_cmd.c_str());
+    char abs_path[PATH_MAX];
+    if (realpath(fixed_path.c_str(), abs_path) == NULL) {
+        std::cerr << "Error resolving absolute path" << std::endl;
+        return false;
+    }
+    std::string library_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+
+    std::string venv_path = std::string(abs_path) + "/mysqlenv/lib/python3.12/site-packages";
+    if (realpath(venv_path.c_str(), abs_path) == NULL) {
+        std::cerr << "Error resolving absolute path for virtual environment" << std::endl;
+        return false;
+    }
+    std::string venv_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+
+    PyRun_SimpleString(library_path_cmd.c_str());
     PyRun_SimpleString(venv_path_cmd.c_str());
+
     PyRun_SimpleString("print('sys.path:', sys.path)");
 
     return true;
 }
+
+
 
 void finalizePythonInterpreter() {
     Py_Finalize();
@@ -269,9 +280,9 @@ bool ExecuteDeleteQuery(const std::string& library, const std::string& delete_qu
     return success;
 }
 
-std::vector<std::string> ExecuteSelectGenresQuery(const std::string& library, const std::string& query) {
+std::map<std::string, std::vector<std::string>> ExecuteSelectGenresQuery(const std::string& library, const std::string& query) {
     std::string function_name = "select_genres";
-    std::vector<std::string> results;
+    std::map<std::string, std::vector<std::string>> results;
 
     PyObject *pName = PyUnicode_DecodeFSDefault(library.c_str());
     PyObject *pModule = PyImport_Import(pName);
@@ -298,11 +309,33 @@ std::vector<std::string> ExecuteSelectGenresQuery(const std::string& library, co
 
                 PyObject *item;
                 while ((item = PyIter_Next(iterator)) != NULL) {
-                    if (PyUnicode_Check(item)) {
-                        results.push_back(PyUnicode_AsUTF8(item));
+                    if (PyTuple_Check(item) && PyTuple_Size(item) == 2) {
+                        PyObject *first = PyTuple_GetItem(item, 0);
+                        PyObject *second = PyTuple_GetItem(item, 1);
+
+                        if (PyUnicode_Check(first) && PyTuple_Check(second)) {
+                            std::string tconst = PyUnicode_AsUTF8(first);
+                            std::vector<std::string> genres;
+
+                            PyObject *genre_item;
+                            Py_ssize_t genre_size = PyTuple_Size(second);
+                            for (Py_ssize_t i = 0; i < genre_size; ++i) {
+                                genre_item = PyTuple_GetItem(second, i);
+                                if (PyUnicode_Check(genre_item)) {
+                                    genres.push_back(PyUnicode_AsUTF8(genre_item));
+                                } else {
+                                    PyErr_Print();
+                                    std::cout << red_color_code << "Genre item is not a string" << reset_color_code << std::endl;
+                                }
+                            }
+                            results[tconst] = genres;
+                        } else {
+                            PyErr_Print();
+                            std::cout << red_color_code << "Tuple items are not of expected types" << reset_color_code << std::endl;
+                        }
                     } else {
                         PyErr_Print();
-                        std::cout << red_color_code << "Item is not a string" << reset_color_code << std::endl;
+                        std::cout << red_color_code << "Item is not a tuple or does not have 2 elements" << reset_color_code << std::endl;
                     }
                     Py_DECREF(item);
                 }
