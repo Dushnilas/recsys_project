@@ -28,16 +28,18 @@ FilmType strToType(const std::string& type){
 void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
     // Load all genres in map {tconst: [genre1, genre2, ...]}
     std::map<std::string, std::vector<std::string>> genres;
-    std::string query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN "
-                        "titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE "
-                        "t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > "
-                        "200 ORDER BY r.num_votes DESC;";
+    std::string query = "SELECT top_movies.tconst, g.genre_name FROM (SELECT t.tconst FROM titles t JOIN ratings r ON "
+                        "t.tconst = r.tconst WHERE t.description IS NOT NULL AND t.description != '' AND t.year_start > "
+                        "1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC LIMIT 10000) AS top_movies JOIN "
+                        "titles_genres tg ON top_movies.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id "
+                        "ORDER BY (SELECT r.num_votes FROM ratings r WHERE r.tconst = top_movies.tconst) DESC;";
     genres = ExecuteSelectGenresQuery("library", query);
 
     // Load all movies in vector of maps [{title_name: name, ...}, {title_name: name, ...}]
     query = "SELECT t.title_name, t.tconst, t.description, t.title_type, t.year_start, t.year_end, "
                         "t.is_adult, r.rating, r.num_votes FROM titles t JOIN ratings r ON t.tconst = r.tconst WHERE "
-                        "t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC LIMIT 100;";
+                        "t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 "
+                        "ORDER BY r.num_votes DESC LIMIT 10000;";
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", query);
 
     int counter = 0;

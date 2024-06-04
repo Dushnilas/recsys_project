@@ -8,7 +8,7 @@
 Actor::Actor(std::string name, std::string nconst, std::string photo_url, int birth_year, int death_year, int actor_importance):
         _name(std::move(name)), _nconst(std::move(nconst)), _photo_url(std::move(photo_url)),
         _birth_year(birth_year), _death_year(death_year), _actor_importance(actor_importance) {
-    Logger::getInstance().logInfo("Actor class object was created (" + _name + ").");
+//    Logger::getInstance().logInfo("Actor class object was created (" + _name + ").");
 }
 
 std::string Actor::getName() const {
@@ -210,7 +210,7 @@ void Movie::leaveComment(const std::string& com) {
 
 // Definition of Collection class methods
 Collection::Collection(int collection_id, const std::string& name): _collection_id(collection_id), _name(name) {
-    Logger::getInstance().logInfo("Collection class object was created (" + name + ").");
+//    Logger::getInstance().logInfo("Collection class object was created (" + name + ").");
 }
 
 std::string Collection::getName() const {
