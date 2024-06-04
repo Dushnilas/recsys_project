@@ -191,6 +191,10 @@ void Movie::removeActor(const std::shared_ptr<Actor>& actor) {
     }
 }
 
+void Movie::loadComments(){
+
+}
+
 const std::vector<std::string>& Movie::getComments() const {
     return _comments;
 }
