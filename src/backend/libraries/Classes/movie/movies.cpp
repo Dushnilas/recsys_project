@@ -5,10 +5,20 @@
 #include "../../mysql-queries/mysql-queries.h"
 
 // Definition of Actor class methods
-Actor::Actor(std::string name, std::string character_played, std::string nconst, std::string photo_url, int birth_year, int death_year, int actor_importance):
+Actor::Actor(std::string name, std::string character_played, std::string nconst, std::string photo_url, int birth_year, int death_year, int actor_importance, const std::string& n_role):
         _name(std::move(name)), _character_played(std::move(character_played)), _nconst(std::move(nconst)),
         _photo_url(std::move(photo_url)), _birth_year(birth_year), _death_year(death_year),
         _actor_importance(actor_importance) {
+
+    if (n_role == "actor"){
+        _n_role = Character::Actor;
+    }
+    else if (n_role == "director"){
+        _n_role = Character::Director;
+    }
+    else if (n_role == "producer"){
+        _n_role = Character::Producer;
+    }
 //    Logger::getInstance().logInfo("Actor class object was created (" + _name + ").");
 }
 
