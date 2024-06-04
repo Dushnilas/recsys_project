@@ -90,6 +90,6 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Mase_Cinema_Project)
 endif()
 
-set(PROJECT_PATH /Users/senya/recsys_project_front/src/backend/libraries/mysql-queries)
+set(PROJECT_PATH /Users/anastasiaseraa/nastya_project/src/backend/libraries/mysql-queries)
 
 add_definitions(-DPROJECT_PATH="${PROJECT_PATH}")

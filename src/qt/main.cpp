@@ -214,6 +214,6 @@ int main(int argc, char *argv[])
 
     finalizePythonInterpreter();
 
-    // return a.exec();
+     return a.exec();
 
 }
