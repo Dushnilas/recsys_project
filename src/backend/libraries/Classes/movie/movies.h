@@ -33,10 +33,11 @@ private:
     int _birth_year;
     int _death_year;
     int _actor_importance;
+    Character _n_role;
 
 public:
     Actor(std::string name, std::string character_played, std::string nconst, std::string photo_url, int birth_year,
-          int death_year, int actor_importance);
+          int death_year, int actor_importance, const std::string& n_role);
 
     std::string getName() const;
     std::string getId() const;
