@@ -27,6 +27,7 @@ class Movie;
 class Actor : public std::enable_shared_from_this<Actor> {
 private:
     const std::string _name;
+    const std::string _character_played;
     const std::string _nconst;
     std::string _photo_url;
     int _birth_year;
@@ -34,7 +35,7 @@ private:
     int _actor_importance;
 
 public:
-    Actor(std::string name, std::string nconst, std::string photo_url, int birth_year,
+    Actor(std::string name, std::string character_played, std::string nconst, std::string photo_url, int birth_year,
           int death_year, int actor_importance);
 
     std::string getName() const;
