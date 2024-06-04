@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmovies.a CMakeFiles/movies.dir/movie/movies.cpp.o
-/usr/bin/ranlib libmovies.a

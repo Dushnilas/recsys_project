@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmysql-queries.a "CMakeFiles/mysql-queries.dir/mysql-queries.cpp.o"
-/usr/bin/ranlib libmysql-queries.a

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcosine_distance.a CMakeFiles/cosine_distance.dir/cosine_distance.cpp.o
-/usr/bin/ranlib libcosine_distance.a
