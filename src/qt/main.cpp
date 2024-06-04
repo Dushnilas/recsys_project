@@ -150,6 +150,7 @@ bool SignUp(const std::string& login, const std::string& password){
 
 // ----------------- FUNCTIONS FOR DB TESTING ----------------------
 void print_select_genres(std::vector<std::pair<std::string, std::vector<std::string>>> results) {
+    std::cout << "IM OK";
     for (const auto& result : results) {
         std::cout << yellow_color_code << "TConst: " << result.first << "\nGenres: ";
         for (const auto& genre : result.second) {
@@ -159,16 +160,41 @@ void print_select_genres(std::vector<std::pair<std::string, std::vector<std::str
     }
     std::cout << reset_color_code;
 }
+
+void print_select(std::vector<std::map<std::string, std::string>> results) {
+    for (const auto& row : results) {
+        for (const auto& [key, value] : row) {
+            std::cout << yellow_color_code << key << ": " << value << "\t" << reset_color_code;
+        }
+        std::cout << '\n';
+    }
+}
+
  // ------------------ MAIN -------------------
 int main(int argc, char *argv[])
 {
 
     initializePythonInterpreter(PROJECT_PATH);
 
-    // ---------------- TEST OF SELECTGENRES ------------------
-    std::string query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC;";
-    std::vector<std::pair<std::string, std::vector<std::string>>> results = ExecuteSelectGenresQuery("library", query);
-    print_select_genres(results);
+    // ---------------- TEST OF DATABASE------------------
+    // ---------------- INITIALIZING VARIABLES -------------
+    std::vector<std::map<std::string, std::string>> select;
+    std::vector<std::pair<std::string, std::vector<std::string>>> select_genres;
+    std::string query;
+
+    //---------------- FUNCTIONS AND QUERIES -----------------
+    // -------------- SELECT ALL GENRES IN SENYA'S FORMAT
+    query = "SELECT t.tconst, g.genre_name FROM titles t JOIN ratings r ON t.tconst = r.tconst JOIN titles_genres tg ON t.tconst = tg.tconst JOIN genres g ON tg.genre_id = g.genre_id WHERE t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC;";
+    select_genres = ExecuteSelectGenresQuery("library", query);
+    print_select_genres(select_genres);
+
+// -------------- CHECK REC TABLE --------------
+    // select = ExecuteSelectQuery("library", "SELECT COUNT(*) FROM cb_similarity;");
+    // print_select(select);
+
+
+
+
 
     std::vector<std::shared_ptr<Movie>> all_movies;
     loadMovies(all_movies);
@@ -178,8 +204,6 @@ int main(int argc, char *argv[])
 
     finalizePythonInterpreter();
 
-    return a.exec();
-
-    //QObject::connect(&pageMain, &PageMain::goToTVShowsButtonClicked, &userInfo, &UserInfo::handleGoToTVShowsButtonClicked);
+    // return a.exec();
 
 }

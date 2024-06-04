@@ -1,5 +1,5 @@
 project(Mase_Cinema_Project VERSION 0.1 LANGUAGES CXX)
-
+cmake_minimum_required(VERSION 3.28)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
