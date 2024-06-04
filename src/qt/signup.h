@@ -30,6 +30,9 @@ private:
     FirstLogInSignUp *flisu;
 
     LogIn *li2;
+
+
 };
+
 
 #endif // SIGNUP_H

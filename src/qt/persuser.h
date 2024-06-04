@@ -47,6 +47,10 @@ private slots:
 
     void on_FilmsBPU_clicked();
 
+    void on_TVShowsPU_clicked();
+
+    void on_KidsBPU_clicked();
+
 private:
     Ui::PersUser *ui;
 

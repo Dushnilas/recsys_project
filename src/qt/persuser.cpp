@@ -46,17 +46,34 @@ void PersUser::on_HomeBPU_clicked()
     pmPU = new PageMain(this);
     pmPU->show();
 
-
-
 }
-
 
 void PersUser::on_FilmsBPU_clicked()
 {
     hide();
 
-    cp = new CollectionPage(this); //goes to collections page
-    cp->show();
+    uiPU = new UserInfo(this);
+    uiPU->show();
+
+}
+
+
+void PersUser::on_TVShowsPU_clicked()
+{
+    hide();
+
+    tvsPU = new TVShows(this);
+    tvsPU->show();
+
+}
+
+
+void PersUser::on_KidsBPU_clicked()
+{
+    hide();
+
+    kidsPU = new KidsTV(this);
+    kidsPU->show();
 
 }
 

@@ -42,7 +42,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="HomeFSerach">
            <property name="styleSheet">
             <string notr="true">border-image: url(:/rec/Pics/housenormal.png);</string>
            </property>
@@ -52,7 +52,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="FilmsBFSearch">
            <property name="styleSheet">
             <string notr="true">border-image: url(:/rec/Pics/Films.png);</string>
            </property>
@@ -62,7 +62,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="TVShoesBFSeach">
            <property name="styleSheet">
             <string notr="true">border-image: url(:/rec/Pics/TVShows.png);</string>
            </property>
@@ -72,7 +72,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="KidsBFSearch">
            <property name="styleSheet">
             <string notr="true">border-image: url(:/rec/Pics/Kids.png);</string>
            </property>
@@ -92,7 +92,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_5">
+          <widget class="QPushButton" name="UserBFSearch">
            <property name="styleSheet">
             <string notr="true">border-image: url(:/rec/Pics/profile-user.png);</string>
            </property>
