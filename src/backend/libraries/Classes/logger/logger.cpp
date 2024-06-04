@@ -4,6 +4,9 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
+#include <vector>
+#include <map>
+#include "../../mysql-queries/mysql-queries.h"
 
 Logger& Logger::getInstance() {
     static Logger instance;
@@ -68,6 +71,11 @@ void Logger::log(LogLevel level, const std::string& message) {
 
     std::string logMessage = getCurrentTime() + " " + prefix + message;
 //    std::cout << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
+
+    std::vector<std::map<std::string, std::string>> data = {
+            {{"timestamp", "2024-06-02 18:23:13"}, {"type", "[INFO]"},
+             {"message", "User abobus233 has logged in."}}};
+    ExecuteInsertQuery("library", "insert", "logging", data);
     if (logFile.is_open()) {
         logFile << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
     }
