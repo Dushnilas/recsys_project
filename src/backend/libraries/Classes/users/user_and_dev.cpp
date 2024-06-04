@@ -135,8 +135,15 @@ void AllUsers::createCol(const std::string& name) {
     _all_collection.push_back(newCollection);
 }
 
-void AllUsers::leaveComment(const std::shared_ptr<Movie>& movie, const std::string& com) {
-    movie->leaveComment(com);
+bool AllUsers::leaveComment(const std::shared_ptr<Movie>& movie, const std::string& com) {
+    std::vector<std::map<std::string, std::string>> data = {
+            {{"user_id", _login}, {"tconst", movie->getTconst()}, {"comment", com}}
+    };
+    if (ExecuteInsertQuery("library", "insert", "comments", data)) {
+        movie->leaveComment(com);
+        return true;
+    }
+    return false;
 }
 
 void AllUsers::makeVote(const std::shared_ptr<Movie>& movie, int vote){

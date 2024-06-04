@@ -192,7 +192,12 @@ void Movie::removeActor(const std::shared_ptr<Actor>& actor) {
 }
 
 void Movie::loadComments(){
+    std::string query = "SELECT * FROM comments WHERE tconst = '" + _tconst + "'";
+    std::vector<std::map<std::string, std::string>> select = ExecuteSelectQuery("library", query);
 
+    for (auto el: select){
+        _comments.push_back(el["comment"]);
+    }
 }
 
 const std::vector<std::string>& Movie::getComments() const {

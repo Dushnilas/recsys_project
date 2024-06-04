@@ -57,7 +57,7 @@ public:
     void createCol(const std::string& name);
     bool removeCol(const std::shared_ptr<Collection>& collection);
 
-    void leaveComment(const std::shared_ptr<Movie>& movie, const std::string& com);
+    bool leaveComment(const std::shared_ptr<Movie>& movie, const std::string& com);
     void makeVote(const std::shared_ptr<Movie>& movie, int vote);
 };
 
