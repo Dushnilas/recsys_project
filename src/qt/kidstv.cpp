@@ -64,3 +64,13 @@ void KidsTV::on_UserButKid_clicked()
 
 }
 
+
+void KidsTV::on_SearchByGKid_clicked()
+{
+    hide();
+
+    sfK = new SearchFilm(this);
+    sfK->show();
+
+}
+

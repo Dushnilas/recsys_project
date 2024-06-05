@@ -59,3 +59,12 @@ void TVShows::on_UserButTV_clicked()
 
 }
 
+
+void TVShows::on_SearchByGTV_clicked()
+{
+    hide();
+
+    sfTVS = new SearchFilm(this);
+    sfTVS ->show();
+}
+

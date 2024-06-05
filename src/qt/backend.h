@@ -1,0 +1,40 @@
+#ifndef BACKEND_H
+#define BACKEND_H
+
+
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include "../backend/libraries/Classes/movie/movies.h"
+#include "../backend/libraries/Classes/users/user_and_dev.h"
+#include "../backend/libraries/Classes/logger/logger.h"
+#include "../backend/libraries/mysql-queries/mysql-queries.h"
+
+
+static std::shared_ptr<AllUsers> main_user;
+static std::vector<std::shared_ptr<Movie>> all_movies;
+
+FilmType strToType(const std::string& type);
+
+void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies);
+
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::shared_ptr<Movie>>& allMovies,
+                                                    int n, const std::string& genre="", const FilmType filmType=FilmType::Default,
+                                                    const bool is_adult=true);
+
+void getRecommendation();
+
+bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2, const std::string& query);
+
+void searchMovies(const std::vector<std::shared_ptr<Movie>>& all_movies, std::vector<std::shared_ptr<Movie>>& result,
+                  const std::string& query, int n);
+
+bool SignIn(const std::string& login, const std::string& password);
+
+bool SignUp(const std::string& login, const std::string& password);
+
+void print_select_genres(std::vector<std::pair<std::string, std::vector<std::string>>> results);
+
+void print_select(std::vector<std::map<std::string, std::string>> results);
+
+#endif

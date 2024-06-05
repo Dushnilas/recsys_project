@@ -10,6 +10,9 @@
 #include "kidstv.h"
 #include "persuser.h"
 
+//search
+#include "searchfilm.h"
+
 namespace Ui {
 class TVShows;
 }
@@ -20,6 +23,9 @@ class UserInfo;
 class TVShows;
 class KidsTV;
 class PersUser;
+
+//Search
+class SearchFilm;
 
 class TVShows : public QMainWindow
 {
@@ -40,6 +46,8 @@ private slots:
 
     void on_UserButTV_clicked();
 
+    void on_SearchByGTV_clicked();
+
 private:
     Ui::TVShows *ui;
 
@@ -48,6 +56,8 @@ private:
     TVShows *tvsTVS;
     KidsTV *kidsTVS;
     PersUser *puTVS;
+
+    SearchFilm *sfTVS;
 };
 
 #endif // TVSHOWS_H

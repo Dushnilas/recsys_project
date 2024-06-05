@@ -70,3 +70,13 @@ void UserInfo::on_UserButFilms_clicked()
 
 }
 
+
+void UserInfo::on_SearchGButFilms_clicked()
+{
+    hide();
+
+    sfUI = new SearchFilm(this);
+    sfUI->show();
+
+}
+

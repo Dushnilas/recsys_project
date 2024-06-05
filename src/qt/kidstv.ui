@@ -23,6 +23,12 @@ color: white;</string>
      <layout class="QHBoxLayout" name="headerLO">
       <item>
        <widget class="QWidget" name="widget" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -42,10 +48,16 @@ padding: 5px;</string>
          </property>
          <item>
           <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>150</width>
-             <height>0</height>
+             <height>52</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -133,10 +145,16 @@ padding: 5px;</string>
          <item>
           <widget class="QPushButton" name="UserButKid">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
            </property>
            <property name="styleSheet">
             <string notr="true">border-image: url(:/rec/Pics/profile-user.png);</string>

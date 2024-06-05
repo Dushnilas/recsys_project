@@ -29,10 +29,8 @@ void PersUser::on_CollectionsBut_clicked()
 
     hide();
 
-    cp = new CollectionPage(this); //goes to collections page
-    cp->show();
-
-
+    fcPU = new FilmsCollection(this); //goes to collections page
+    fcPU->show();
 
 }
 
