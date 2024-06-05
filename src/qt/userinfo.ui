@@ -26,7 +26,13 @@ color: white;</string>
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>74</height>
+          <height>76</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>76</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -45,7 +51,13 @@ padding: 5px;</string>
            <property name="minimumSize">
             <size>
              <width>150</width>
-             <height>0</height>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>50</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -58,9 +70,21 @@ padding: 5px;</string>
          </item>
          <item>
           <widget class="QPushButton" name="HomeBut">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>60</horstretch>
+             <verstretch>50</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>60</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
              <height>50</height>
             </size>
            </property>
@@ -74,9 +98,21 @@ padding: 5px;</string>
          </item>
          <item>
           <widget class="QPushButton" name="FilmsBut">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>60</horstretch>
+             <verstretch>50</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>60</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
              <height>50</height>
             </size>
            </property>
@@ -90,9 +126,21 @@ padding: 5px;</string>
          </item>
          <item>
           <widget class="QPushButton" name="TVShowsBut">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>60</horstretch>
+             <verstretch>50</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>60</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
              <height>50</height>
             </size>
            </property>
@@ -106,9 +154,21 @@ padding: 5px;</string>
          </item>
          <item>
           <widget class="QPushButton" name="KidsBut">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>60</horstretch>
+             <verstretch>50</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>60</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
              <height>50</height>
             </size>
            </property>
@@ -121,10 +181,47 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="SearchEL"/>
+          <widget class="QLineEdit" name="SearchEL">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>36</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>36</height>
+            </size>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="SerachBut">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>60</horstretch>
+             <verstretch>34</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>34</height>
+            </size>
+           </property>
            <property name="text">
             <string>Serach</string>
            </property>
@@ -133,10 +230,22 @@ padding: 5px;</string>
          <item>
           <widget class="QPushButton" name="UserBut">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>60</horstretch>
+             <verstretch>50</verstretch>
             </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>50</height>
+            </size>
            </property>
            <property name="styleSheet">
             <string notr="true">border-image: url(:/rec/Pics/profile-user.png);</string>
@@ -1082,7 +1191,7 @@ padding: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>962</width>
-     <height>24</height>
+     <height>36</height>
     </rect>
    </property>
   </widget>

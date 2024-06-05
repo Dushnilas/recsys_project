@@ -26,19 +26,19 @@ color: white;</string>
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
-          <verstretch>74</verstretch>
+          <verstretch>76</verstretch>
          </sizepolicy>
         </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>74</height>
+          <height>76</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>74</height>
+          <height>76</height>
          </size>
         </property>
         <property name="layoutDirection">
@@ -56,13 +56,13 @@ padding: 5px;</string>
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
+             <verstretch>50</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
              <width>150</width>
-             <height>52</height>
+             <height>50</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -738,7 +738,7 @@ padding: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>36</height>
     </rect>
    </property>
   </widget>
