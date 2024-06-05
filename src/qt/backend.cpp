@@ -1,3 +1,10 @@
+#include "backend.h"
+#include "firstloginsignup.h"
+#include "pagemain.h"
+#include "userinfo.h"
+
+#include <QApplication>
+
 #include <iostream>
 #include <vector>
 #include <iomanip>
@@ -5,8 +12,10 @@
 #include "../backend/libraries/Classes/users/user_and_dev.h"
 #include "../backend/libraries/Classes/logger/logger.h"
 #include "../backend/libraries/mysql-queries/mysql-queries.h"
-#include "backend.h"
 
+
+
+static std::shared_ptr<AllUsers> main_user;
 
 FilmType strToType(const std::string& type){
     if (type == "Movie") return FilmType::Movie;
@@ -17,7 +26,7 @@ FilmType strToType(const std::string& type){
 }
 
 
-void loadMovies() {
+void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
     // Load all genres in map {tconst: [genre1, genre2, ...]}
     std::map<std::string, std::vector<std::string>> genres;
     std::string query = "SELECT top_movies.tconst, g.genre_name FROM (SELECT t.tconst FROM titles t JOIN ratings r ON "
@@ -39,7 +48,7 @@ void loadMovies() {
         auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"],  el["description"],
                                              strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
                                              std::stoi(el["is_adult"]), std::stod(el["rating"]), std::stoi(el["num_votes"]));
-        all_movies.push_back(movie);
+        allMovies.push_back(movie);
         movie->setGenre(genres[el["tconst"]]);
         counter++;
     }
@@ -47,26 +56,28 @@ void loadMovies() {
     Logger::getInstance().logInfo(std::to_string(counter) + " movies was uploaded.");
 }
 
-std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre, FilmType filmType, bool is_adult) {
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::shared_ptr<Movie>>& allMovies,
+                                                    int n, const std::string& genre, const FilmType filmType,
+                                                    const bool is_adult) {
 
     std::vector<std::shared_ptr<Movie>> genreMovies;
 
     if (!genre.empty()) {
-        for (const auto &movie: all_movies) {
+        for (const auto &movie: allMovies) {
             if (std::find(movie->getGenre().begin(), movie->getGenre().end(), genre) != movie->getGenre().end()) {
                 genreMovies.push_back(movie);
             }
         }
     }
     else if (filmType != FilmType::Default){
-        for (const auto &movie: all_movies) {
+        for (const auto &movie: allMovies) {
             if (movie->getFilmType() == filmType) {
                 genreMovies.push_back(movie);
             }
         }
     }
     else if (!is_adult){
-        for (const auto &movie: all_movies) {
+        for (const auto &movie: allMovies) {
             if (movie->IsAdult() == 0) {
                 genreMovies.push_back(movie);
             }
@@ -90,7 +101,8 @@ bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie
     return m1->getName().length() < m2->getName().length();
 }
 
-void searchMovies(std::vector<std::shared_ptr<Movie>>& result, const std::string& query, int n) {
+void searchMovies(const std::vector<std::shared_ptr<Movie>>& all_movies, std::vector<std::shared_ptr<Movie>>& result,
+                  const std::string& query, int n) {
 
     for (const auto& movie : all_movies) {
         if (movie->getName().find(query) != std::string::npos) {
@@ -106,9 +118,7 @@ void searchMovies(std::vector<std::shared_ptr<Movie>>& result, const std::string
     }
 }
 
-//Log In code
-
-bool SignInFun(const std::string& login, const std::string& password){
+bool SignIn(const std::string& login, const std::string& password){
     std::string query = "SELECT a.user_id, a.pass, u.name, u.age, u.photo_url FROM auth a JOIN user_profile u ON u.user_id = a.user_id;";
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", query);
     for (const auto& el: buf){
@@ -124,16 +134,17 @@ bool SignInFun(const std::string& login, const std::string& password){
     return false;
 }
 
-bool SignUpFun(const std::string& login, const std::string& password, int age){
+bool SignUp(const std::string& login, const std::string& password){
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", "SELECT * FROM auth;");;
 
     if (std::find_if(buf.begin(), buf.end(), [&](const auto& c) {
-            return login == c.at("user_id"); }) == buf.end()) {
+        return login == c.at("user_id"); }) == buf.end()) {
 
-        std::vector<std::map<std::string, std::string>> data = {{{"user_id", login}, {"name", login,},
-                                                                 {"age", std::to_string(age)}, {"photo_url", ""}}};
+        std::vector<std::map<std::string, std::string>> data = {
+                {{"user_id", login}, {"name", login,}, {"age", "0"}, {"photo_url", ""}}};
 
-        std::vector<std::map<std::string, std::string>> data2 = {{{"user_id", login}, {"pass", password,}}};
+        std::vector<std::map<std::string, std::string>> data2 = {
+                {{"user_id", login}, {"pass", password,}}};
 
         if (ExecuteInsertQuery("library", "insert", "user_profile", data) and
             ExecuteInsertQuery("library", "insert", "auth", data2)){
