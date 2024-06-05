@@ -8,22 +8,23 @@
 
 int main(int argc, char *argv[])
 {
-    initializePythonInterpreter(PROJECT_PATH);
+    initializePythonInterpreter("/Users/maykorablina/Yandex.Disk.localized/CodingProjects/BITCH/src/backend/libraries/mysql-queries");
 
 ////     ---------------- TEST OF DATABASE------------------
 ////     ---------------- INITIALIZING VARIABLES -------------
-//    std::vector<std::map<std::string, std::string>> select;
-//    bool update;
-//    bool insert;
-//    bool del;
-//    std::string user_id;
-//    std::string tconst;
-//    std::vector<std::pair<std::string, std::vector<std::string>>> select_genres;
-//    std::string query;
-//    std::string collection_name;
-//    std::string collection_id;
-//    std::string comment;
-//    std::vector<std::map<std::string, std::string>> data;
+    std::vector<std::map<std::string, std::string>> select;
+    bool update;
+    bool insert;
+    bool del;
+    std::string user_id;
+    std::string tconst;
+    std::vector<std::pair<std::string, std::vector<std::string>>> select_genres;
+    std::string query;
+    std::string collection_name;
+    std::string collection_id;
+    std::string comment;
+    std::vector<std::map<std::string, std::string>> data;
+    std::vector<std::string> rec;
 //
 ////    ---------------- FUNCTIONS AND QUERIES -----------------
 ////    -------------- SELECT ALL GENRES IN SENYA'S FORMAT
@@ -135,17 +136,20 @@ int main(int argc, char *argv[])
     // query = "SELECT * FROM titles_collections WHERE collection_id = '" + collection_id + "';";
     // select = ExecuteSelectQuery("library", query);
     // print_select(select);
-
-
-// ------------ RECOMENDATION ON CONTENT!!!!!!!! -----------------------
-    std::vector<std::string> rec = GetContentRecommendations("PavelPopov");
-    for (auto r: rec) {
-        std::cout << yellow_color_code << r << reset_color_code << '\n';
+    rec = GetUserRecommendations("papa_i_papa");
+    for (auto c : rec) {
+        std::cout << yellow_color_code << c << reset_color_code << std::endl;
     }
 
-// ------------- QT PART -----------------
-    Logger::getInstance().setLogFile("/Users/senya/recsys_project_front/src/Data/NeLogFole.txt");
+    std::cout << std::endl;
 
+    rec = GetContentRecommendations("papa_i_papa");
+    for (auto c : rec) {
+        std::cout << yellow_color_code << c << reset_color_code << "\n";
+    }
+
+
+// ------------- QT PART -----------------
     loadMovies(all_movies);
 
     QApplication a(argc, argv);
@@ -154,6 +158,6 @@ int main(int argc, char *argv[])
 
     finalizePythonInterpreter();
 
-    // return a.exec();
+    return a.exec();
 
 }

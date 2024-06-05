@@ -18,19 +18,11 @@ bool initializePythonInterpreter(const std::string& fixed_path) {
     PyRun_SimpleString("import os");
     PyRun_SimpleString("print('Current working directory:', os.getcwd())");
 
-    char abs_path[PATH_MAX];
-    if (realpath(fixed_path.c_str(), abs_path) == NULL) {
-        std::cerr << "Error resolving absolute path" << std::endl;
-        return false;
-    }
-    std::string library_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+    std::string library_path_cmd = "sys.path.append('" + std::string(fixed_path) + "')";
 
-    std::string venv_path = std::string(abs_path) + "/mysqlenv/lib/python3.12/site-packages";
-    if (realpath(venv_path.c_str(), abs_path) == NULL) {
-        std::cerr << "Error resolving absolute path for virtual environment" << std::endl;
-        return false;
-    }
-    std::string venv_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+    std::string venv_path = std::string(fixed_path) + "/mysqlenv/lib/python3.12/site-packages";
+
+    std::string venv_path_cmd = "sys.path.append('" + std::string(venv_path) + "')";
 
     PyRun_SimpleString(library_path_cmd.c_str());
     PyRun_SimpleString(venv_path_cmd.c_str());
@@ -39,7 +31,6 @@ bool initializePythonInterpreter(const std::string& fixed_path) {
 
     return true;
 }
-
 
 
 void finalizePythonInterpreter() {
@@ -177,7 +168,6 @@ bool ExecuteInsertQuery(const std::string& library, const std::string& function_
 
     return success;
 }
-
 
 bool ExecuteUpdateQuery(const std::string& library, const std::string& update_query) {
     std::string function_name = "update";
@@ -360,10 +350,10 @@ std::map<std::string, std::vector<std::string>> ExecuteSelectGenresQuery(const s
     return results;
 }
 
-std::vector<std::string> GetContentRecommendations(const std::string& user_id) {
+std::vector<std::string> GetContentRecommendations(const std::string& target_user_id) {
     std::string library = "library";
-    std::string likes_query = "SELECT user_id, tconst, rating FROM user_ratings WHERE user_id = '" + user_id + "' and rating >= 6 ORDER BY rating DESC;";
-    std::string dislikes_query = "SELECT user_id, tconst, rating FROM user_ratings WHERE user_id = '" + user_id + "' and rating < 6 ORDER BY rating DESC;";
+    std::string likes_query = "SELECT user_id, tconst, rating FROM user_ratings WHERE user_id = '" + target_user_id + "' and rating >= 6 ORDER BY rating DESC;";
+    std::string dislikes_query = "SELECT user_id, tconst, rating FROM user_ratings WHERE user_id = '" + target_user_id + "' and rating < 6 ORDER BY rating DESC;";
 
     std::vector<std::map<std::string, std::string>> likes = ExecuteSelectQuery(library, likes_query);
     std::vector<std::map<std::string, std::string>> dislikes = ExecuteSelectQuery(library, dislikes_query);
@@ -386,6 +376,102 @@ std::vector<std::string> GetContentRecommendations(const std::string& user_id) {
                 recommended.push_back(j.at("index1"));
             }
         }
+    }
+
+    return recommended;
+}
+
+std::vector<std::string> GetUserRecommendations(const std::string& target_user_id) {
+    std::string library = "library";
+    std::string user_ratings_query = "SELECT user_id, tconst, rating FROM user_ratings";
+    std::string titles_query = R"(
+        SELECT t.tconst
+        FROM titles t
+        JOIN ratings r ON t.tconst = r.tconst
+        WHERE t.description IS NOT NULL
+          AND t.description != ''
+          AND t.year_start > 1950
+          AND r.num_votes > 200
+        ORDER BY r.num_votes DESC LIMIT 10000;
+    )";
+
+    auto user_ratings = ExecuteSelectQuery(library, user_ratings_query);
+    if (user_ratings.empty()) {
+        std::cerr << "Failed to retrieve user ratings" << std::endl;
+        return {};
+    }
+
+    auto titles = ExecuteSelectQuery(library, titles_query);
+    if (titles.empty()) {
+        std::cerr << "Failed to retrieve titles" << std::endl;
+        return {};
+    }
+
+    std::unordered_map<std::string, std::unordered_map<std::string, double>> user_movie_dict;
+    for (const auto& row : user_ratings) {
+        std::string user_id = row.at("user_id");
+        std::string tconst = row.at("tconst");
+        double rating = std::stod(row.at("rating"));
+        user_movie_dict[user_id][tconst] = rating;
+    }
+
+    std::vector<std::string> movie_list;
+    for (const auto& row : titles) {
+        movie_list.push_back(row.at("tconst"));
+    }
+
+    std::unordered_map<std::string, double> cosine_similarities;
+    const auto& target_ratings = user_movie_dict[target_user_id];
+    for (const auto& [user_id, ratings] : user_movie_dict) {
+        if (user_id == target_user_id) continue;
+        double dot_product = 0.0, target_norm = 0.0, user_norm = 0.0;
+        for (const auto& movie : movie_list) {
+            double target_rating = target_ratings.count(movie) ? target_ratings.at(movie) : 0.0;
+            double user_rating = ratings.count(movie) ? ratings.at(movie) : 0.0;
+            dot_product += target_rating * user_rating;
+            target_norm += target_rating * target_rating;
+            user_norm += user_rating * user_rating;
+        }
+        double similarity = (target_norm == 0 || user_norm == 0) ? 0 : dot_product / (std::sqrt(target_norm) * std::sqrt(user_norm));
+        cosine_similarities[user_id] = similarity;
+    }
+
+    std::unordered_map<std::string, std::unordered_map<std::string, double>> adjusted_user_movie_dict;
+    for (const auto& [user_id, ratings] : user_movie_dict) {
+        double similarity = cosine_similarities.count(user_id) ? cosine_similarities.at(user_id) : 1.0;
+        for (const auto& [movie, rating] : ratings) {
+            adjusted_user_movie_dict[user_id][movie] = rating * similarity;
+        }
+    }
+
+    std::unordered_map<std::string, double> movie_sums;
+    for (const auto& [user_id, ratings] : adjusted_user_movie_dict) {
+        if (user_id == target_user_id) continue;
+        for (const auto& [tconst, rating] : ratings) {
+            movie_sums[tconst] += rating;
+        }
+    }
+
+    std::vector<std::string> watched_list;
+    for (const auto& row : user_ratings) {
+        if (row.at("user_id") == target_user_id) {
+            watched_list.push_back(row.at("tconst"));
+        }
+    }
+
+    std::vector<std::pair<std::string, double>> recommendations;
+    for (const auto& [tconst, sum] : movie_sums) {
+        if (std::find(watched_list.begin(), watched_list.end(), tconst) == watched_list.end() && sum != 0) {
+            recommendations.emplace_back(tconst, sum);
+        }
+    }
+    std::sort(recommendations.begin(), recommendations.end(), [](const auto& a, const auto& b) {
+        return a.second > b.second;
+    });
+
+    std::vector<std::string> recommended;
+    for (const auto& rec : recommendations) {
+        recommended.push_back(rec.first);
     }
 
     return recommended;

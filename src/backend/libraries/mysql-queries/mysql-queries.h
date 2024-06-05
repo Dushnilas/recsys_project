@@ -16,7 +16,8 @@ bool ExecuteInsertQuery(const std::string& library, const std::string& function_
 bool ExecuteUpdateQuery(const std::string& library, const std::string& update_query);
 bool ExecuteDeleteQuery(const std::string& library, const std::string& delete_query);
 std::map<std::string, std::vector<std::string>> ExecuteSelectGenresQuery(const std::string& library, const std::string& query);
-std::vector<std::string> GetContentRecommendations(const std::string& user_id);
+std::vector<std::string> GetContentRecommendations(const std::string& target_user_id);
+std::vector<std::string> GetUserRecommendations(const std::string& target_user_id);
 
 
 #endif // MYSQL_QUERIES_H
