@@ -15,6 +15,7 @@
 namespace Ui {
 class PageMain;
 }
+class FilmPage;
 
 class LogIn;
 class UserInfo;
@@ -59,8 +60,30 @@ private slots:
 
     void on_FilmsB1_clicked();
 
+    void on_pushButton_39_clicked();
+
+    void on_pushButton_41_clicked();
+
+    void on_pushButton_43_clicked();
+
+    void on_pushButton_42_clicked();
+
+    void on_pushButton_40_clicked();
+
+    void on_pushButton_32_clicked();
+
+    void on_pushButton_38_clicked();
+
+    void on_pushButton_37_clicked();
+
+    void on_pushButton_34_clicked();
+
+    void on_pushButton_33_clicked();
+
 private:
     Ui::PageMain *ui;
+
+    FilmPage *fip; //Page of the films
 
     LogIn *lg; // Log In page
 

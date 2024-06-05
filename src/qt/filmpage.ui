@@ -633,7 +633,7 @@ color: rgb(229, 217, 190);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
+          <width>100</width>
           <height>100</height>
          </size>
         </property>
@@ -665,7 +665,7 @@ color: rgb(229, 217, 190);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>80</width>
           <height>100</height>
          </size>
         </property>

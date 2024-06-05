@@ -29,7 +29,6 @@ class TVShows;
 class KidsTV;
 class PersUser;
 
-
 class PersUser : public QMainWindow
 {
     Q_OBJECT
@@ -47,20 +46,23 @@ private slots:
 
     void on_FilmsBPU_clicked();
 
+    void on_TVShowsPU_clicked();
+
+    void on_KidsBPU_clicked();
+
+    void on_UserPU_clicked();
+
 private:
     Ui::PersUser *ui;
 
     CollectionPage *cp;
     LikedFilms *lf;
-
-    PageMain *pmPU;
-    UserInfo *uiPU;
-    TVShows *tvsPU;
-    KidsTV *kidsPU;
-    PersUser *puPU;
-
-
-
+    //Header
+    PageMain *pgFI;
+    UserInfo *uiFI;
+    TVShows *tvsFI;
+    KidsTV *kidsFI;
+    PersUser *puFC;
 };
 
 #endif // PERSUSER_H

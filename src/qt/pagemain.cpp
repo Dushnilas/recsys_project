@@ -13,6 +13,8 @@
 #include "userinfo.h"
 #include "persuser.h"
 
+#include "filmpage.h"
+
 
 PageMain::PageMain(QWidget *parent)
     : QMainWindow(parent)
@@ -112,11 +114,83 @@ void PageMain::on_KidsHButton_clicked()
 
 }
 
+//Film own page
+void PageMain::on_pushButton_39_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
 
 
+void PageMain::on_pushButton_41_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
 
 
+void PageMain::on_pushButton_43_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
 
 
+void PageMain::on_pushButton_42_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
 
+
+void PageMain::on_pushButton_40_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
+
+
+void PageMain::on_pushButton_32_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
+
+
+void PageMain::on_pushButton_38_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
+
+
+void PageMain::on_pushButton_37_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
+
+
+void PageMain::on_pushButton_34_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
+
+
+void PageMain::on_pushButton_33_clicked()
+{
+    hide();
+    fip = new FilmPage(this);
+    fip->show();
+}
 
