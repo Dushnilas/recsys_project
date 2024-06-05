@@ -108,6 +108,13 @@ FilmType Movie::getFilmType() const {
     return _film_type;
 }
 
+void Movie::setPhoto(std::string url){
+    _photo_url = url;
+}
+std::string Movie::getPhoto(){
+    return _photo_url;
+}
+
 std::vector<int> Movie::getYears() const {
     return std::vector<int>({_year_start, _year_end});
 }

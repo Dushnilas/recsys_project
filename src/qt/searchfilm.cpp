@@ -8,6 +8,7 @@
 #include <QVBoxLayout>  // Подключаем класс QVBoxLayout для вертикального размещения виджетов
 #include <QDebug>  // Подключаем класс QDebug для отладки
 #include <QPixmap>  // Подключаем класс QPixmap для работы с изображениями
+#include <QLabel>  // Подключаем класс QLabel для создания меток
 
 SearchFilm::SearchFilm(QWidget *parent)
     : QMainWindow(parent)
@@ -37,38 +38,44 @@ bool SearchFilm::Search_Films_Overall(std::vector<std::shared_ptr<Movie>>& resul
 
 
 
-// Функция для обновления кнопок в пользовательском интерфейсе
+/// Функция для обновления кнопок и меток в пользовательском интерфейсе
 void SearchFilm::updateButtons(const std::vector<std::shared_ptr<Movie>>& results)
 {
-    // Удаляем существующие кнопки (если они есть)
+    // Удаляем существующие элементы (если они есть)
     QLayoutItem *item;
     while ((item = ui->buttonContainer->layout()->takeAt(0)) != nullptr) {
-        delete item->widget();  // Удаляем виджет (кнопку)
+        delete item->widget();  // Удаляем виджет (кнопку или метку)
         delete item;  // Удаляем элемент макета
     }
 
-    // Для каждого найденного фильма создаем кнопку
+    // Для каждого найденного фильма создаем кнопку и метку
     for (const auto& movie : results) {
-        QPushButton *button = new QPushButton(QString::fromStdString(movie->getTconst()), this);  // Создаем кнопку с названием фильма
-
-        // Подключаем обработчик нажатия кнопки
-        connect(button, &QPushButton::clicked, this, [=]() {
-            // Обработка нажатия кнопки (если нужно)
-            qDebug() << "Button clicked for movie: " << QString::fromStdString(movie->getTconst());
-        });
+        // Создаем кнопку с названием фильма
+        QPushButton *button = new QPushButton(this);
 
         // Устанавливаем изображение на кнопку
-        QString imagePath = QString::fromStdString(movie->getPhoto());  // Получаем путь к изображению фильма
+        QString imagePath = QString::fromStdString(movie->getImagePath());  // Получаем путь к изображению фильма
         QPixmap pixmap(imagePath);  // Загружаем изображение
         QIcon ButtonIcon(pixmap);  // Создаем иконку из изображения
         button->setIcon(ButtonIcon);  // Устанавливаем иконку на кнопку
         button->setIconSize(pixmap.rect().size());  // Устанавливаем размер иконки
 
-        // Добавляем кнопку в контейнер с вертикальным макетом
-        ui->buttonContainer->layout()->addWidget(button);  // Добавляем кнопку в макет
-    }
-}
+        // Подключаем обработчик нажатия кнопки
+        connect(button, &QPushButton::clicked, this, [=]() {
+            // Обработка нажатия кнопки (если нужно)
+            qDebug() << "Button clicked for movie: " << QString::fromStdString(movie->getTitle());
+        });
 
+        // Создаем метку с названием фильма
+        QLabel *label = new QLabel(QString::fromStdString(movie->getTitle()), this);
+        label->setAlignment(Qt::AlignCenter);  // Центрируем текст метки
+
+        // Создаем вертикальный макет для кнопки и метки
+        QVBoxLayout *vLayout = new QVBoxLayout;
+        vLayout->addWidget(button);  // Добавляем кнопку в макет
+        vLayout->addWidget(label);  // Добавляем метку в макет
+
+        // Создаем виджет-контейнер для макета
 
 SearchFilm::~SearchFilm()
 {

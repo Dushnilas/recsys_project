@@ -61,6 +61,7 @@ private:
     std::vector<std::string> _genre;
     std::string _description;
     const FilmType _film_type;
+    std::string _photo_url;
     const int _year_start;
     int _year_end;
     const bool _is_adult;
@@ -77,6 +78,8 @@ public:
     const std::vector<std::string>& getGenre() const;
     std::string getDescription() const;
     FilmType getFilmType() const;
+    void setPhoto(std::string url);
+    std::string getPhoto();
     std::vector<int> getYears() const;
     bool IsAdult() const;
     double getRating() const;
