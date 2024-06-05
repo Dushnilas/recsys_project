@@ -59,6 +59,8 @@ private slots:
 
     void on_FilmsB1_clicked();
 
+    void on_SearchB1_clicked();
+
 private:
     Ui::PageMain *ui;
 

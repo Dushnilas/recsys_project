@@ -1,7 +1,5 @@
-cmake_minimum_required(VERSION 3.28)
-
 project(Mase_Cinema_Project VERSION 0.1 LANGUAGES CXX)
-
+cmake_minimum_required(VERSION 3.28)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -38,6 +36,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             ${PROJECT_SOURCES}
             Pics.qrc
             backend.h backend.cpp
+            stringpass.h stringpass.cpp
     )
 else()
     if(ANDROID)
@@ -51,16 +50,17 @@ else()
     endif()
 endif()
 
-set(PROJECT_PATH "${CMAKE_SOURCE_DIR}/src/backend/libraries/mysql-queries")
-
+# Include directories for dependencies
 include_directories(${CMAKE_SOURCE_DIR}/src/backend/libraries/Classes/logger)
 include_directories(${CMAKE_SOURCE_DIR}/src/backend/libraries/Classes/movie)
 include_directories(${CMAKE_SOURCE_DIR}/src/backend/libraries/Classes/users)
-include_directories(${PROJECT_PATH})
+include_directories(${CMAKE_SOURCE_DIR}/src/backend/libraries/mysql-queries)
 include_directories(/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/include/python3.12)
 
+# Link directories for Python
 link_directories(/opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib)
 
+# Link libraries
 target_link_libraries(Mase_Cinema_Project PRIVATE
         Qt${QT_VERSION_MAJOR}::Widgets
         /opt/homebrew/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/lib/libpython3.12.dylib
@@ -68,6 +68,7 @@ target_link_libraries(Mase_Cinema_Project PRIVATE
         classes
 )
 
+# Set target properties for macOS and Windows
 if(${QT_VERSION} VERSION_LESS 6.1.0)
     set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.Mase_Cinema_Project)
 endif()
@@ -79,6 +80,7 @@ set_target_properties(Mase_Cinema_Project PROPERTIES
         WIN32_EXECUTABLE TRUE
 )
 
+# Installation directives
 include(GNUInstallDirs)
 install(TARGETS Mase_Cinema_Project
         BUNDLE DESTINATION .
@@ -89,5 +91,7 @@ install(TARGETS Mase_Cinema_Project
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Mase_Cinema_Project)
 endif()
+
+set(PROJECT_PATH /Users/elizabethstorozheva/lisa_front/src/backend/libraries/mysql-queries)
 
 add_definitions(-DPROJECT_PATH="${PROJECT_PATH}")

@@ -24,6 +24,8 @@ private slots:
 
     void on_LogInBut_clicked();
 
+    void on_SignUpBSU_clicked();
+
 private:
     Ui::SignUp *ui;
 

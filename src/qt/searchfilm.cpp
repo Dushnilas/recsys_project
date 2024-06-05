@@ -1,12 +1,51 @@
 #include "searchfilm.h"
 #include "ui_searchfilm.h"
 
+#include "stringpass.h"
+#include <QString>
+
 SearchFilm::SearchFilm(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::SearchFilm)
 {
     ui->setupUi(this);
+
 }
+static QString filmname;
+
+void printClassString(StringPass &stringpass) {
+    filmname = stringpass.getString();
+}
+
+
+bool SearchFilm::Search_Films_Overall(std::vector<std::shared_ptr<Movie>>& result, std::string query)
+{
+    //QString searchPM = ui->lineEditPM->text();
+
+    searchMovies(result,query,10);
+    if (!result.empty()){
+
+        return true;
+    }
+
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 SearchFilm::~SearchFilm()
 {
