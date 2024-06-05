@@ -236,6 +236,9 @@ void Collection::removeMovie(const std::shared_ptr<Movie>& movie) {
         if (ExecuteDeleteQuery("library", query)) {
             Logger::getInstance().logInfo("Movie " + movie->getName() + " was removed from collection " + _name);
         }
+        else {
+            Logger::getInstance().logInfo("Movie " + movie->getName() + " can`t be removed from collection " + _name);
+        }
     } else {
         Logger::getInstance().logInfo("Movie " + movie->getName() + " doesn't in the collection " + _name);
     }
