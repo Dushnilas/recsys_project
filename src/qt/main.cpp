@@ -37,7 +37,7 @@ protected:
 
 int main(int argc, char *argv[])
 {
-    initializePythonInterpreter(PROJECT_PATH);
+    initializePythonInterpreter("/Users/maykorablina/Yandex.Disk.localized/CodingProjects/FUCK/src/backend/libraries/mysql-queries");
 
     ////     ---------------- TEST OF DATABASE------------------
     ////     ---------------- INITIALIZING VARIABLES -------------
@@ -145,7 +145,11 @@ int main(int argc, char *argv[])
     FirstLogInSignUp w;
     w.show();
 
+<<<<<<< HEAD
     //finalizePythonInterpreter();
+=======
+//    finalizePythonInterpreter();
+>>>>>>> 3f26f8893d2c3d6d9854ba0caec3651e3dc4c6d5
 
     return a.exec();
 

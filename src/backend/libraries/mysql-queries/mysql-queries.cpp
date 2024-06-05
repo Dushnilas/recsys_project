@@ -18,19 +18,11 @@ bool initializePythonInterpreter(const std::string& fixed_path) {
     PyRun_SimpleString("import os");
     PyRun_SimpleString("print('Current working directory:', os.getcwd())");
 
-    char abs_path[PATH_MAX];
-    if (realpath(fixed_path.c_str(), abs_path) == NULL) {
-        std::cerr << "Error resolving absolute path" << std::endl;
-        return false;
-    }
-    std::string library_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+    std::string library_path_cmd = "sys.path.append('" + std::string(fixed_path) + "')";
 
-    std::string venv_path = std::string(abs_path) + "/mysqlenv/lib/python3.12/site-packages";
-    if (realpath(venv_path.c_str(), abs_path) == NULL) {
-        std::cerr << "Error resolving absolute path for virtual environment" << std::endl;
-        return false;
-    }
-    std::string venv_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+    std::string venv_path = std::string(fixed_path) + "/mysqlenv/lib/python3.12/site-packages";
+
+    std::string venv_path_cmd = "sys.path.append('" + std::string(venv_path) + "')";
 
     PyRun_SimpleString(library_path_cmd.c_str());
     PyRun_SimpleString(venv_path_cmd.c_str());
@@ -357,4 +349,35 @@ std::map<std::string, std::vector<std::string>> ExecuteSelectGenresQuery(const s
     }
 
     return results;
+}
+
+std::vector<std::string> GetContentRecommendations(const std::string& user_id) {
+    std::string library = "library";
+    std::string likes_query = "SELECT user_id, tconst, rating FROM user_ratings WHERE user_id = '" + user_id + "' and rating >= 6 ORDER BY rating DESC;";
+    std::string dislikes_query = "SELECT user_id, tconst, rating FROM user_ratings WHERE user_id = '" + user_id + "' and rating < 6 ORDER BY rating DESC;";
+
+    std::vector<std::map<std::string, std::string>> likes = ExecuteSelectQuery(library, likes_query);
+    std::vector<std::map<std::string, std::string>> dislikes = ExecuteSelectQuery(library, dislikes_query);
+
+    std::vector<std::string> disliked;
+    for (const auto& d : dislikes) {
+        disliked.push_back(d.at("tconst"));
+    }
+
+    std::vector<std::string> recommended;
+    for (const auto& l : likes) {
+        std::string tc = l.at("tconst");
+        std::string sel_query = "SELECT * FROM cb_similarity WHERE index1 = '" + tc + "' OR index2 = '" + tc + "' ORDER BY similarity DESC LIMIT 5;";
+        std::vector<std::map<std::string, std::string>> sel = ExecuteSelectQuery(library, sel_query);
+
+        for (const auto& j : sel) {
+            if (j.at("index1") == tc && std::find(disliked.begin(), disliked.end(), j.at("index2")) == disliked.end()) {
+                recommended.push_back(j.at("index2"));
+            } else if (j.at("index2") == tc && std::find(disliked.begin(), disliked.end(), j.at("index1")) == disliked.end()) {
+                recommended.push_back(j.at("index1"));
+            }
+        }
+    }
+
+    return recommended;
 }

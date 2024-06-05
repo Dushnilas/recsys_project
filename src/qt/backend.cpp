@@ -47,8 +47,7 @@ void loadMovies() {
     Logger::getInstance().logInfo(std::to_string(counter) + " movies was uploaded.");
 }
 
-std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre, const FilmType filmType,
-                                                    const bool is_adult) {
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre, FilmType filmType, bool is_adult) {
 
     std::vector<std::shared_ptr<Movie>> genreMovies;
 
