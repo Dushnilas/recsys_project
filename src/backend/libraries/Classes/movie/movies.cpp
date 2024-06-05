@@ -5,10 +5,21 @@
 #include "../../mysql-queries/mysql-queries.h"
 
 // Definition of Actor class methods
-Actor::Actor(std::string name, std::string nconst, std::string photo_url, int birth_year, int death_year, int actor_importance):
-        _name(std::move(name)), _nconst(std::move(nconst)), _photo_url(std::move(photo_url)),
-        _birth_year(birth_year), _death_year(death_year), _actor_importance(actor_importance) {
-    Logger::getInstance().logInfo("Actor class object was created (" + _name + ").");
+Actor::Actor(std::string name, std::string character_played, std::string nconst, std::string photo_url, int birth_year, int death_year, int actor_importance, const std::string& n_role):
+        _name(std::move(name)), _character_played(std::move(character_played)), _nconst(std::move(nconst)),
+        _photo_url(std::move(photo_url)), _birth_year(birth_year), _death_year(death_year),
+        _actor_importance(actor_importance) {
+
+    if (n_role == "actor"){
+        _n_role = Character::Actor;
+    }
+    else if (n_role == "director"){
+        _n_role = Character::Director;
+    }
+    else if (n_role == "producer"){
+        _n_role = Character::Producer;
+    }
+//    Logger::getInstance().logInfo("Actor class object was created (" + _name + ").");
 }
 
 std::string Actor::getName() const {
@@ -139,9 +150,10 @@ void Movie::loadActors() {
 
     int counter = 0;
     for (auto el: buf){
-        auto actor = std::make_shared<Actor>(el.at("name"), el.at("nconst"), el.at("photo_url"),
+        auto actor = std::make_shared<Actor>(el.at("name"), el.at("character_played"),
+                                             el.at("nconst"), el.at("photo_url"),
                                              std::stoi(el.at("birth_year")), std::stoi(el.at("death_year")),
-                                             std::stoi(el.at("actor_importance")));
+                                             std::stoi(el.at("actor_importance")), el.at("n_role"));
 
         if (std::find_if(_actors.begin(), _actors.end(), [&actor](const std::shared_ptr<Actor>& a) {
             return compareActors(a, actor); }) == _actors.end()) {
@@ -192,7 +204,12 @@ void Movie::removeActor(const std::shared_ptr<Actor>& actor) {
 }
 
 void Movie::loadComments(){
+    std::string query = "SELECT * FROM comments WHERE tconst = '" + _tconst + "'";
+    std::vector<std::map<std::string, std::string>> select = ExecuteSelectQuery("library", query);
 
+    for (auto el: select){
+        _comments.push_back(el["comment"]);
+    }
 }
 
 const std::vector<std::string>& Movie::getComments() const {
@@ -205,7 +222,7 @@ void Movie::leaveComment(const std::string& com) {
 
 // Definition of Collection class methods
 Collection::Collection(int collection_id, const std::string& name): _collection_id(collection_id), _name(name) {
-    Logger::getInstance().logInfo("Collection class object was created (" + name + ").");
+//    Logger::getInstance().logInfo("Collection class object was created (" + name + ").");
 }
 
 std::string Collection::getName() const {
