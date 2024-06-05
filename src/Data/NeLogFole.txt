@@ -1,0 +1,1 @@
+2024-06-05 18:19:13 [INFO]    10000 movies was uploaded.

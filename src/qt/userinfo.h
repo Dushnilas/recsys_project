@@ -2,7 +2,6 @@
 #define USERINFO_H
 
 #include <QMainWindow>
-#include "mainpage.h"
 
 //Header
 #include "pagemain.h"

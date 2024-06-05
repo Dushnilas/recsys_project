@@ -23,7 +23,6 @@ set(PROJECT_SOURCES
         persuser.h persuser.cpp persuser.ui
         tvshows.h tvshows.cpp tvshows.ui
         kidstv.h kidstv.cpp kidstv.ui
-        mainwindow.h mainwindow.cpp mainwindow.ui
         filmpage.h filmpage.cpp filmpage.ui
         likedfilms.h likedfilms.cpp likedfilms.ui
         filmscollection.h filmscollection.cpp filmscollection.ui
@@ -37,8 +36,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             ${PROJECT_SOURCES}
             Pics.qrc
             backend.h backend.cpp
-            check.h check.cpp
-
     )
 else()
     if(ANDROID)
