@@ -16,170 +16,162 @@ UserInfo::~UserInfo()
     delete ui;
 }
 
-void UserInfo::on_pushButton_6_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_6_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_11_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_11_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_7_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_7_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_8_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_8_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_10_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_10_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_14_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_14_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_17_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_17_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_13_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_13_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_12_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_12_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_16_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_16_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_20_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_20_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_23_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_23_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_19_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_19_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_18_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_18_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 
-void UserInfo::on_pushButton_22_clicked()
-{
-    hide();
-    fip = new FilmPage(this);
-    fip->show();
-}
+// void UserInfo::on_pushButton_22_clicked()
+// {
+//     hide();
+//     fip = new FilmPage(this);
+//     fip->show();
+// }
 
 //Header
-void UserInfo::on_HomeBut_clicked()
+void UserInfo::on_HomeButFilms_clicked()
 {
     hide();
-    pgFI = new PageMain(this);
-    pgFI->show();
+    pmUI = new PageMain(this);
+    pmUI->show();
 }
 
 
-void UserInfo::on_FilmsBut_clicked()
+void UserInfo::on_TVShowsButFilms_clicked()
 {
-    hide();
-    uiFI = new UserInfo(this);
-    uiFI->show();
+    // hide();
+    // tvsUI = new TVShows(this);
+    // tvsUI->show();
 }
 
 
-void UserInfo::on_TVShowsBut_clicked()
+void UserInfo::on_KidsButFilms_clicked()
 {
     hide();
-    tvsFI = new TVShows(this);
-    tvsFI->show();
+    kidsUI = new KidsTV(this);
+    kidsUI->show();
 }
 
 
-void UserInfo::on_KidsBut_clicked()
+void UserInfo::on_UserButFilms_clicked()
 {
     hide();
-    kidsFI = new KidsTV(this);
-    kidsFI->show();
+    puUI = new PersUser(this);
+    puUI->show();
 }
 
 
-void UserInfo::on_UserBut_clicked()
+void UserInfo::on_SearchGButFilms_clicked()
 {
     hide();
-    puFC = new PersUser(this);
-    puFC->show();
-}
-
-
-void UserInfo::on_pushButton_clicked()
-{
-    hide();
-    sf = new SearchFilm(this);
-    sf->show();
+    sfUI = new SearchFilm(this);
+    sfUI->show();
 }
 

@@ -17,6 +17,7 @@ namespace Ui {
 class UserInfo;
 }
 class MainPage;
+class FilmPage;
 
 
 //Header
@@ -40,11 +41,9 @@ public:
 public slots:
 
 signals:
-//     //void buttonClicked();
+    //void buttonClicked();
 
 private slots:
-    //void onPushButton();
-    //void on_pushButton_clicked();
 
     void on_HomeButFilms_clicked();
 
@@ -62,6 +61,7 @@ private:
     Ui::UserInfo *ui;
 
     MainPage *mp1;
+    FilmPage *fip;
 
 
     PageMain *pmUI;
