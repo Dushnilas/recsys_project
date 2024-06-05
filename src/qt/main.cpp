@@ -116,8 +116,6 @@ int main(int argc, char *argv[])
     FirstLogInSignUp w;
     w.show();
 
-    finalizePythonInterpreter();
-
-     return a.exec();
+    return a.exec();
 
 }

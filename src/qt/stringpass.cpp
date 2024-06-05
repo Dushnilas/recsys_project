@@ -2,10 +2,10 @@
 
 StringPass::StringPass() {}
 
-void MyClass::setString(const QString &str) {
+void StringPass::setString(const QString &str) {
     myString = str;
 }
 
-QString MyClass::getString() const {
+QString StringPass::getString() const {
     return myString;
 }
