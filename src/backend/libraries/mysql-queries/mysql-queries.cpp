@@ -18,19 +18,11 @@ bool initializePythonInterpreter(const std::string& fixed_path) {
     PyRun_SimpleString("import os");
     PyRun_SimpleString("print('Current working directory:', os.getcwd())");
 
-    char abs_path[PATH_MAX];
-    if (realpath(fixed_path.c_str(), abs_path) == NULL) {
-        std::cerr << "Error resolving absolute path" << std::endl;
-        return false;
-    }
-    std::string library_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+    std::string library_path_cmd = "sys.path.append('" + std::string(fixed_path) + "')";
 
-    std::string venv_path = std::string(abs_path) + "/mysqlenv/lib/python3.12/site-packages";
-    if (realpath(venv_path.c_str(), abs_path) == NULL) {
-        std::cerr << "Error resolving absolute path for virtual environment" << std::endl;
-        return false;
-    }
-    std::string venv_path_cmd = "sys.path.append('" + std::string(abs_path) + "')";
+    std::string venv_path = std::string(fixed_path) + "/mysqlenv/lib/python3.12/site-packages";
+
+    std::string venv_path_cmd = "sys.path.append('" + std::string(venv_path) + "')";
 
     PyRun_SimpleString(library_path_cmd.c_str());
     PyRun_SimpleString(venv_path_cmd.c_str());

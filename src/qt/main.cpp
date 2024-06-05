@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[])
 {
-    initializePythonInterpreter(PROJECT_PATH);
+    initializePythonInterpreter("/Users/maykorablina/Yandex.Disk.localized/CodingProjects/FUCK/src/backend/libraries/mysql-queries");
 
     ////     ---------------- TEST OF DATABASE------------------
     ////     ---------------- INITIALIZING VARIABLES -------------
