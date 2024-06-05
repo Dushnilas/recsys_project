@@ -73,8 +73,8 @@ void Logger::log(LogLevel level, const std::string& message) {
 //    std::cout << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
 
     std::vector<std::map<std::string, std::string>> data = {
-            {{"timestamp", "2024-06-02 18:23:13"}, {"type", "[INFO]"},
-             {"message", "User abobus233 has logged in."}}};
+            {{"timestamp", getCurrentTime()}, {"type", prefix},
+             {"message", message}}};
     ExecuteInsertQuery("library", "insert", "logging", data);
     if (logFile.is_open()) {
         logFile << std::left << getCurrentTime() << " " << std::setw(10) <<  prefix << message << '\n';
