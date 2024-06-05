@@ -2,7 +2,7 @@
 #define PERSUSER_H
 
 
-#include "filmscollection.h"
+#include "collectionpage.h"
 #include "likedfilms.h"
 
 #include <QMainWindow>
@@ -19,9 +19,8 @@ class PersUser;
 }
 
 
-//class CollectionPage;
+class CollectionPage;
 class LikedFilms;
-class FilmsCollection;
 
 //Header
 class PageMain;
@@ -29,7 +28,6 @@ class UserInfo;
 class TVShows;
 class KidsTV;
 class PersUser;
-
 
 class PersUser : public QMainWindow
 {
@@ -52,21 +50,19 @@ private slots:
 
     void on_KidsBPU_clicked();
 
+    void on_UserPU_clicked();
+
 private:
     Ui::PersUser *ui;
 
-   //CollectionPage *cp;
-    FilmsCollection *fcPU;
+    CollectionPage *cp;
     LikedFilms *lf;
-
-    PageMain *pmPU;
-    UserInfo *uiPU;
-    TVShows *tvsPU;
-    KidsTV *kidsPU;
-    PersUser *puPU;
-
-
-
+    //Header
+    PageMain *pgFI;
+    UserInfo *uiFI;
+    TVShows *tvsFI;
+    KidsTV *kidsFI;
+    PersUser *puFC;
 };
 
 #endif // PERSUSER_H

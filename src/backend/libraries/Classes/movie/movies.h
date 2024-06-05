@@ -27,15 +27,17 @@ class Movie;
 class Actor : public std::enable_shared_from_this<Actor> {
 private:
     const std::string _name;
+    const std::string _character_played;
     const std::string _nconst;
     std::string _photo_url;
     int _birth_year;
     int _death_year;
     int _actor_importance;
+    Character _n_role;
 
 public:
-    Actor(std::string name, std::string nconst, std::string photo_url, int birth_year,
-          int death_year, int actor_importance);
+    Actor(std::string name, std::string character_played, std::string nconst, std::string photo_url, int birth_year,
+          int death_year, int actor_importance, const std::string& n_role);
 
     std::string getName() const;
     std::string getId() const;
@@ -60,6 +62,7 @@ private:
     const std::string _tconst;
     std::vector<std::string> _genre;
     std::string _description;
+    std::string _photo_url;
     const FilmType _film_type;
     std::string _photo_url;
     const int _year_start;
@@ -69,7 +72,7 @@ private:
     int _num_votes;
 
 public:
-    Movie(std::string name, std::string tconst, std::string description, FilmType film_type,
+    Movie(std::string name, std::string tconst, std::string description, FilmType film_type, std::string url,
           int year_start, int year_end, bool is_adult, double rating, int num_votes);
 
     std::string getName() const;

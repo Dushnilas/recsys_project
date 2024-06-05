@@ -37,8 +37,9 @@ void loadMovies() {
     int counter = 0;
     for (auto el: buf){
         auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"],  el["description"],
-                                             strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
-                                             std::stoi(el["is_adult"]), std::stod(el["rating"]), std::stoi(el["num_votes"]));
+                                             strToType(el["title_type"]), el["image_url"], std::stoi(el["year_start"]),
+                                             std::stoi(el["year_end"]), std::stoi(el["is_adult"]),
+                                             std::stod(el["rating"]), std::stoi(el["num_votes"]));
         all_movies.push_back(movie);
         movie->setGenre(genres[el["tconst"]]);
         counter++;
@@ -47,7 +48,8 @@ void loadMovies() {
     Logger::getInstance().logInfo(std::to_string(counter) + " movies was uploaded.");
 }
 
-std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre, FilmType filmType, bool is_adult) {
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre, const FilmType filmType,
+                                                    const bool is_adult) {
 
     std::vector<std::shared_ptr<Movie>> genreMovies;
 
@@ -80,8 +82,6 @@ std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& ge
     return {genreMovies.begin(), genreMovies.begin() + n};
 }
 
-void getRecommendation();
-
 bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2, const std::string& query) {
     size_t pos1 = m1->getName().find(query);
     size_t pos2 = m2->getName().find(query);
@@ -106,9 +106,7 @@ void searchMovies(std::vector<std::shared_ptr<Movie>>& result, const std::string
     }
 }
 
-//Log In code
-
-bool SignInFun(const std::string& login, const std::string& password){
+bool SignIn(const std::string& login, const std::string& password){
     std::string query = "SELECT a.user_id, a.pass, u.name, u.age, u.photo_url FROM auth a JOIN user_profile u ON u.user_id = a.user_id;";
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", query);
     for (const auto& el: buf){
@@ -124,16 +122,17 @@ bool SignInFun(const std::string& login, const std::string& password){
     return false;
 }
 
-bool SignUpFun(const std::string& login, const std::string& password, int age){
+bool SignUp(const std::string& login, const std::string& password){
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", "SELECT * FROM auth;");;
 
     if (std::find_if(buf.begin(), buf.end(), [&](const auto& c) {
-            return login == c.at("user_id"); }) == buf.end()) {
+        return login == c.at("user_id"); }) == buf.end()) {
 
-        std::vector<std::map<std::string, std::string>> data = {{{"user_id", login}, {"name", login,},
-                                                                 {"age", std::to_string(age)}, {"photo_url", ""}}};
+        std::vector<std::map<std::string, std::string>> data = {
+                {{"user_id", login}, {"name", login,}, {"age", "0"}, {"photo_url", ""}}};
 
-        std::vector<std::map<std::string, std::string>> data2 = {{{"user_id", login}, {"pass", password,}}};
+        std::vector<std::map<std::string, std::string>> data2 = {
+                {{"user_id", login}, {"pass", password,}}};
 
         if (ExecuteInsertQuery("library", "insert", "user_profile", data) and
             ExecuteInsertQuery("library", "insert", "auth", data2)){

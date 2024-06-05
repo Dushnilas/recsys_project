@@ -1,5 +1,6 @@
 #include "searchfilm.h"
 #include "ui_searchfilm.h"
+#include "backend.h"
 
 #include "stringpass.h"
 #include "backend.h"
