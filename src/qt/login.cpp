@@ -7,7 +7,7 @@
 #include "backend.h"
 
 class SignUp;
-
+//class BACKEND;
 
 LogIn::LogIn(QWidget *parent)
     : QMainWindow(parent)
@@ -48,9 +48,11 @@ void LogIn::on_ButNext_clicked()
     QString us = ui->UsernameTB->text();
     QString pass = ui->PasswordTB->text();
 
+    //bcLogIn = new BACKEND(this);
 
 
-    if(SignIn(us,pass))
+
+        if(SignInFun(us,pass))
     {
         hide();
         pg = new PageMain(this);

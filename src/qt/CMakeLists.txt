@@ -28,6 +28,7 @@ set(PROJECT_SOURCES
         likedfilms.h likedfilms.cpp likedfilms.ui
         filmscollection.h filmscollection.cpp filmscollection.ui
         collectionpage.h collectionpage.cpp collectionpage.ui
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -36,6 +37,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             ${PROJECT_SOURCES}
             Pics.qrc
             backend.h backend.cpp
+            check.h check.cpp
+
     )
 else()
     if(ANDROID)

@@ -7,6 +7,8 @@
 #include "../backend/libraries/mysql-queries/mysql-queries.h"
 #include "backend.h"
 
+//BACKEND::BACKEND() {}
+
 
 FilmType strToType(const std::string& type){
     if (type == "Movie") return FilmType::Movie;
@@ -111,7 +113,7 @@ void searchMovies(const std::vector<std::shared_ptr<Movie>>& all_movies, std::ve
 
 //Log In code
 
-bool SignIn(const std::string& login, const std::string& password){
+bool SignInFun(const std::string& login, const std::string& password){
     std::string query = "SELECT a.user_id, a.pass, u.name, u.age, u.photo_url FROM auth a JOIN user_profile u ON u.user_id = a.user_id;";
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", query);
     for (const auto& el: buf){
@@ -127,7 +129,7 @@ bool SignIn(const std::string& login, const std::string& password){
     return false;
 }
 
-bool SignUp(const std::string& login, const std::string& password){
+bool SignUpFun(const std::string& login, const std::string& password){
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", "SELECT * FROM auth;");;
 
     if (std::find_if(buf.begin(), buf.end(), [&](const auto& c) {

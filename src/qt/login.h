@@ -6,12 +6,15 @@
 #include "pagemain.h"
 #include "signup.h"
 
+#include "backend.h"
+
 namespace Ui {
 class LogIn;
 }
 
 class FirstLogInSignUp;
 class SignUp;
+//class BACKEND;
 
 class LogIn : public QMainWindow
 {
@@ -38,6 +41,8 @@ private:
     FirstLogInSignUp *fls;
 
     SignUp *su2;
+
+    //BACKEND *bcLogIn;
 
 
 
