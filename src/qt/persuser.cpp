@@ -15,8 +15,6 @@ PersUser::~PersUser()
 
 void PersUser::on_LikedBut_clicked()
 {
-
-
     hide();
 
     lf = new LikedFilms(this); //goes to liked page
@@ -26,52 +24,48 @@ void PersUser::on_LikedBut_clicked()
 
 void PersUser::on_CollectionsBut_clicked()
 {
-
     hide();
 
-    fcPU = new FilmsCollection(this); //goes to collections page
-    fcPU->show();
-
+    cp = new CollectionPage(this); //goes to collections page
+    cp->show();
 }
 
-
 //Header
-
 void PersUser::on_HomeBPU_clicked()
 {
     hide();
-
-    pmPU = new PageMain(this);
-    pmPU->show();
-
+    pgFI = new PageMain(this);
+    pgFI->show();
 }
+
 
 void PersUser::on_FilmsBPU_clicked()
 {
     hide();
-
-    uiPU = new UserInfo(this);
-    uiPU->show();
-
+    uiFI = new UserInfo(this);
+    uiFI->show();
 }
 
 
 void PersUser::on_TVShowsPU_clicked()
 {
     hide();
-
-    tvsPU = new TVShows(this);
-    tvsPU->show();
-
+    tvsFI = new TVShows(this);
+    tvsFI->show();
 }
 
 
 void PersUser::on_KidsBPU_clicked()
 {
     hide();
-
-    kidsPU = new KidsTV(this);
-    kidsPU->show();
-
+    kidsFI = new KidsTV(this);
+    kidsFI->show();
 }
 
+
+void PersUser::on_UserPU_clicked()
+{
+    hide();
+    puFC = new PersUser(this);
+    puFC->show();
+}

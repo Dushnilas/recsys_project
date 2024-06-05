@@ -13,8 +13,6 @@
 namespace Ui {
 class FilmPage;
 }
-class LikedFilms;
-class FilmsCollection;
 
 //Header
 class PageMain;
@@ -32,9 +30,6 @@ public:
     ~FilmPage();
 
 private slots:
-    void on_pushButton_7_clicked();
-
-    void on_pushButton_8_clicked();
 
     void on_HomeBFI_clicked();
 
@@ -48,8 +43,6 @@ private slots:
 
 private:
     Ui::FilmPage *ui;
-    LikedFilms *like;
-    FilmsCollection *collection;
 
     //Header
 
