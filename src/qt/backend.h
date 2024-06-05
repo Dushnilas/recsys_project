@@ -31,7 +31,7 @@ void searchMovies(const std::vector<std::shared_ptr<Movie>>& all_movies, std::ve
 
 bool SignInFun(const std::string& login, const std::string& password);
 
-bool SignUpFun(const std::string& login, const std::string& password);
+bool SignUpFun(const std::string& login, const std::string& password, int age);
 
 void print_select_genres(std::vector<std::pair<std::string, std::vector<std::string>>> results);
 

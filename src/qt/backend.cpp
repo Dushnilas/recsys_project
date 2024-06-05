@@ -127,17 +127,16 @@ bool SignInFun(const std::string& login, const std::string& password){
     return false;
 }
 
-bool SignUpFun(const std::string& login, const std::string& password){
+bool SignUpFun(const std::string& login, const std::string& password, int age){
     std::vector<std::map<std::string, std::string>> buf = ExecuteSelectQuery("library", "SELECT * FROM auth;");;
 
     if (std::find_if(buf.begin(), buf.end(), [&](const auto& c) {
             return login == c.at("user_id"); }) == buf.end()) {
 
-        std::vector<std::map<std::string, std::string>> data = {
-                                                                {{"user_id", login}, {"name", login,}, {"age", "0"}, {"photo_url", ""}}};
+        std::vector<std::map<std::string, std::string>> data = {{{"user_id", login}, {"name", login,},
+                                                                 {"age", std::to_string(age)}, {"photo_url", ""}}};
 
-        std::vector<std::map<std::string, std::string>> data2 = {
-                                                                 {{"user_id", login}, {"pass", password,}}};
+        std::vector<std::map<std::string, std::string>> data2 = {{{"user_id", login}, {"pass", password,}}};
 
         if (ExecuteInsertQuery("library", "insert", "user_profile", data) and
             ExecuteInsertQuery("library", "insert", "auth", data2)){
