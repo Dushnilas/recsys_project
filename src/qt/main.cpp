@@ -90,24 +90,60 @@ int main(int argc, char *argv[])
 //    };
 //    insert = ExecuteInsertQuery("library", "insert", "comments", data);
 //
-////     ------------ GET COMMENTS ON FILM --------------
-//    query = "SELECT * FROM comments WHERE tconst = '" + tconst + "'";
-//    select = ExecuteSelectQuery("library", query);
-//    print_select(select);
-//
-////     ------------------ INSERT LOG INTO LOG TABLE --------------
-//    data = {
-//        {{"timestamp", "2024-06-02 18:23:13"}, {"type", "[INFO]"}, {"message", "User abobus233 has logged in."}}
-//    };
-//    insert = ExecuteInsertQuery("library", "insert", "logging", data);
-//    query = "SELECT * FROM logging";
-//    select = ExecuteSelectQuery("library", query);
-//    print_select(select);
+    // ------------ GET COMMENTS ON FILM --------------
+    // query = "SELECT comment FROM comments WHERE tconst = '" + tconst + "'";
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
+
+    // ------------------ INSERT LOG INTO LOG TABLE --------------
+    // data = {
+    //     {{"timestamp", "2024-06-02 18:23:13"}, {"type", "[INFO]"}, {"message", "User abobus233 has logged in."}}
+    // // };
+    // insert = ExecuteInsertQuery("library", "insert", "logging", data);
+    // query = "SELECT * FROM logging";
+    // select = ExecuteSelectQuery("library", query);
+
+    // ------------DELETE FROM LOGGING --------------
+
+    // del = ExecuteDeleteQuery("library", "DELETE FROM logging WHERE message = 'User abobus233 has logged in.'");
+    // query = "SELECT * FROM logging";
+    //
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
+    // ------------------ GET ALL ACTORS FROM MOVIE (LINK IS EMPTY FOR NOW) -----------------------
+    // tconst = "tt1375666";
+    // query = "SELECT nt.actor_importance, nt.character_played, nt.nconst, n.name, n.birth_year, n.death_year, nt.n_role, '' as image_url FROM names_titles nt JOIN names n on n.nconst = nt.nconst WHERE tconst = '" + tconst +"';";
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
+
+    // -----------------
+    // query = "SELECT COUNT(*) FROM titles t JOIN ratings r ON t.tconst = r.tconst WHERE "
+    //                     "t.description IS NOT NULL AND t.description != '' AND t.year_start > 1950 AND r.num_votes > 200 ORDER BY r.num_votes DESC LIMIT 10000;";
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
+// -------------- REMOVE FILM FROM COLLECTION --------------------
+    // user_id = "PavelPopov";
+    // collection_name = "DUROV IS THE BEST";
+    // query = "SELECT collection_id FROM user_collections WHERE user_id = '" + user_id + "' AND collection_name = '" + collection_name + "';";
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
+    //
+    // tconst = "tt0103617";
+    // collection_id = select[0]["collection_id"];
+    // query = "DELETE FROM titles_collections WHERE collection_id = '" + collection_id + "' AND tconst = '" + tconst + "';";
+    // del = ExecuteDeleteQuery("library", query);
+    // query = "SELECT * FROM titles_collections WHERE collection_id = '" + collection_id + "';";
+    // select = ExecuteSelectQuery("library", query);
+    // print_select(select);
 
 
+// ------------ RECOMENDATION ON CONTENT!!!!!!!! -----------------------
+    std::vector<std::string> rec = GetContentRecommendations("PavelPopov");
+    for (auto r: rec) {
+        std::cout << yellow_color_code << r << reset_color_code << '\n';
+    }
 
-
-//    ------------- QT PART -----------------
+// ------------- QT PART -----------------
     Logger::getInstance().setLogFile("/Users/senya/recsys_project_front/src/Data/NeLogFole.txt");
 
     loadMovies(all_movies);
