@@ -47,28 +47,27 @@ void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
     Logger::getInstance().logInfo(std::to_string(counter) + " movies was uploaded.");
 }
 
-std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::shared_ptr<Movie>>& allMovies,
-                                                    int n, const std::string& genre, const FilmType filmType,
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre, const FilmType filmType,
                                                     const bool is_adult) {
 
     std::vector<std::shared_ptr<Movie>> genreMovies;
 
     if (!genre.empty()) {
-        for (const auto &movie: allMovies) {
+        for (const auto &movie: all_movies) {
             if (std::find(movie->getGenre().begin(), movie->getGenre().end(), genre) != movie->getGenre().end()) {
                 genreMovies.push_back(movie);
             }
         }
     }
     else if (filmType != FilmType::Default){
-        for (const auto &movie: allMovies) {
+        for (const auto &movie: all_movies) {
             if (movie->getFilmType() == filmType) {
                 genreMovies.push_back(movie);
             }
         }
     }
     else if (!is_adult){
-        for (const auto &movie: allMovies) {
+        for (const auto &movie: all_movies) {
             if (movie->IsAdult() == 0) {
                 genreMovies.push_back(movie);
             }
@@ -92,8 +91,7 @@ bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie
     return m1->getName().length() < m2->getName().length();
 }
 
-void searchMovies(const std::vector<std::shared_ptr<Movie>>& all_movies, std::vector<std::shared_ptr<Movie>>& result,
-                  const std::string& query, int n) {
+void searchMovies(std::vector<std::shared_ptr<Movie>>& result, const std::string& query, int n) {
 
     for (const auto& movie : all_movies) {
         if (movie->getName().find(query) != std::string::npos) {

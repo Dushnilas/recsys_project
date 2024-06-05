@@ -16,18 +16,16 @@ static std::vector<std::shared_ptr<Movie>> all_movies;
 
 FilmType strToType(const std::string& type);
 
-void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies);
+void loadMovies();
 
-std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::shared_ptr<Movie>>& allMovies,
-                                                    int n, const std::string& genre="", const FilmType filmType=FilmType::Default,
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre="", const FilmType filmType=FilmType::Default,
                                                     const bool is_adult=true);
 
 void getRecommendation();
 
 bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2, const std::string& query);
 
-void searchMovies(const std::vector<std::shared_ptr<Movie>>& all_movies, std::vector<std::shared_ptr<Movie>>& result,
-                  const std::string& query, int n);
+void searchMovies(std::vector<std::shared_ptr<Movie>>& result, const std::string& query, int n);
 
 bool SignInFun(const std::string& login, const std::string& password);
 
