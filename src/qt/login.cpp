@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QString>
 #include "signup.h"
+#include <string>
 
 #include "backend.h"
 
@@ -46,13 +47,18 @@ void LogIn::on_pushButton_3_clicked()
 void LogIn::on_ButNext_clicked()
 {
     QString us = ui->UsernameTB->text();
+    std::string usStr = us.toStdString();
+
     QString pass = ui->PasswordTB->text();
+    std::string passStr = pass.toStdString();
+
+
 
     //bcLogIn = new BACKEND(this);
 
 
 
-        if(SignInFun(us,pass))
+        if(SignInFun(usStr,passStr))
     {
         hide();
         pg = new PageMain(this);
@@ -63,25 +69,6 @@ void LogIn::on_ButNext_clicked()
         QMessageBox::information(this, "User","Your username or password is incorect");
 
     }
-
-    // if(us == "aleko" && pass == "12345")
-    // {
-    //     hide();
-    //     pg = new PageMain(this);
-    //     pg->show();
-
-    // }
-    // else
-    // {
-    //     QMessageBox::information(this, "User","Your username or password is incorect");
-
-    // }
-
-
-
-
-
-
 
 
 

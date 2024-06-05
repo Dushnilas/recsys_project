@@ -10,12 +10,6 @@
 #include "../backend/libraries/Classes/logger/logger.h"
 #include "../backend/libraries/mysql-queries/mysql-queries.h"
 
-// class BACKEND
-// {
-// public:
-//     BACKEND();
-// };
-
 
 static std::shared_ptr<AllUsers> main_user;
 static std::vector<std::shared_ptr<Movie>> all_movies;

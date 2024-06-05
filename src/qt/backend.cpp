@@ -7,8 +7,6 @@
 #include "../backend/libraries/mysql-queries/mysql-queries.h"
 #include "backend.h"
 
-//BACKEND::BACKEND() {}
-
 
 FilmType strToType(const std::string& type){
     if (type == "Movie") return FilmType::Movie;
