@@ -1,11 +1,6 @@
 #ifndef BACKEND_H
 #define BACKEND_H
 
-#include "firstloginsignup.h"
-#include "pagemain.h"
-#include "userinfo.h"
-
-#include <QApplication>
 
 #include <iostream>
 #include <vector>
@@ -15,6 +10,9 @@
 #include "../backend/libraries/Classes/logger/logger.h"
 #include "../backend/libraries/mysql-queries/mysql-queries.h"
 
+
+static std::shared_ptr<AllUsers> main_user;
+static std::vector<std::shared_ptr<Movie>> all_movies;
 
 FilmType strToType(const std::string& type);
 

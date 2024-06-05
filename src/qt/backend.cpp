@@ -1,10 +1,3 @@
-#include "backend.h"
-#include "firstloginsignup.h"
-#include "pagemain.h"
-#include "userinfo.h"
-
-#include <QApplication>
-
 #include <iostream>
 #include <vector>
 #include <iomanip>
@@ -12,10 +5,8 @@
 #include "../backend/libraries/Classes/users/user_and_dev.h"
 #include "../backend/libraries/Classes/logger/logger.h"
 #include "../backend/libraries/mysql-queries/mysql-queries.h"
+#include "backend.h"
 
-
-
-static std::shared_ptr<AllUsers> main_user;
 
 FilmType strToType(const std::string& type){
     if (type == "Movie") return FilmType::Movie;
