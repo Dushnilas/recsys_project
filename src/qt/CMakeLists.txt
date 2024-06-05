@@ -26,6 +26,7 @@ set(PROJECT_SOURCES
         tvshows.h tvshows.cpp tvshows.ui
         kidstv.h kidstv.cpp kidstv.ui
         pics.qrc
+        backend.cpp backend.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
