@@ -248,7 +248,11 @@ void Collection::removeMovie(const std::shared_ptr<Movie>& movie) {
     auto it = std::find(_collection.begin(), _collection.end(), movie);
     if (it != _collection.end()) {
         _collection.erase(it);
-        Logger::getInstance().logInfo("Movie " + movie->getName() + " was removed from collection " + _name);
+        std::string query = "DELETE FROM titles_collections WHERE collection_id = '" + std::to_string(_collection_id) +
+                "' AND tconst = '" + movie->getTconst() + "';";
+        if(ExecuteDeleteQuery("library", query)) {
+            Logger::getInstance().logInfo("Movie " + movie->getName() + " was removed from collection " + _name);
+        }
     } else {
         Logger::getInstance().logInfo("Movie " + movie->getName() + " doesn't in the collection " + _name);
     }
