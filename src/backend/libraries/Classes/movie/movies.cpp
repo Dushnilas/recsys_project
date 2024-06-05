@@ -82,10 +82,10 @@ void Actor::removeMovie(const std::shared_ptr<Movie>& movie) {
 }
 
 // Definition of Movie class methods
-Movie::Movie(std::string name, std::string tconst, std::string description, FilmType film_type,
+Movie::Movie(std::string name, std::string tconst, std::string description, FilmType film_type, std::string url,
              int year_start, int year_end, bool is_adult, double rating, int num_votes):
         _name(std::move(name)), _tconst(std::move(tconst)), _description(std::move(description)), _film_type(film_type),
-        _year_start(year_start), _year_end(year_end), _is_adult(is_adult), _rating(rating), _num_votes(num_votes) {
+        _photo_url(url), _year_start(year_start), _year_end(year_end), _is_adult(is_adult), _rating(rating), _num_votes(num_votes) {
 
 //    Logger::get Instance().logInfo("Movie class object was created (" + _name + ").");
 }
@@ -117,6 +117,14 @@ std::string Movie::getDescription() const {
 
 FilmType Movie::getFilmType() const {
     return _film_type;
+}
+
+void Movie::setPhoto(std::string url){
+    _photo_url = url;
+}
+
+std::string Movie::getPhoto(){
+    return _photo_url;
 }
 
 std::vector<int> Movie::getYears() const {

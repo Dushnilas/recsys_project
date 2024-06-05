@@ -41,13 +41,10 @@ public:
 public slots:
 
 signals:
-    //void buttonClicked();
 
 private slots:
 
     void on_HomeButFilms_clicked();
-
-    void on_FilmsButFilms_clicked();
 
     void on_TVShowsButFilms_clicked();
 
@@ -66,7 +63,7 @@ private:
 
     PageMain *pmUI;
     UserInfo *uiUI;
-    TVShows *tvsUi;
+    TVShows *tvsUI;
     KidsTV *kidsUI;
     PersUser *puUI;
 

@@ -62,6 +62,7 @@ private:
     const std::string _tconst;
     std::vector<std::string> _genre;
     std::string _description;
+    std::string _photo_url;
     const FilmType _film_type;
     const int _year_start;
     int _year_end;
@@ -70,7 +71,7 @@ private:
     int _num_votes;
 
 public:
-    Movie(std::string name, std::string tconst, std::string description, FilmType film_type,
+    Movie(std::string name, std::string tconst, std::string description, FilmType film_type, std::string url,
           int year_start, int year_end, bool is_adult, double rating, int num_votes);
 
     std::string getName() const;
@@ -79,6 +80,8 @@ public:
     const std::vector<std::string>& getGenre() const;
     std::string getDescription() const;
     FilmType getFilmType() const;
+    void setPhoto(std::string url);
+    std::string getPhoto();
     std::vector<int> getYears() const;
     bool IsAdult() const;
     double getRating() const;

@@ -63,7 +63,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="HomeBut">
+          <widget class="QPushButton" name="HomeButFilms">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -79,7 +79,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="TVShowsBut">
+          <widget class="QPushButton" name="FilmsButFilms">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -95,7 +95,7 @@ padding: 5px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="KidsBut">
+          <widget class="QPushButton" name="TVShowsButFilms">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -1088,7 +1088,7 @@ padding: 5px;</string>
      <x>0</x>
      <y>0</y>
      <width>962</width>
-     <height>36</height>
+     <height>38</height>
     </rect>
    </property>
   </widget>

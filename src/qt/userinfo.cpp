@@ -146,9 +146,9 @@ void UserInfo::on_HomeButFilms_clicked()
 
 void UserInfo::on_TVShowsButFilms_clicked()
 {
-    // hide();
-    // tvsUI = new TVShows(this);
-    // tvsUI->show();
+    hide();
+    tvsUI = new TVShows(this);
+    tvsUI->show();
 }
 
 

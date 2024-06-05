@@ -17,7 +17,7 @@ FilmType strToType(const std::string& type){
 }
 
 
-void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
+void loadMovies() {
     // Load all genres in map {tconst: [genre1, genre2, ...]}
     std::map<std::string, std::vector<std::string>> genres;
     std::string query = "SELECT top_movies.tconst, g.genre_name FROM (SELECT t.tconst FROM titles t JOIN ratings r ON "
@@ -37,9 +37,10 @@ void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
     int counter = 0;
     for (auto el: buf){
         auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"],  el["description"],
-                                             strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
-                                             std::stoi(el["is_adult"]), std::stod(el["rating"]), std::stoi(el["num_votes"]));
-        allMovies.push_back(movie);
+                                             strToType(el["title_type"]), el["image_url"], std::stoi(el["year_start"]),
+                                             std::stoi(el["year_end"]), std::stoi(el["is_adult"]),
+                                             std::stod(el["rating"]), std::stoi(el["num_votes"]));
+        all_movies.push_back(movie);
         movie->setGenre(genres[el["tconst"]]);
         counter++;
     }
@@ -47,28 +48,27 @@ void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
     Logger::getInstance().logInfo(std::to_string(counter) + " movies was uploaded.");
 }
 
-std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::shared_ptr<Movie>>& allMovies,
-                                                    int n, const std::string& genre, const FilmType filmType,
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre, const FilmType filmType,
                                                     const bool is_adult) {
 
     std::vector<std::shared_ptr<Movie>> genreMovies;
 
     if (!genre.empty()) {
-        for (const auto &movie: allMovies) {
+        for (const auto &movie: all_movies) {
             if (std::find(movie->getGenre().begin(), movie->getGenre().end(), genre) != movie->getGenre().end()) {
                 genreMovies.push_back(movie);
             }
         }
     }
     else if (filmType != FilmType::Default){
-        for (const auto &movie: allMovies) {
+        for (const auto &movie: all_movies) {
             if (movie->getFilmType() == filmType) {
                 genreMovies.push_back(movie);
             }
         }
     }
     else if (!is_adult){
-        for (const auto &movie: allMovies) {
+        for (const auto &movie: all_movies) {
             if (movie->IsAdult() == 0) {
                 genreMovies.push_back(movie);
             }
@@ -82,8 +82,6 @@ std::vector<std::shared_ptr<Movie>> getMoviesSorted(const std::vector<std::share
     return {genreMovies.begin(), genreMovies.begin() + n};
 }
 
-void getRecommendation();
-
 bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2, const std::string& query) {
     size_t pos1 = m1->getName().find(query);
     size_t pos2 = m2->getName().find(query);
@@ -92,8 +90,7 @@ bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie
     return m1->getName().length() < m2->getName().length();
 }
 
-void searchMovies(const std::vector<std::shared_ptr<Movie>>& all_movies, std::vector<std::shared_ptr<Movie>>& result,
-                  const std::string& query, int n) {
+void searchMovies(std::vector<std::shared_ptr<Movie>>& result, const std::string& query, int n) {
 
     for (const auto& movie : all_movies) {
         if (movie->getName().find(query) != std::string::npos) {
