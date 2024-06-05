@@ -110,13 +110,13 @@ int main(int argc, char *argv[])
     //    ------------- QT PART -----------------
     Logger::getInstance().setLogFile("/Users/senya/recsys_project_front/src/Data/NeLogFole.txt");
 
-    loadMovies(all_movies);
+    loadMovies();
 
     QApplication a(argc, argv);
     FirstLogInSignUp w;
     w.show();
 
-    finalizePythonInterpreter();
+//    finalizePythonInterpreter();
 
     return a.exec();
 

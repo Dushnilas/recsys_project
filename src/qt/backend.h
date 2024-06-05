@@ -18,8 +18,8 @@ FilmType strToType(const std::string& type);
 
 void loadMovies();
 
-std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre="", const FilmType filmType=FilmType::Default,
-                                                    const bool is_adult=true);
+std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre="", FilmType filmType=FilmType::Default,
+                                                    bool is_adult=true);
 
 void getRecommendation();
 

@@ -52,7 +52,8 @@ void LogIn::on_ButNext_clicked()
 
 
 
-        if(SignInFun(us.toStdString(),pass.toStdString()))
+//        if(SignInFun(us.toStdString(),pass.toStdString()))
+    if (true)
     {
         hide();
         pg = new PageMain(this);
