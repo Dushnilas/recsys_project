@@ -91,7 +91,7 @@ color:rgb(229, 217, 190)</string>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="usernameTB">
+           <widget class="QLineEdit" name="usernameTBSU">
             <property name="styleSheet">
              <string notr="true">border: 1px solid rgb(229, 217, 190);
 border-radius: 5px;
@@ -111,7 +111,7 @@ color:rgb(229, 217, 190)</string>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="PasswordTB">
+           <widget class="QLineEdit" name="PasswordTBSU">
             <property name="styleSheet">
              <string notr="true">border: 1px solid rgb(229, 217, 190);
 border-radius: 5px;
@@ -120,26 +120,6 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(255, 255, 255, 0);
-color:rgb(229, 217, 190)</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Repeate your password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLineEdit" name="RepPassTB">
-            <property name="styleSheet">
-             <string notr="true">border: 1px solid rgb(229, 217, 190);
-border-radius: 5px;
-padding: 5px;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
            <widget class="QLabel" name="label_4">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);
@@ -150,8 +130,8 @@ color:rgb(229, 217, 190)</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
-           <widget class="QLineEdit" name="AgeTB">
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="AgeTBSU">
             <property name="styleSheet">
              <string notr="true">border: 1px solid rgb(229, 217, 190);
 border-radius: 5px;
@@ -159,23 +139,21 @@ padding: 5px;</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_5">
+          <item row="3" column="1">
+           <widget class="QPushButton" name="SignUpBSU">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgba(255, 255, 255, 0);
-color:rgb(229, 217, 190)</string>
+             <string notr="true">border: 4px solid rgb(229, 217, 190);
+border-radius: 5px;
+padding: 5px;</string>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Email&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QLineEdit" name="EmailTB">
-            <property name="styleSheet">
-             <string notr="true">border: 1px solid rgb(229, 217, 190);
-border-radius: 5px;
-padding: 5px;</string>
+             <string>Sign Up</string>
             </property>
            </widget>
           </item>
@@ -229,7 +207,7 @@ border-radius: 5px;
 padding: 5px;</string>
         </property>
         <property name="text">
-         <string>Leave</string>
+         <string>Back</string>
         </property>
        </widget>
       </item>

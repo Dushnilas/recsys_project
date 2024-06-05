@@ -361,6 +361,22 @@ padding: 5px;</string>
       </item>
      </layout>
     </item>
+    <item row="2" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QPushButton" name="LeaveBPU">
+        <property name="styleSheet">
+         <string notr="true">border: 4px solid rgb(229, 217, 190);
+border-radius: 5px;
+padding: 5px;</string>
+        </property>
+        <property name="text">
+         <string>Leave</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">

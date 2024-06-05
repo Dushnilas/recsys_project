@@ -157,7 +157,7 @@ padding: 5px;
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit">
+          <widget class="QLineEdit" name="lineEditPM">
            <property name="styleSheet">
             <string notr="true">border: 4px solid rgb(229, 217, 190);
 border-radius: 5px;
@@ -246,7 +246,7 @@ padding: 5px;
       </property>
       <widget class="QWidget" name="FilmsTab">
        <attribute name="icon">
-        <iconset resource="pics.qrc">
+        <iconset resource="Pics.qrc">
          <normaloff>:/rec/Pics/Films.png</normaloff>:/rec/Pics/Films.png</iconset>
        </attribute>
        <attribute name="title">
@@ -667,7 +667,7 @@ color:white</string>
       </widget>
       <widget class="QWidget" name="ShowTab">
        <attribute name="icon">
-        <iconset resource="pics.qrc">
+        <iconset resource="Pics.qrc">
          <normaloff>:/rec/Pics/TVShows.png</normaloff>:/rec/Pics/TVShows.png</iconset>
        </attribute>
        <attribute name="title">
@@ -1090,7 +1090,7 @@ color:white</string>
       </widget>
       <widget class="QWidget" name="KidsTab">
        <attribute name="icon">
-        <iconset resource="pics.qrc">
+        <iconset resource="Pics.qrc">
          <normaloff>:/rec/Pics/Kids.png</normaloff>:/rec/Pics/Kids.png</iconset>
        </attribute>
        <attribute name="title">
@@ -1106,7 +1106,7 @@ color:white</string>
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-72</y>
+             <y>0</y>
              <width>881</width>
              <height>568</height>
             </rect>
@@ -1523,7 +1523,7 @@ padding: 5px;</string>
   </widget>
  </widget>
  <resources>
-  <include location="pics.qrc"/>
+  <include location="Pics.qrc"/>
  </resources>
  <connections/>
 </ui>

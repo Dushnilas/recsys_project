@@ -2,9 +2,38 @@
 #include "pagemain.h"
 #include "userinfo.h"
 #include "backend.h"
+#include <QMessageBox>
+#include <QCloseEvent>
 
 #include <QApplication>
 
+
+class YourMainWindowClass : public QMainWindow {
+    // Остальные члены класса
+
+protected:
+    // Переопределение метода closeEvent
+    void closeEvent(QCloseEvent *event) override {
+        // Проверка, нужно ли выполнить какие-либо действия перед закрытием окна
+        if (true) {
+            // Показываем диалоговое окно с запросом подтверждения закрытия
+            QMessageBox::StandardButton reply;
+            reply = QMessageBox::question(this, "Подтверждение", "Вы уверены, что хотите закрыть приложение?",
+                                          QMessageBox::Yes|QMessageBox::No);
+            if (reply == QMessageBox::Yes) {
+                // Если пользователь подтвердил закрытие, вызываем стандартное событие закрытия
+                event->accept();
+            } else {
+                // Если пользователь отменил закрытие, игнорируем событие закрытия
+                event->ignore();
+            }
+        } else {
+            // Если дополнительные действия перед закрытием не требуются, вызываем стандартное событие закрытия
+            QMainWindow::closeEvent(event);
+        }
+    }
+
+};
 
 int main(int argc, char *argv[])
 {
@@ -110,14 +139,16 @@ int main(int argc, char *argv[])
     //    ------------- QT PART -----------------
     Logger::getInstance().setLogFile("/Users/senya/recsys_project_front/src/Data/NeLogFole.txt");
 
-    loadMovies(all_movies);
+    loadMovies();
 
     QApplication a(argc, argv);
     FirstLogInSignUp w;
     w.show();
 
-    finalizePythonInterpreter();
+    //finalizePythonInterpreter();
 
     return a.exec();
 
 }
+
+

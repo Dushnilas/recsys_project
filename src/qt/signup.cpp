@@ -34,3 +34,20 @@ void SignUp::on_LogInBut_clicked()
 
 }
 
+
+void SignUp::on_SignUpBSU_clicked()
+{
+    QString usSU = ui->usernameTBSU->text();
+    QString passSU = ui->PasswordTBSU->text();
+    QString ageSU = ui->AgeTBSU->text();
+
+
+    //if()
+
+
+
+
+
+
+}
+

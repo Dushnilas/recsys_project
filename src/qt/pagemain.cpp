@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QScrollArea>
 #include <QWidget>
+#include <QString>
 #include "userinfo.h"
 #include "persuser.h"
 
@@ -12,6 +13,10 @@
 #include "kidstv.h"
 #include "userinfo.h"
 #include "persuser.h"
+
+#include "searchfilm.h"
+
+#include "stringpass.h"
 
 
 PageMain::PageMain(QWidget *parent)
@@ -110,10 +115,22 @@ void PageMain::on_KidsHButton_clicked()
     kidstv = new KidsTV(this); //Goes to kids
     kidstv->show();
 
+
 }
 
+static QString searchPM;
 
+//Search above
+void PageMain::on_SearchB1_clicked()
+{
+    searchPM = ui->lineEditPM->text();
 
+}
+
+void setClassString(StringPass &stringpass) {
+    stringpass.setString(searchPM);
+
+}
 
 
 

@@ -17,7 +17,7 @@ FilmType strToType(const std::string& type){
 }
 
 
-void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
+void loadMovies() {
     // Load all genres in map {tconst: [genre1, genre2, ...]}
     std::map<std::string, std::vector<std::string>> genres;
     std::string query = "SELECT top_movies.tconst, g.genre_name FROM (SELECT t.tconst FROM titles t JOIN ratings r ON "
@@ -39,7 +39,7 @@ void loadMovies(std::vector<std::shared_ptr<Movie>> &allMovies) {
         auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"],  el["description"],
                                              strToType(el["title_type"]), std::stoi(el["year_start"]), std::stoi(el["year_end"]),
                                              std::stoi(el["is_adult"]), std::stod(el["rating"]), std::stoi(el["num_votes"]));
-        allMovies.push_back(movie);
+        all_movies.push_back(movie);
         movie->setGenre(genres[el["tconst"]]);
         counter++;
     }
