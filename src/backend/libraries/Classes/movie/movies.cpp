@@ -153,7 +153,7 @@ void Movie::loadActors() {
         auto actor = std::make_shared<Actor>(el.at("name"), el.at("character_played"),
                                              el.at("nconst"), el.at("photo_url"),
                                              std::stoi(el.at("birth_year")), std::stoi(el.at("death_year")),
-                                             std::stoi(el.at("actor_importance")));
+                                             std::stoi(el.at("actor_importance")), el.at("n_role"));
 
         if (std::find_if(_actors.begin(), _actors.end(), [&actor](const std::shared_ptr<Actor>& a) {
             return compareActors(a, actor); }) == _actors.end()) {
