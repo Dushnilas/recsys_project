@@ -2,6 +2,7 @@
 #define SEARCHFILM_H
 
 #include <QMainWindow>
+#include "backend.h"
 
 //Header
 #include "pagemain.h"
@@ -39,6 +40,12 @@ private slots:
     void on_KidsBFSearch_clicked();
 
     void on_UserBFSearch_clicked();
+
+    void on_pushButton_11_clicked();
+
+    bool Search_Films_Overall(std::vector<std::shared_ptr<Movie>>& result, std::string query);
+
+    void updateButtons(const std::vector<std::shared_ptr<Movie>>& results);
 
 private:
     Ui::SearchFilm *ui;
