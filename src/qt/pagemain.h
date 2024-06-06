@@ -5,6 +5,8 @@
 #include <QScrollArea>
 #include <QWidget>
 #include <QPushButton>
+#include <QString>
+#include <string>
 
 #include "tvshows.h"
 #include "kidstv.h"
@@ -19,6 +21,7 @@ class PageMain;
 class LogIn;
 class UserInfo;
 class PersUser;
+class SearchFilm;
 
 class QPushButton;
 
@@ -30,7 +33,12 @@ public:
     explicit PageMain(QWidget *parent = nullptr);
     ~PageMain();
 
+    //std::string getStringVariable() const;
+    //void setStringVariable(const std::string &value);
+
+
 signals:
+    void sendSearchQuery(const QString &query);
 
 
 private slots:
@@ -44,10 +52,8 @@ private slots:
 
     void on_GoTpTVShowsB_clicked();
 
-    //void onGoToTVShowsButtonClicked();//надо для проверки сигнала
 
 
-    //void on_FilmsB1_clicked();
 
     void on_TVShowsB1_clicked();
 
@@ -55,14 +61,16 @@ private slots:
 
     void on_KidsHButton_clicked();
 
-    //void on_FilmB1_clicked();
 
     void on_FilmsB1_clicked();
 
     void on_SearchB1_clicked();
 
+
 private:
     Ui::PageMain *ui;
+
+    std::string stringVariable;
 
     LogIn *lg; // Log In page
 
@@ -73,6 +81,8 @@ private:
     KidsTV *kidstv; //Kids
 
     TVShows *tvsh; //TVShows
+
+    SearchFilm *searchPMF;
 
 };
 

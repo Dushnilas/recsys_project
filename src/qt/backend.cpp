@@ -17,7 +17,7 @@ FilmType strToType(const std::string& type){
 }
 
 
-void loadMovies() {
+void loadMovies(std::vector<QSharedPointer<Movie>>& allmovies) {
     // Load all genres in map {tconst: [genre1, genre2, ...]}
     std::map<std::string, std::vector<std::string>> genres;
     std::string query = "SELECT top_movies.tconst, g.genre_name FROM (SELECT t.tconst FROM titles t JOIN ratings r ON "
@@ -36,22 +36,23 @@ void loadMovies() {
 
     int counter = 0;
     for (auto el: buf){
-        auto movie = std::make_shared<Movie>(el["title_name"], el["tconst"],  el["description"],
+        auto movie = QSharedPointer<Movie>::create(el["title_name"], el["tconst"],  el["description"],
                                              strToType(el["title_type"]), el["image_url"], std::stoi(el["year_start"]),
                                              std::stoi(el["year_end"]), std::stoi(el["is_adult"]),
                                              std::stod(el["rating"]), std::stoi(el["num_votes"]));
-        all_movies.push_back(movie);
+        allmovies.push_back(movie);
         movie->setGenre(genres[el["tconst"]]);
         counter++;
     }
+    std::cout << counter;
 
     Logger::getInstance().logInfo(std::to_string(counter) + " movies was uploaded.");
 }
 
-std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& genre, const FilmType filmType,
+std::vector<QSharedPointer<Movie>> getMoviesSorted(int n, const std::string& genre, const FilmType filmType,
                                                     const bool is_adult) {
 
-    std::vector<std::shared_ptr<Movie>> genreMovies;
+    std::vector<QSharedPointer<Movie>> genreMovies;
 
     if (!genre.empty()) {
         for (const auto &movie: all_movies) {
@@ -75,14 +76,14 @@ std::vector<std::shared_ptr<Movie>> getMoviesSorted(int n, const std::string& ge
         }
     }
 
-    std::sort(genreMovies.begin(), genreMovies.end(),[](const std::shared_ptr<Movie>& a, const std::shared_ptr<Movie>& b) {
+    std::sort(genreMovies.begin(), genreMovies.end(),[](const QSharedPointer<Movie>& a, const QSharedPointer<Movie>& b) {
         return a->getRating() > b->getRating(); });
 
     if (genreMovies.size() <= n) return genreMovies;
     return {genreMovies.begin(), genreMovies.begin() + n};
 }
 
-bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2, const std::string& query) {
+bool compareMovies(const QSharedPointer<Movie>& m1, const QSharedPointer<Movie>& m2, const std::string& query) {
     size_t pos1 = m1->getName().find(query);
     size_t pos2 = m2->getName().find(query);
 
@@ -90,15 +91,18 @@ bool compareMovies(const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie
     return m1->getName().length() < m2->getName().length();
 }
 
-void searchMovies(std::vector<std::shared_ptr<Movie>>& result, const std::string& query, int n) {
+void searchMovies(const std::vector<QSharedPointer<Movie>>& AllMovies, std::vector<QSharedPointer<Movie>>& result, std::string query, int n) {
 
-    for (const auto& movie : all_movies) {
+    for (const auto& movie : AllMovies) {
+
+
         if (movie->getName().find(query) != std::string::npos) {
+
             result.push_back(movie);
         }
     }
 
-    std::sort(result.begin(), result.end(), [&](const std::shared_ptr<Movie>& m1, const std::shared_ptr<Movie>& m2) {
+    std::sort(result.begin(), result.end(), [&](const QSharedPointer<Movie>& m1, const QSharedPointer<Movie>& m2) {
         return compareMovies(m1, m2, query); });
 
     if (n < result.size()) {

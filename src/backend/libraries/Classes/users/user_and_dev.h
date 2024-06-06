@@ -6,6 +6,8 @@
 #include <vector>
 #include <memory>
 #include "../movie/movies.h"
+#include <QSharedPointer>
+
 
 enum class userAccess
 {
@@ -57,8 +59,8 @@ public:
     void createCol(const std::string& name);
     bool removeCol(const std::shared_ptr<Collection>& collection);
 
-    bool leaveComment(const std::shared_ptr<Movie>& movie, const std::string& com);
-    void makeVote(const std::shared_ptr<Movie>& movie, int vote);
+    bool leaveComment(const QSharedPointer<Movie>& movie, const std::string& com);
+    void makeVote(const QSharedPointer<Movie>& movie, int vote);
 };
 
 class User : public AllUsers{

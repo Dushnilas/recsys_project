@@ -90,7 +90,7 @@ void AllUsers::loadCol() {
 
     int counter = 0;
     for (auto el: buf){
-        auto col = std::make_shared<Collection>(std::stoi(el.at("collection_id")),
+        auto col = QSharedPointer<Movie>::create(std::stoi(el.at("collection_id")),
                                                 el.at("collection_name"));
 
         if (std::find_if(_all_collection.begin(), _all_collection.end(), [&col](const std::shared_ptr<Collection>& c) {
@@ -137,12 +137,12 @@ void AllUsers::createCol(const std::string& name) {
         }
     }
     int id = 0;
-    auto newCollection = std::make_shared<Collection>(id, name);
+    auto newCollection = QSharedPointer<Movie>::create(id, name);
     _all_collection.push_back(newCollection);
     Logger::getInstance().logInfo("Collection " + name + " was created by " + _name);
 }
 
-bool AllUsers::leaveComment(const std::shared_ptr<Movie>& movie, const std::string& com) {
+bool AllUsers::leaveComment(const QSharedPointer<Movie>& movie, const std::string& com) {
     std::vector<std::map<std::string, std::string>> data = {
             {{"user_id", _login}, {"tconst", movie->getTconst()}, {"comment", com}}
     };
@@ -156,7 +156,7 @@ bool AllUsers::leaveComment(const std::shared_ptr<Movie>& movie, const std::stri
     return false;
 }
 
-void AllUsers::makeVote(const std::shared_ptr<Movie>& movie, int vote){
+void AllUsers::makeVote(const QSharedPointer<Movie>& movie, int vote){
     if (0 <= vote and vote <= 10){
         movie->updateRating(vote);
         Logger::getInstance().logInfo("Movie (" + movie->getName() + ") rating update.");

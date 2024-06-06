@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[])
 {
-    initializePythonInterpreter(PROJECT_PATH);
+    initializePythonInterpreter("/Users/elizabethstorozheva/lisa_front/src/backend/libraries/mysql-queries");
 
 ////     ---------------- TEST OF DATABASE------------------
 ////     ---------------- INITIALIZING VARIABLES -------------
@@ -108,9 +108,14 @@ int main(int argc, char *argv[])
 
 
 //    ------------- QT PART -----------------
-    Logger::getInstance().setLogFile("/Users/senya/recsys_project_front/src/Data/NeLogFole.txt");
+    // Logger::getInstance().setLogFile("/Users/senya/recsys_project_front/src/Data/NeLogFole.txt");
 
-    loadMovies();
+    loadMovies(all_movies);
+    // std::cout << all_movies.size() << '\n';
+
+    std::vector<std::shared_ptr<Movie>> buf;
+    searchMovies(all_movies, buf, "a", 10);
+    // std::cout << buf.size() << '\n';
 
     QApplication a(argc, argv);
     FirstLogInSignUp w;

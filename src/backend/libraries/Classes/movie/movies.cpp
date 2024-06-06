@@ -31,7 +31,7 @@ std::string Actor::getId() const{
 }
 
 
-const std::vector<std::shared_ptr<Movie>>& Actor::getMovies() const {
+const std::vector<QSharedPointer<Movie>>& Actor::getMovies() const {
     return _movies;
 }
 
@@ -47,16 +47,16 @@ int Actor::getImportance() const {
     return _actor_importance;
 }
 
-const std::map<std::shared_ptr<Movie>, Character>& Actor::getAllCharacters() const {
+const std::map<QSharedPointer<Movie>, Character>& Actor::getAllCharacters() const {
     return _all_characters;
 }
 
-bool compareMovies(const std::shared_ptr<Movie>& movie1, const std::shared_ptr<Movie>& movie2) {
+bool compareMovies(const QSharedPointer<Movie>& movie1, const QSharedPointer<Movie>& movie2) {
     return movie1.get() == movie2.get();
 }
 
-void Actor::addToMovie(const std::shared_ptr<Movie>& movie) {
-    if (std::find_if(_movies.begin(), _movies.end(), [&movie](const std::shared_ptr<Movie>& m) {
+void Actor::addToMovie(const QSharedPointer<Movie>& movie) {
+    if (std::find_if(_movies.begin(), _movies.end(), [&movie](const QSharedPointer<Movie>& m) {
         return compareMovies(m, movie); }) == _movies.end()){
         _movies.push_back(movie);
         Logger::getInstance().logInfo("Actor`s movies list was updated. Actor " + _name + " was added to "
@@ -68,8 +68,8 @@ void Actor::addToMovie(const std::shared_ptr<Movie>& movie) {
     }
 }
 
-void Actor::removeMovie(const std::shared_ptr<Movie>& movie) {
-    auto it = std::find_if(_movies.begin(), _movies.end(), [&movie](const std::shared_ptr<Movie>& m) {
+void Actor::removeMovie(const QSharedPointer<Movie>& movie) {
+    auto it = std::find_if(_movies.begin(), _movies.end(), [&movie](const QSharedPointer<Movie>& m) {
         return compareMovies(m, movie); });
     if (it != _movies.end()) {
         _movies.erase(it);
@@ -99,7 +99,7 @@ std::string Movie::getTconst() const{
 }
 
 
-const std::vector<std::shared_ptr<Actor>>& Movie::getActors() const {
+const std::vector<QSharedPointer<Actor>>& Movie::getActors() const {
     return _actors;
 }
 
@@ -122,10 +122,7 @@ FilmType Movie::getFilmType() const {
 void Movie::setPhoto(std::string url){
     _photo_url = url;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 7558b042c098fadca275661685b31b6e6d38afb9
 std::string Movie::getPhoto(){
     return _photo_url;
 }
@@ -152,7 +149,7 @@ void Movie::updateRating(double new_vote){
 }
 
 
-bool compareActors(const std::shared_ptr<Actor>& actor1, const std::shared_ptr<Actor>& actor2) {
+bool compareActors(const QSharedPointer<Actor>& actor1, const QSharedPointer<Actor>& actor2) {
     return actor1.get() == actor2.get();
 }
 
@@ -166,7 +163,7 @@ void Movie::loadActors() {
                                              std::stoi(el.at("birth_year")), std::stoi(el.at("death_year")),
                                              std::stoi(el.at("actor_importance")), el.at("n_role"));
 
-        if (std::find_if(_actors.begin(), _actors.end(), [&actor](const std::shared_ptr<Actor>& a) {
+        if (std::find_if(_actors.begin(), _actors.end(), [&actor](const QSharedPointer<Actor>& a) {
             return compareActors(a, actor); }) == _actors.end()) {
             _actors.push_back(actor);
             counter++;
@@ -179,8 +176,8 @@ void Movie::loadActors() {
     Logger::getInstance().logInfo(std::to_string(counter) + "actors was added to " + _name + ".");
 }
 
-void Movie::addActor(const std::shared_ptr<Actor>& actor) {
-    if (std::find_if(_actors.begin(), _actors.end(), [&actor](const std::shared_ptr<Actor>& a) {
+void Movie::addActor(const QSharedPointer<Actor>& actor) {
+    if (std::find_if(_actors.begin(), _actors.end(), [&actor](const QSharedPointer<Actor>& a) {
         return compareActors(a, actor); }) == _actors.end()) {
         _actors.push_back(actor);
         Logger::getInstance().logInfo("Movie`s actor list was updated. Actor " + actor->getName() +
@@ -201,8 +198,8 @@ void Movie::clearActors() {
     Logger::getInstance().logInfo("All actors were removed from " + _name + ".");
 }
 
-void Movie::removeActor(const std::shared_ptr<Actor>& actor) {
-    auto it = std::find_if(_actors.begin(), _actors.end(), [&actor](const std::shared_ptr<Actor>& a) {
+void Movie::removeActor(const QSharedPointer<Actor>& actor) {
+    auto it = std::find_if(_actors.begin(), _actors.end(), [&actor](const QSharedPointer<Actor>& a) {
         return compareActors(a, actor); });
     if (it != _actors.end()) {
         _actors.erase(it);
@@ -240,11 +237,11 @@ std::string Collection::getName() const {
     return _name;
 }
 
-const std::vector<std::shared_ptr<Movie>>& Collection::getMovies() const {
+const std::vector<QSharedPointer<Movie>>& Collection::getMovies() const {
     return _collection;
 }
 
-void Collection::addMovie(const std::shared_ptr<Movie>& movie) {
+void Collection::addMovie(const QSharedPointer<Movie>& movie) {
     _collection.push_back(movie);
     std::vector<std::map<std::string, std::string>> data = {
             {{"collection_id", std::to_string(_collection_id)}, {"tconst", movie->getTconst()}},
@@ -255,7 +252,7 @@ void Collection::addMovie(const std::shared_ptr<Movie>& movie) {
     else Logger::getInstance().logError("Movie " + movie->getTconst() + " can`t be added to collection " + std::to_string(_collection_id) + '.');
 }
 
-void Collection::removeMovie(const std::shared_ptr<Movie>& movie) {
+void Collection::removeMovie(const QSharedPointer<Movie>& movie) {
     auto it = std::find(_collection.begin(), _collection.end(), movie);
     if (it != _collection.end()) {
         _collection.erase(it);

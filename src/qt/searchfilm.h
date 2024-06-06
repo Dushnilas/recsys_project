@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "backend.h"
+#include <string>
 
 //Header
 #include "pagemain.h"
@@ -23,6 +24,9 @@ class TVShows;
 class KidsTV;
 class PersUser;
 
+class Movie;
+
+
 class SearchFilm : public QMainWindow
 {
     Q_OBJECT
@@ -30,6 +34,17 @@ class SearchFilm : public QMainWindow
 public:
     explicit SearchFilm(QWidget *parent = nullptr);
     ~SearchFilm();
+
+    std::string filmNameString;
+
+
+
+    //void setStringVariable(const std::string &value);
+    //std::string getStringVariable() const;
+public slots:
+    void receiveSearchQuery(const QString &query);
+
+
 
 private slots:
     void on_HomeFSerach_clicked();
@@ -42,11 +57,7 @@ private slots:
 
     void on_UserBFSearch_clicked();
 
-    void on_pushButton_11_clicked();
-
-    bool Search_Films_Overall(std::vector<std::shared_ptr<Movie>>& result, std::string query);
-
-    void updateButtons(const std::vector<std::shared_ptr<Movie>>& results);
+    void on_SearchFilmButSerarchbyGen_clicked();
 
 private:
     Ui::SearchFilm *ui;
@@ -56,6 +67,16 @@ private:
     TVShows *tvsFS;
     KidsTV *kidsFS;
     PersUser *puFS;
+
+    std::vector<QSharedPointer<Movie>> results;
+    std::string stringVariable;
+
+
+
+    bool Search_Films_Overall(const std::vector<QSharedPointer<Movie>> AllMovies, std::vector<QSharedPointer<Movie>>& buf,
+                                          std::string query);  // Метод для поиска фильмов
+    void updateButtons();  // Метод для обновления кнопок и меток
+
 };
 
 #endif // SEARCHFILM_H

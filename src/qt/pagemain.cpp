@@ -25,7 +25,6 @@ PageMain::PageMain(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //connect(goToTVShowsB, &QPushButton::clicked, this, &PageMain::onGoToTVShowsButtonClicked);
 
 }
 
@@ -34,6 +33,28 @@ PageMain::~PageMain()
     delete ui;
 
 }
+
+
+
+
+
+
+
+// std::string PageMain::getStringVariable() const {
+//     return stringVariable;
+// }
+
+// void PageMain::setStringVariable(const std::string &value) {
+//     stringVariable = value;
+// }
+
+
+
+
+
+
+
+
 
 void PageMain::on_UserB1_clicked()
 {
@@ -115,20 +136,52 @@ void PageMain::on_KidsHButton_clicked()
     kidstv = new KidsTV(this); //Goes to kids
     kidstv->show();
 
-
 }
 
-static QString searchPM;
+//static QString searchPM;
+
+
+
+
+// std::string PageMain::getStringVariable() const {
+//     return stringVariable;
+// }
+
+// void PageMain::setStringVariable(const std::string &value) {
+//     stringVariable = value;
+// }
+
+
+
+
 
 //Search above
 void PageMain::on_SearchB1_clicked()
 {
-    searchPM = ui->lineEditPM->text();
+    QString query = ui->lineEditPM->text();
+    emit sendSearchQuery(query);
 
-}
 
-void setClassString(StringPass &stringpass) {
-    stringpass.setString(searchPM);
+    hide();
+    searchPMF = new SearchFilm(this); //Goes to TVShows
+    searchPMF->show();
+    //this->close();
+
+
+
+    //stringVariable = searchPM.toStdString();
+
+    //SearchFilm serFilm;
+
+    //serFilm.setStringVariable(stringVariable);
+
+    //serFilm.show();
+    //this->close();
+
+
+    //searchPMF = new SearchFilm(this, searchPM.toStdString()); //Goes to search
+    //search->show();
+
 
 }
 
