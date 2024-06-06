@@ -53,7 +53,7 @@ padding: 5px;</string>
           <number>1</number>
          </property>
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="logo">
            <property name="minimumSize">
             <size>
              <width>150</width>
@@ -322,9 +322,9 @@ background-color: rgb(228, 215, 190);</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>-267</y>
          <width>902</width>
-         <height>818</height>
+         <height>788</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -344,7 +344,7 @@ background-color: rgb(228, 215, 190);</string>
            <number>-1</number>
           </property>
           <item row="0" column="8">
-           <widget class="QPushButton" name="pushButton_9">
+           <widget class="QPushButton" name="pushButton_5">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -368,7 +368,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="1" column="2">
-           <widget class="QLabel" name="label_7">
+           <widget class="QLabel" name="QLabel_2">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -391,7 +391,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="0" column="4">
-           <widget class="QPushButton" name="pushButton_7">
+           <widget class="QPushButton" name="pushButton_3">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -428,7 +428,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton_11">
+           <widget class="QPushButton" name="pushButton_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -465,7 +465,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="1" column="6">
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="QLabel_4">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -475,7 +475,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="0" column="6">
-           <widget class="QPushButton" name="pushButton_8">
+           <widget class="QPushButton" name="pushButton_4">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -495,6 +495,97 @@ padding: 5px;</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_1">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>150</horstretch>
+              <verstretch>200</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid rgb(229, 217, 190);
+border-radius: 5px;
+padding: 5px;</string>
+            </property>
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="QLabel_1">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="QLabel_3">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="8">
+           <widget class="QLabel" name="QLabel_5">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="TopComLO" columnstretch="3,0,0,0,0,0,0,0,0">
+          <item row="1" column="8">
+           <widget class="QLabel" name="QLabel_10">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="QLabel_6">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>
@@ -522,109 +613,8 @@ padding: 5px;</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_2">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="4">
-           <widget class="QLabel" name="label_3">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="8">
-           <widget class="QLabel" name="label_5">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QLabel" name="TopComLab">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Cartoons&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QGridLayout" name="TopComLO" columnstretch="3,0,0,0,0,0,0,0,0">
-          <item row="1" column="8">
-           <widget class="QLabel" name="label_11">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_8">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-            </property>
-            <property name="text">
-             <string>TextLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_14">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>150</horstretch>
-              <verstretch>200</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>150</width>
-              <height>200</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border: 1px solid rgb(229, 217, 190);
-border-radius: 5px;
-padding: 5px;</string>
-            </property>
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="6">
-           <widget class="QPushButton" name="pushButton_12">
+           <widget class="QPushButton" name="pushButton_9">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -648,7 +638,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="1" column="2">
-           <widget class="QLabel" name="label_13">
+           <widget class="QLabel" name="QLabel_7">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -671,7 +661,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="1" column="6">
-           <widget class="QLabel" name="label_12">
+           <widget class="QLabel" name="QLabel_9">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -694,7 +684,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton_17">
+           <widget class="QPushButton" name="pushButton_7">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -731,7 +721,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="1" column="4">
-           <widget class="QLabel" name="label_10">
+           <widget class="QLabel" name="QLabel_8">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -754,7 +744,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="0" column="4">
-           <widget class="QPushButton" name="pushButton_13">
+           <widget class="QPushButton" name="pushButton_8">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -778,7 +768,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="0" column="8">
-           <widget class="QPushButton" name="pushButton_16">
+           <widget class="QPushButton" name="pushButton_10">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -829,7 +819,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_15">
+           <widget class="QLabel" name="QLabel_11">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -839,7 +829,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="1" column="2">
-           <widget class="QLabel" name="label_20">
+           <widget class="QLabel" name="QLabel_12">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -849,7 +839,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="1" column="4">
-           <widget class="QLabel" name="label_17">
+           <widget class="QLabel" name="QLabel_13">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -859,7 +849,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="0" column="4">
-           <widget class="QPushButton" name="pushButton_19">
+           <widget class="QPushButton" name="pushButton_13">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -883,7 +873,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_20">
+           <widget class="QPushButton" name="pushButton_11">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -933,7 +923,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton_23">
+           <widget class="QPushButton" name="pushButton_12">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -957,7 +947,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="0" column="8">
-           <widget class="QPushButton" name="pushButton_22">
+           <widget class="QPushButton" name="pushButton_15">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>
@@ -981,7 +971,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="1" column="8">
-           <widget class="QLabel" name="label_18">
+           <widget class="QLabel" name="QLabel_15">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -1004,7 +994,7 @@ padding: 5px;</string>
            </spacer>
           </item>
           <item row="1" column="6">
-           <widget class="QLabel" name="label_19">
+           <widget class="QLabel" name="QLabel_14">
             <property name="styleSheet">
              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
             </property>
@@ -1014,7 +1004,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="0" column="6">
-           <widget class="QPushButton" name="pushButton_18">
+           <widget class="QPushButton" name="pushButton_14">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>150</horstretch>

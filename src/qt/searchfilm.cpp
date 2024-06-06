@@ -125,9 +125,3 @@ void SearchFilm::on_UserBFSearch_clicked()
 
 }
 
-
-void SearchFilm::on_pushButton_11_clicked()
-{
-
-}
-

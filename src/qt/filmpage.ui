@@ -293,13 +293,13 @@ border-image: url(:/rec/Pics/плюс.png);</string>
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>290</width>
             <height>100</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>900</width>
+            <width>700</width>
             <height>16777215</height>
            </size>
           </property>
@@ -315,66 +315,16 @@ padding: 5px;</string>
          </widget>
         </item>
         <item>
-         <widget class="QScrollArea" name="scrollArea">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-            <horstretch>100</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+         <widget class="QLabel" name="label_9">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(255, 255, 255, 0);
+border: 4px solid rgb(229, 217, 190);
+border-radius: 5px;
+padding: 5px;</string>
           </property>
-          <property name="maximumSize">
-           <size>
-            <width>850</width>
-            <height>16777215</height>
-           </size>
+          <property name="text">
+           <string>TextLabel</string>
           </property>
-          <property name="widgetResizable">
-           <bool>true</bool>
-          </property>
-          <widget class="QWidget" name="scrollAreaWidgetContents">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>304</width>
-             <height>181</height>
-            </rect>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_4">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_10">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>875</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Comments</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QScrollBar" name="verticalScrollBar">
-              <property name="maximumSize">
-               <size>
-                <width>25</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
          </widget>
         </item>
        </layout>
@@ -389,7 +339,7 @@ padding: 5px;</string>
         </property>
         <property name="minimumSize">
          <size>
-          <width>173</width>
+          <width>190</width>
           <height>250</height>
          </size>
         </property>
@@ -656,12 +606,21 @@ padding: 5px;</string>
         </item>
         <item>
          <widget class="QLabel" name="label_8">
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgba(255, 255, 255, 0);
 color: rgb(229, 217, 190);</string>
           </property>
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Rate the Film&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
           </property>
          </widget>
         </item>
@@ -672,7 +631,7 @@ color: rgb(229, 217, 190);</string>
     <item>
      <layout class="QGridLayout" name="gridLayout_2">
       <property name="leftMargin">
-       <number>30</number>
+       <number>0</number>
       </property>
       <property name="rightMargin">
        <number>30</number>
@@ -696,30 +655,7 @@ color: rgb(229, 217, 190);</string>
 color: rgb(229, 217, 190);</string>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;(Num_ratings)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>70</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>70</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgba(255, 255, 255, 0);
-color: rgb(229, 217, 190);</string>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Rating:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;(Num_ratings)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -742,8 +678,94 @@ color: rgb(229, 217, 190);</string>
 color: rgb(229, 217, 190);</string>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Numder&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Numder&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>70</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(229, 217, 190);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Rating:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+          <horstretch>100</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>700</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>519</width>
+           <height>118</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>875</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Comments</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QScrollBar" name="verticalScrollBar">
+            <property name="maximumSize">
+             <size>
+              <width>25</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>

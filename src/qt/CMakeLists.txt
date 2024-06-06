@@ -37,6 +37,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             Pics.qrc
             backend.h backend.cpp
             stringpass.h stringpass.cpp
+            intpass.h intpass.cpp
     )
 else()
     if(ANDROID)
